@@ -206,32 +206,17 @@
                             <li data-i18n="membership.benefits.3">✓ Quyền biểu quyết tại đại hội</li>
                         </ul>
                     </div>
-                    <form class="contact-form" id="membershipForm">
-                        <h3 style="color: var(--color-black); margin-bottom: 20px;" data-i18n="membership.form.title">
-                            Đơn Đăng Ký</h3>
-                        <div class="form-group">
-                            <label for="mem-name" data-i18n="form.name">Họ và Tên</label>
-                            <input type="text" id="mem-name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="mem-email" data-i18n="form.email">Email</label>
-                            <input type="email" id="mem-email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="mem-phone" data-i18n="form.phone">Số Điện Thoại</label>
-                            <input type="tel" id="mem-phone" name="phone">
-                        </div>
-                        <div class="form-group">
-                            <label for="mem-type" data-i18n="form.type_label">Loại Thành Viên</label>
-                            <select id="mem-type" name="type"
-                                style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px;">
-                                <option value="student" data-i18n="form.type_options.student">Sinh viên</option>
-                                <option value="adult" data-i18n="form.type_options.adult">Người lớn</option>
-                                <option value="family" data-i18n="form.type_options.family">Gia đình</option>
-                            </select>
-                        </div>
-                        <button type="submit" class="btn-submit" data-i18n="form.submit_join">Đăng Ký</button>
-                    </form>
+                    <div class="contact-form"
+                        style="text-align: center; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 20px;">
+                        <h3 data-i18n="membership.register_online_title" style="color: var(--color-black);">Đăng ký trực
+                            tuyến</h3>
+                        <p data-i18n="membership.register_online_desc" style="color: var(--color-dark-gray);">Nhấn vào
+                            nút bên dưới để điền đơn đăng ký thành viên.</p>
+                        <a href="https://forms.gle/iByjqJptMSL3dV6b6" target="_blank" class="btn-submit"
+                            style="text-decoration: none; display: inline-block; width: auto; text-align: center; line-height: 1.5;">
+                            <span data-i18n="membership.open_form_btn">Mở Đơn Đăng Ký</span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>

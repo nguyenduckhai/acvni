@@ -73,7 +73,10 @@ const translations = {
             },
             form: {
                 title: "Formulaire d'Adhésion"
-            }
+            },
+            register_online_title: "Adhésion en ligne",
+            register_online_desc: "Cliquez sur le bouton ci-dessous pour remplir le formulaire d'adhésion.",
+            open_form_btn: "Ouvrir le formulaire d'adhésion"
         },
         contact: {
             title: "Contactez-Nous",
@@ -186,7 +189,10 @@ const translations = {
             },
             form: {
                 title: "Đơn Đăng Ký"
-            }
+            },
+            register_online_title: "Đăng ký trực tuyến",
+            register_online_desc: "Nhấn vào nút bên dưới để điền đơn đăng ký thành viên.",
+            open_form_btn: "Mở Đơn Đăng Ký"
         },
         contact: {
             title: "Liên Hệ",
@@ -299,7 +305,10 @@ const translations = {
             },
             form: {
                 title: "Membership Form"
-            }
+            },
+            register_online_title: "Register Online",
+            register_online_desc: "Click the button below to fill out the membership form.",
+            open_form_btn: "Open Registration Form"
         },
         contact: {
             title: "Contact Us",
