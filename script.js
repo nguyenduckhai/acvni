@@ -480,7 +480,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }, observerOptions);
 
     // Add animation classes to elements
-    const animatedElements = document.querySelectorAll('.about-card, .gallery-item, .event-card');
+    const animatedElements = document.querySelectorAll('.about-card, .gallery-item');
     animatedElements.forEach((el, index) => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(30px)';
