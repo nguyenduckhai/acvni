@@ -79,7 +79,11 @@ const translations = {
             title: "Contactez-Nous",
             desc: "Vous souhaitez devenir bénévole ou simplement en savoir plus sur nos activités ? N'hésitez pas à nous écrire.",
             phone: "Téléphone:",
-            address: "Adresse:"
+            address: "Adresse:",
+            send_email_title: "Envoyez-nous un email",
+            send_email_desc: "Cliquez ci-dessous pour ouvrir votre application de messagerie",
+            open_mail_app: "Ouvrir l'application Email",
+            support_info: "Supporte : Gmail (Android), Mail (iOS), Outlook, etc."
         },
         form: {
             name: "Nom Complet",
@@ -188,7 +192,11 @@ const translations = {
             title: "Liên Hệ",
             desc: "Bạn muốn trở thành tình nguyện viên hay tìm hiểu thêm về các hoạt động? Hãy liên hệ với chúng tôi.",
             phone: "Điện thoại:",
-            address: "Địa chỉ:"
+            address: "Địa chỉ:",
+            send_email_title: "Gửi email cho chúng tôi",
+            send_email_desc: "Nhấn vào bên dưới để mở ứng dụng email của bạn",
+            open_mail_app: "Mở Ứng Dụng Email",
+            support_info: "Hỗ trợ: Gmail (Android), Mail (iOS), Outlook, v.v."
         },
         form: {
             name: "Họ và Tên",
@@ -297,7 +305,11 @@ const translations = {
             title: "Contact Us",
             desc: "Want to become a volunteer or learn more about our activities? Feel free to write to us.",
             phone: "Phone:",
-            address: "Address:"
+            address: "Address:",
+            send_email_title: "Send us an email",
+            send_email_desc: "Click below to open your email application",
+            open_mail_app: "Open Email App",
+            support_info: "Supports: Gmail (Android), Mail (iOS), Outlook, etc."
         },
         form: {
             name: "Full Name",
