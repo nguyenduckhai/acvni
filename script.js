@@ -440,36 +440,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Form Submission Handling
-    const handleFormSubmit = (formId, successMsgKey) => {
-        const form = document.getElementById(formId);
-        if (form) {
-            form.addEventListener('submit', (e) => {
-                e.preventDefault();
-
-                const btn = form.querySelector('.btn-submit');
-                const originalText = btn.innerText;
-
-                // Simple loading state
-                btn.innerText = '...';
-                btn.disabled = true;
-
-                setTimeout(() => {
-                    // Get current lang for alert message (simplified)
-                    const alertMsg = currentLang === 'fr' ? "Merci ! Votre message a été envoyé." :
-                        (currentLang === 'vi' ? "Cảm ơn! Tin nhắn của bạn đã được gửi." :
-                            "Thank you! Your message has been sent.");
-
-                    alert(alertMsg);
-                    form.reset();
-                    btn.innerText = originalText;
-                    btn.disabled = false;
-                }, 1500);
-            });
-        }
-    };
-
-    handleFormSubmit('contactForm');
-    handleFormSubmit('membershipForm');
+    // Forms are now handled by Formspree via HTML action attributes
+    // We can keep custom validation here if needed, but for now we'll let the browser handle the submission.
 
     // Scroll Animation (Simple Intersection Observer)
     const observerOptions = {

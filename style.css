@@ -225,7 +225,11 @@ p {
     align-items: center;
     position: relative;
     padding-top: 80px;
-    background: radial-gradient(circle at center, #1a1a1a 0%, #000000 100%);
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('assets/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    /* Parallax effect */
     overflow: hidden;
 }
 
@@ -496,6 +500,10 @@ p {
     align-items: center;
     gap: 10px;
     color: var(--color-white);
+}
+
+.contact-details li strong {
+    color: var(--color-gold);
 }
 
 .social-links {
