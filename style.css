@@ -175,6 +175,35 @@ p {
     font-size: 0.8rem;
 }
 
+.lang-switcher {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-left: 10px;
+}
+
+.lang-btn {
+    background: none;
+    border: none;
+    color: var(--color-text-gray);
+    cursor: pointer;
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 0.9rem;
+    padding: 2px 5px;
+    transition: var(--transition);
+}
+
+.lang-btn:hover,
+.lang-btn.active {
+    color: var(--color-gold);
+}
+
+.separator {
+    color: rgba(255, 255, 255, 0.2);
+    font-size: 0.8rem;
+}
+
 .hamburger {
     display: none;
     cursor: pointer;

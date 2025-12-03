@@ -1,21 +1,21 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="vi">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="ACVNI - Association de la Communauté Vietnamienne de Nice. Promouvoir la culture et l'entraide au sein de la communauté vietnamienne à Nice.">
-    <meta name="keywords" content="ACVNI, Vietnam, Nice, Association, Culture, Communauté, France">
+        content="ACVNI - Hội Người Việt Nam tại Nice. Phát huy văn hóa và tương trợ cộng đồng người Việt tại Nice.">
+    <meta name="keywords" content="ACVNI, Vietnam, Nice, Hội, Văn hóa, Cộng đồng, Pháp">
     <meta name="author" content="ACVNI">
-    <meta property="og:title" content="ACVNI - Association de la Communauté Vietnamienne de Nice">
+    <meta property="og:title" content="ACVNI - Hội Người Việt Nam tại Nice">
     <meta property="og:description"
-        content="Bienvenue sur le site officiel de l'ACVNI. Découvrez nos activités, nos événements et notre mission.">
+        content="Chào mừng đến với trang web chính thức của ACVNI. Khám phá các hoạt động, sự kiện và sứ mệnh của chúng tôi.">
     <meta property="og:image" content="assets/logo.png">
     <meta property="og:url" content="https://acvni.fr">
     <meta property="og:type" content="website">
 
-    <title>ACVNI - Association de la Communauté Vietnamienne de Nice</title>
+    <title>ACVNI - Hội Người Việt Nam tại Nice</title>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -40,11 +40,19 @@
                     <span>ACVNI</span>
                 </a>
                 <ul class="nav-links">
-                    <li><a href="#home">Accueil</a></li>
-                    <li><a href="#about">À Propos</a></li>
-                    <li><a href="#activities">Activités</a></li>
-                    <li><a href="#events">Événements</a></li>
-                    <li><a href="#contact" class="btn-primary">Contact</a></li>
+                    <li><a href="#home" data-i18n="nav.home">Trang Chủ</a></li>
+                    <li><a href="#about" data-i18n="nav.about">Giới Thiệu</a></li>
+                    <li><a href="#activities" data-i18n="nav.activities">Hoạt Động</a></li>
+                    <li><a href="#events" data-i18n="nav.events">Sự Kiện</a></li>
+                    <li><a href="#membership" data-i18n="nav.membership">Thành Viên</a></li>
+                    <li><a href="#contact" class="btn-primary" data-i18n="nav.contact">Liên Hệ</a></li>
+                    <li class="lang-switcher">
+                        <button class="lang-btn active" data-lang="vi">VI</button>
+                        <span class="separator">|</span>
+                        <button class="lang-btn" data-lang="fr">FR</button>
+                        <span class="separator">|</span>
+                        <button class="lang-btn" data-lang="en">EN</button>
+                    </li>
                 </ul>
                 <div class="hamburger">
                     <span class="bar"></span>
@@ -61,11 +69,12 @@
             <div class="hero-overlay"></div>
             <div class="container hero-content">
                 <div class="hero-text" data-aos="fade-up">
-                    <h1>Association de la Communauté <span class="text-gold">Vietnamienne</span> de Nice</h1>
-                    <p>Promouvoir la culture, l'entraide et l'amitié franco-vietnamienne sur la Côte d'Azur.</p>
+                    <h1 data-i18n="hero.title">Hội Người <span class="text-gold">Việt Nam</span> tại Nice</h1>
+                    <p data-i18n="hero.subtitle">Phát huy văn hóa, tương trợ và tình hữu nghị Pháp-Việt tại vùng Côte
+                        d'Azur.</p>
                     <div class="hero-btns">
-                        <a href="#about" class="btn-primary">Découvrir l'Association</a>
-                        <a href="#contact" class="btn-secondary">Nous Rejoindre</a>
+                        <a href="#about" class="btn-primary" data-i18n="hero.btn_discover">Khám Phá Hội</a>
+                        <a href="#membership" class="btn-secondary" data-i18n="hero.btn_join">Tham Gia Ngay</a>
                     </div>
                 </div>
                 <div class="hero-image" data-aos="fade-left">
@@ -78,28 +87,27 @@
         <section id="about" class="section">
             <div class="container">
                 <div class="section-header">
-                    <h2>Qui Sommes-Nous ?</h2>
+                    <h2 data-i18n="about.title">Về Chúng Tôi</h2>
                     <div class="underline"></div>
                 </div>
                 <div class="about-grid">
                     <div class="about-card">
                         <div class="icon">🤝</div>
-                        <h3>Solidarité</h3>
-                        <p>Créer un réseau d'entraide fort pour les vietnamiens et amis du Vietnam résidant à Nice et
-                            ses environs.</p>
+                        <h3 data-i18n="about.solidarity.title">Đoàn Kết</h3>
+                        <p data-i18n="about.solidarity.desc">Xây dựng mạng lưới tương trợ vững mạnh cho người Việt và
+                            bạn bè yêu mến Việt Nam tại Nice.</p>
                     </div>
                     <div class="about-card">
-                        <div class="icon">im_culture</div>
-                        <!-- Will replace with SVG or image later if needed, using text for now or simple unicode -->
-                        <h3>Culture</h3>
-                        <p>Préserver et partager la richesse de la culture vietnamienne à travers des événements
-                            artistiques et culinaires.</p>
+                        <div class="icon">🎭</div>
+                        <h3 data-i18n="about.culture.title">Văn Hóa</h3>
+                        <p data-i18n="about.culture.desc">Gìn giữ và chia sẻ bản sắc văn hóa Việt Nam qua các sự kiện
+                            nghệ thuật và ẩm thực.</p>
                     </div>
                     <div class="about-card">
                         <div class="icon">🎓</div>
-                        <h3>Éducation</h3>
-                        <p>Soutenir l'apprentissage de la langue vietnamienne et faciliter l'intégration des nouveaux
-                            arrivants.</p>
+                        <h3 data-i18n="about.education.title">Giáo Dục</h3>
+                        <p data-i18n="about.education.desc">Hỗ trợ việc học tiếng Việt và giúp đỡ người mới đến hòa
+                            nhập cuộc sống.</p>
                     </div>
                 </div>
             </div>
@@ -109,33 +117,32 @@
         <section id="activities" class="section bg-darker">
             <div class="container">
                 <div class="section-header">
-                    <h2>Nos Activités</h2>
+                    <h2 data-i18n="activities.title">Hoạt Động Của Hội</h2>
                     <div class="underline"></div>
                 </div>
                 <div class="gallery-grid">
-                    <!-- Placeholders for gallery images. In a real scenario, we'd use real photos. -->
                     <div class="gallery-item">
                         <div class="gallery-content">
-                            <h3>Fête du Têt</h3>
-                            <p>Célébration du Nouvel An Lunaire</p>
+                            <h3 data-i18n="activities.tet.title">Tết Nguyên Đán</h3>
+                            <p data-i18n="activities.tet.desc">Lễ hội đón mừng năm mới âm lịch</p>
                         </div>
                     </div>
                     <div class="gallery-item">
                         <div class="gallery-content">
-                            <h3>Cours de Vietnamien</h3>
-                            <p>Pour enfants et adultes</p>
+                            <h3 data-i18n="activities.class.title">Lớp Tiếng Việt</h3>
+                            <p data-i18n="activities.class.desc">Dành cho trẻ em và người lớn</p>
                         </div>
                     </div>
                     <div class="gallery-item">
                         <div class="gallery-content">
-                            <h3>Ateliers Culinaires</h3>
-                            <p>Découverte des saveurs du Vietnam</p>
+                            <h3 data-i18n="activities.cooking.title">Lớp Học Nấu Ăn</h3>
+                            <p data-i18n="activities.cooking.desc">Khám phá hương vị ẩm thực Việt</p>
                         </div>
                     </div>
                     <div class="gallery-item">
                         <div class="gallery-content">
-                            <h3>Sorties Culturelles</h3>
-                            <p>Visites et rencontres</p>
+                            <h3 data-i18n="activities.culture.title">Giao Lưu Văn Hóa</h3>
+                            <p data-i18n="activities.culture.desc">Tham quan và gặp gỡ giao lưu</p>
                         </div>
                     </div>
                 </div>
@@ -146,35 +153,85 @@
         <section id="events" class="section">
             <div class="container">
                 <div class="section-header">
-                    <h2>Prochains Événements</h2>
+                    <h2 data-i18n="events.title">Sự Kiện Sắp Tới</h2>
                     <div class="underline"></div>
                 </div>
                 <div class="events-list">
                     <article class="event-card">
                         <div class="event-date">
                             <span class="day">10</span>
-                            <span class="month">Fév</span>
+                            <span class="month" data-i18n="months.feb">Th2</span>
                         </div>
                         <div class="event-details">
-                            <h3>Célébration du Têt 2026</h3>
-                            <p class="event-time">18:00 - 23:00 | Salle des Fêtes de Nice</p>
-                            <p>Rejoignez-nous pour célébrer l'année du Cheval avec un grand banquet et des spectacles
-                                traditionnels.</p>
-                            <a href="#contact" class="text-link">En savoir plus &rarr;</a>
+                            <h3 data-i18n="events.event1.title">Chào Xuân Bính Ngọ 2026</h3>
+                            <p class="event-time" data-i18n="events.event1.time">18:00 - 23:00 | Hội trường Nice</p>
+                            <p data-i18n="events.event1.desc">Hãy cùng chúng tôi đón chào năm mới với tiệc mừng và các
+                                tiết mục văn nghệ truyền thống.</p>
+                            <a href="#contact" class="text-link" data-i18n="common.readmore">Xem thêm &rarr;</a>
                         </div>
                     </article>
                     <article class="event-card">
                         <div class="event-date">
                             <span class="day">15</span>
-                            <span class="month">Mar</span>
+                            <span class="month" data-i18n="months.mar">Th3</span>
                         </div>
                         <div class="event-details">
-                            <h3>Atelier Cuisine : Le Phở</h3>
-                            <p class="event-time">10:00 - 14:00 | Centre Culturel</p>
-                            <p>Apprenez les secrets du bouillon traditionnel vietnamien avec nos chefs expérimentés.</p>
-                            <a href="#contact" class="text-link">En savoir plus &rarr;</a>
+                            <h3 data-i18n="events.event2.title">Lớp Nấu Phở Truyền Thống</h3>
+                            <p class="event-time" data-i18n="events.event2.time">10:00 - 14:00 | Trung tâm Văn hóa</p>
+                            <p data-i18n="events.event2.desc">Học bí quyết nấu nước dùng phở đậm đà từ các đầu bếp giàu
+                                kinh nghiệm.</p>
+                            <a href="#contact" class="text-link" data-i18n="common.readmore">Xem thêm &rarr;</a>
                         </div>
                     </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Membership Section -->
+        <section id="membership" class="section bg-darker">
+            <div class="container">
+                <div class="section-header">
+                    <h2 data-i18n="membership.title">Đăng Ký Thành Viên</h2>
+                    <div class="underline"></div>
+                </div>
+                <div class="contact-wrapper">
+                    <div class="contact-info">
+                        <h2 data-i18n="membership.subtitle">Tại sao nên tham gia?</h2>
+                        <p data-i18n="membership.desc">Trở thành thành viên của ACVNI, bạn sẽ đóng góp tích cực vào cộng
+                            đồng. Bạn được hưởng ưu đãi khi tham gia sự kiện và ủng hộ các hoạt động từ thiện.</p>
+                        <ul class="contact-details">
+                            <li><strong data-i18n="membership.benefits.title">Quyền lợi:</strong></li>
+                            <li data-i18n="membership.benefits.1">✓ Ưu tiên tham gia các sự kiện</li>
+                            <li data-i18n="membership.benefits.2">✓ Giảm giá các lớp học và workshop</li>
+                            <li data-i18n="membership.benefits.3">✓ Quyền biểu quyết tại đại hội</li>
+                        </ul>
+                    </div>
+                    <form class="contact-form" id="membershipForm">
+                        <h3 style="color: var(--color-black); margin-bottom: 20px;" data-i18n="membership.form.title">
+                            Đơn Đăng Ký</h3>
+                        <div class="form-group">
+                            <label for="mem-name" data-i18n="form.name">Họ và Tên</label>
+                            <input type="text" id="mem-name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="mem-email" data-i18n="form.email">Email</label>
+                            <input type="email" id="mem-email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="mem-phone" data-i18n="form.phone">Số Điện Thoại</label>
+                            <input type="tel" id="mem-phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="mem-type" data-i18n="form.type_label">Loại Thành Viên</label>
+                            <select id="mem-type" name="type"
+                                style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px;">
+                                <option value="student" data-i18n="form.type_options.student">Sinh viên</option>
+                                <option value="adult" data-i18n="form.type_options.adult">Người lớn</option>
+                                <option value="family" data-i18n="form.type_options.family">Gia đình</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn-submit" data-i18n="form.submit_join">Đăng Ký</button>
+                    </form>
                 </div>
             </div>
         </section>
@@ -184,13 +241,13 @@
             <div class="container">
                 <div class="contact-wrapper">
                     <div class="contact-info">
-                        <h2>Contactez-Nous</h2>
-                        <p>Vous souhaitez devenir membre, bénévole ou simplement en savoir plus sur nos activités ?
-                            N'hésitez pas à nous écrire.</p>
+                        <h2 data-i18n="contact.title">Liên Hệ</h2>
+                        <p data-i18n="contact.desc">Bạn muốn trở thành tình nguyện viên hay tìm hiểu thêm về các hoạt
+                            động? Hãy liên hệ với chúng tôi.</p>
                         <ul class="contact-details">
                             <li><strong>Email:</strong> contact@acvni.fr</li>
-                            <li><strong>Téléphone:</strong> +33 4 93 00 00 00</li>
-                            <li><strong>Adresse:</strong> Nice, France</li>
+                            <li><strong data-i18n="contact.phone">Điện thoại:</strong> +33 4 93 00 00 00</li>
+                            <li><strong data-i18n="contact.address">Địa chỉ:</strong> Nice, France</li>
                         </ul>
                         <div class="social-links">
                             <a href="#" aria-label="Facebook">FB</a>
@@ -200,18 +257,18 @@
                     </div>
                     <form class="contact-form" id="contactForm">
                         <div class="form-group">
-                            <label for="name">Nom Complet</label>
+                            <label for="name" data-i18n="form.name">Họ và Tên</label>
                             <input type="text" id="name" name="name" required>
                         </div>
                         <div class="form-group">
-                            <label for="email">Email</label>
+                            <label for="email" data-i18n="form.email">Email</label>
                             <input type="email" id="email" name="email" required>
                         </div>
                         <div class="form-group">
-                            <label for="message">Message</label>
+                            <label for="message" data-i18n="form.message">Tin Nhắn</label>
                             <textarea id="message" name="message" rows="5" required></textarea>
                         </div>
-                        <button type="submit" class="btn-submit">Envoyer</button>
+                        <button type="submit" class="btn-submit" data-i18n="form.submit">Gửi Tin Nhắn</button>
                     </form>
                 </div>
             </div>
@@ -224,11 +281,11 @@
                 <img src="assets/logo.png" alt="ACVNI Logo">
                 <h3>ACVNI</h3>
             </div>
-            <p class="copyright">&copy; 2025 Association de la Communauté Vietnamienne de Nice. Tous droits réservés.
-            </p>
+            <p class="copyright" data-i18n="footer.copyright">&copy; 2025 Hội Người Việt Nam tại Nice. Bảo lưu mọi
+                quyền.</p>
             <div class="footer-links">
-                <a href="#">Mentions Légales</a>
-                <a href="#">Politique de Confidentialité</a>
+                <a href="#" data-i18n="footer.legal">Pháp lý</a>
+                <a href="#" data-i18n="footer.privacy">Chính sách bảo mật</a>
             </div>
         </div>
     </footer>
