@@ -110,7 +110,7 @@ const translations = {
             readmore: "En savoir plus &rarr;"
         },
         footer: {
-            copyright: "&copy; 2025 Association de la communauté Vietnamienne de Nice. Tous droits réservés.",
+            copyright: "&copy; {year} Association de la communauté Vietnamienne de Nice. Tous droits réservés.",
             legal: "Mentions Légales",
             privacy: "Politique de Confidentialité"
         }
@@ -226,7 +226,7 @@ const translations = {
             readmore: "Xem thêm &rarr;"
         },
         footer: {
-            copyright: "&copy; 2025 Cộng đồng người Việt Nam tại Nice. Bảo lưu mọi quyền.",
+            copyright: "&copy; {year} Cộng đồng người Việt Nam tại Nice. Bảo lưu mọi quyền.",
             legal: "Pháp lý",
             privacy: "Chính sách bảo mật"
         }
@@ -342,7 +342,7 @@ const translations = {
             readmore: "Read more &rarr;"
         },
         footer: {
-            copyright: "&copy; 2025 Vietnamese Community in Nice. All rights reserved.",
+            copyright: "&copy; {year} Vietnamese Community in Nice. All rights reserved.",
             legal: "Legal Notice",
             privacy: "Privacy Policy"
         }
@@ -380,6 +380,9 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             if (value) {
+                // Replace {year} with current year
+                value = value.replace('{year}', new Date().getFullYear());
+
                 if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
                     element.placeholder = value;
                 } else if (element.tagName === 'OPTION') {
