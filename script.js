@@ -9,9 +9,9 @@ const translations = {
             contact: "Contact"
         },
         hero: {
-            title: "Association de la Communauté <span class='text-gold'>Vietnamienne</span> de Nice",
+            title: "Communauté <span class='text-gold'>Vietnamienne</span> de Nice",
             subtitle: "Promouvoir la culture, l'entraide et l'amitié franco-vietnamienne sur la Côte d'Azur.",
-            btn_discover: "Découvrir l'Association",
+            btn_discover: "Découvrir la Communauté",
             btn_join: "Nous Rejoindre"
         },
         about: {
@@ -110,7 +110,7 @@ const translations = {
             readmore: "En savoir plus &rarr;"
         },
         footer: {
-            copyright: "&copy; 2025 Association de la Communauté Vietnamienne de Nice. Tous droits réservés.",
+            copyright: "&copy; 2025 Communauté Vietnamienne de Nice. Tous droits réservés.",
             legal: "Mentions Légales",
             privacy: "Politique de Confidentialité"
         }
@@ -121,64 +121,64 @@ const translations = {
             about: "Giới Thiệu",
             activities: "Hoạt Động",
             events: "Sự Kiện",
-            membership: "Thành Viên",
-            contact: "Liên Hệ"
+            membership: "Thành viên",
+            contact: "Liên hệ"
         },
         hero: {
-            title: "Hội Người <span class='text-gold'>Việt Nam</span> tại Nice",
+            title: "Cộng đồng người <span class='text-gold'>Việt Nam</span> tại Nice",
             subtitle: "Phát huy văn hóa, tương trợ và tình hữu nghị Pháp-Việt tại vùng Côte d'Azur.",
-            btn_discover: "Khám Phá Hội",
-            btn_join: "Tham Gia Ngay"
+            btn_discover: "Khám phá cộng đồng",
+            btn_join: "Tham gia ngay"
         },
         about: {
-            title: "Về Chúng Tôi",
+            title: "Về chúng tôi",
             solidarity: {
-                title: "Đoàn Kết",
+                title: "Đoàn kết",
                 desc: "Xây dựng mạng lưới tương trợ vững mạnh cho người Việt và bạn bè yêu mến Việt Nam tại Nice."
             },
             culture: {
-                title: "Văn Hóa",
+                title: "Văn hóa",
                 desc: "Gìn giữ và chia sẻ bản sắc văn hóa Việt Nam qua các sự kiện nghệ thuật và ẩm thực."
             },
             education: {
-                title: "Giáo Dục",
+                title: "Giáo dục",
                 desc: "Hỗ trợ việc học tiếng Việt và giúp đỡ người mới đến hòa nhập cuộc sống."
             }
         },
         activities: {
-            title: "Hoạt Động Của Hội",
+            title: "Hoạt động của cộng đồng",
             tet: {
                 title: "Tết Nguyên Đán",
                 desc: "Lễ hội đón mừng năm mới âm lịch"
             },
             class: {
-                title: "Lớp Tiếng Việt",
+                title: "Lớp học tiếng Việt",
                 desc: "Dành cho trẻ em và người lớn"
             },
             cooking: {
-                title: "Lớp Học Nấu Ăn",
+                title: "Lớp học nấu ăn",
                 desc: "Khám phá hương vị ẩm thực Việt"
             },
             culture: {
-                title: "Giao Lưu Văn Hóa",
+                title: "Giao lưu văn hóa",
                 desc: "Tham quan và gặp gỡ giao lưu"
             }
         },
         events: {
-            title: "Sự Kiện Sắp Tới",
+            title: "Sự kiện sắp tới",
             event1: {
-                title: "Chào Xuân Bính Ngọ 2026",
+                title: "Chào xuân Bính Ngọ 2026",
                 time: "18:00 - 23:00 | Hội trường Nice",
                 desc: "Hãy cùng chúng tôi đón chào năm mới với tiệc mừng và các tiết mục văn nghệ truyền thống."
             },
             event2: {
-                title: "Lớp Nấu Phở Truyền Thống",
+                title: "Lớp nấu phở truyền thống",
                 time: "10:00 - 14:00 | Trung tâm Văn hóa",
                 desc: "Học bí quyết nấu nước dùng phở đậm đà từ các đầu bếp giàu kinh nghiệm."
             }
         },
         membership: {
-            title: "Đăng Ký Thành Viên",
+            title: "Đăng ký thành viên",
             subtitle: "Tại sao nên tham gia?",
             desc: "Trở thành thành viên của ACVNI, bạn sẽ đóng góp tích cực vào cộng đồng. Bạn được hưởng ưu đãi khi tham gia sự kiện và ủng hộ các hoạt động từ thiện.",
             benefits: {
@@ -188,14 +188,14 @@ const translations = {
                 3: "✓ Quyền biểu quyết tại đại hội"
             },
             form: {
-                title: "Đơn Đăng Ký"
+                title: "Đơn đăng ký"
             },
             register_online_title: "Đăng ký trực tuyến",
             register_online_desc: "Nhấn vào nút bên dưới để điền đơn đăng ký thành viên.",
             open_form_btn: "Mở Đơn Đăng Ký"
         },
         contact: {
-            title: "Liên Hệ",
+            title: "Liên hệ",
             desc: "Bạn muốn trở thành tình nguyện viên hay tìm hiểu thêm về các hoạt động? Hãy liên hệ với chúng tôi.",
             phone: "Điện thoại:",
             address: "Địa chỉ:",
@@ -208,10 +208,10 @@ const translations = {
             name: "Họ và Tên",
             email: "Email",
             phone: "Số Điện Thoại",
-            type_label: "Loại Thành Viên",
-            message: "Tin Nhắn",
-            submit: "Gửi Tin Nhắn",
-            submit_join: "Đăng Ký",
+            type_label: "Loại thành viên",
+            message: "Tin nhắn",
+            submit: "Gửi tin nhắn",
+            submit_join: "Đăng ký",
             type_options: {
                 student: "Sinh viên",
                 adult: "Người lớn",
@@ -226,7 +226,7 @@ const translations = {
             readmore: "Xem thêm &rarr;"
         },
         footer: {
-            copyright: "&copy; 2025 Hội Người Việt Nam tại Nice. Bảo lưu mọi quyền.",
+            copyright: "&copy; 2025 Cộng đồng người Việt Nam tại Nice. Bảo lưu mọi quyền.",
             legal: "Pháp lý",
             privacy: "Chính sách bảo mật"
         }
@@ -241,7 +241,7 @@ const translations = {
             contact: "Contact"
         },
         hero: {
-            title: "Association of the <span class='text-gold'>Vietnamese</span> Community in Nice",
+            title: "<span class='text-gold'>Vietnamese</span> Community in Nice",
             subtitle: "Promoting culture, mutual aid, and Franco-Vietnamese friendship on the French Riviera.",
             btn_discover: "Discover Us",
             btn_join: "Join Us"
@@ -342,7 +342,7 @@ const translations = {
             readmore: "Read more &rarr;"
         },
         footer: {
-            copyright: "&copy; 2025 Association of the Vietnamese Community in Nice. All rights reserved.",
+            copyright: "&copy; 2025 Vietnamese Community in Nice. All rights reserved.",
             legal: "Legal Notice",
             privacy: "Privacy Policy"
         }
