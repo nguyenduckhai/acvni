@@ -1,12 +1,12 @@
 /* Reset & Base Styles */
 :root {
-    --color-black: #0a0a0a;
-    --color-dark-gray: #1a1a1a;
-    --color-gold: #D4AF37;
-    /* Metallic Gold */
-    --color-gold-light: #F4C430;
+    --color-black: #01452c;
+    --color-dark-gray: #002b1b;
+    --color-gold: #FEF0CB;
+    /* Cream/Beige */
+    --color-gold-light: #F4B8A8;
     --color-white: #ffffff;
-    --color-text-gray: #cccccc;
+    --color-text-gray: #e6e6e6;
 
     --font-heading: 'Playfair Display', serif;
     --font-body: 'Roboto', sans-serif;
@@ -126,10 +126,10 @@ p {
     left: 0;
     width: 100%;
     z-index: 1000;
-    background-color: rgba(10, 10, 10, 0.95);
+    background-color: rgba(1, 69, 44, 0.95);
     backdrop-filter: blur(10px);
     padding: 15px 0;
-    border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+    border-bottom: 1px solid rgba(254, 240, 203, 0.1);
 }
 
 .navbar {
@@ -225,7 +225,7 @@ p {
     align-items: center;
     position: relative;
     padding-top: 80px;
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('assets/hero-bg.jpg');
+    background: linear-gradient(rgba(1, 69, 44, 0.85), rgba(1, 69, 44, 0.85)), url('assets/hero-bg.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -264,7 +264,7 @@ p {
 
 .hero-image img {
     max-width: 80%;
-    filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.2));
+    filter: drop-shadow(0 0 20px rgba(254, 240, 203, 0.2));
 }
 
 @keyframes float {
@@ -411,7 +411,7 @@ p {
     justify-content: center;
     min-width: 80px;
     height: 80px;
-    background: rgba(212, 175, 55, 0.1);
+    background: rgba(254, 240, 203, 0.1);
     border-radius: 4px;
     color: var(--color-gold);
 }
