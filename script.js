@@ -5,29 +5,32 @@ const translations = {
             about: "À Propos",
             activities: "Activités",
             events: "Événements",
+            mission: "Mission",
             membership: "Adhésion",
             contact: "Contact"
         },
         hero: {
             title: "Association de la communauté <span class='text-gold'>Vietnamienne</span> de Nice",
             subtitle: "Promouvoir la culture, l'entraide et l'amitié franco-vietnamienne sur la Côte d'Azur.",
-            btn_discover: "Découvrir la Communauté",
+            btn_discover: "Découvrir l'Association",
             btn_join: "Nous Rejoindre"
         },
         about: {
             title: "Qui Sommes-Nous ?",
-            solidarity: {
-                title: "Solidarité",
-                desc: "Créer un réseau d'entraide fort pour les vietnamiens et amis du Vietnam résidant à Nice et ses environs."
+            intro: "<p>L'ACVNI est une organisation à but non lucratif créée dans le but de connecter, soutenir et accompagner la communauté vietnamienne vivant, étudiant et travaillant à Nice et sur la Côte d’Azur, pour un développement durable au sein de la société locale.</p><p>Nous visons à construire une communauté unie, ouverte et intégrée, où chaque membre peut trouver attachement, partage et fierté de ses racines vietnamiennes, tout en bénéficiant d'une entraide dans la vie quotidienne, le travail et les activités communautaires.</p>",
+            goals_title: "Nos Objectifs",
+            goals: {
+                1: "Préserver et diffuser l'identité culturelle vietnamienne à travers des activités culturelles, artistiques et traditionnelles.",
+                2: "Soutenir, connecter et aider la communauté vietnamienne de Nice à se développer, notamment dans l'intégration sociale et le partage d'expériences.",
+                3: "Organiser de grands événements communautaires tels que le Têt, la Fête de la Mi-Automne et des échanges culturels.",
+                4: "Promouvoir les échanges culturels franco-vietnamiens et renforcer les liens avec la société locale.",
+                5: "Encourager la solidarité et la responsabilité sociale par le biais d'activités bénévoles."
             },
-            culture: {
-                title: "Culture",
-                desc: "Préserver et partager la richesse de la culture vietnamienne à travers des événements artistiques et culinaires."
-            },
-            education: {
-                title: "Éducation",
-                desc: "Soutenir l'apprentissage de la langue vietnamienne et faciliter l'intégration des nouveaux arrivants."
-            }
+            vision_title: "Notre Vision",
+            vision_desc: "L'ACVNI aspire à devenir un point d'ancrage culturel, social et spirituel pour la communauté vietnamienne de Nice ; un pont durable entre le Vietnam et la France, entre les générations, contribuant à bâtir une communauté vietnamienne unie, forte et intégrée."
+        },
+        mission: {
+            title: "Mission & Vision"
         },
         activities: {
             title: "Nos Activités",
@@ -121,32 +124,35 @@ const translations = {
             about: "Giới Thiệu",
             activities: "Hoạt Động",
             events: "Sự Kiện",
+            mission: "Sứ Mệnh",
             membership: "Thành viên",
             contact: "Liên hệ"
         },
         hero: {
             title: "Cộng đồng người <span class='text-gold'>Việt Nam</span> tại Nice",
             subtitle: "Phát huy văn hóa, tương trợ và tình hữu nghị Pháp-Việt tại vùng Côte d'Azur.",
-            btn_discover: "Khám phá cộng đồng",
+            btn_discover: "Khám phá Hội",
             btn_join: "Tham gia ngay"
         },
         about: {
-            title: "Về chúng tôi",
-            solidarity: {
-                title: "Đoàn kết",
-                desc: "Xây dựng mạng lưới tương trợ vững mạnh cho người Việt và bạn bè yêu mến Việt Nam tại Nice."
+            title: "Giới Thiệu về cộng đồng",
+            intro: "<p>Association de la Communauté Vietnamienne de Nice (ACVNI) là một tổ chức phi lợi nhuận được thành lập với mong muốn kết nối, hỗ trợ và đồng hành cùng cộng đồng người Việt Nam đang sinh sống, học tập và làm việc tại Nice và khu vực Côte d’Azur, cùng nhau phát triển bền vững trong xã hội sở tại.</p><p>ACVNI hướng tới việc xây dựng một cộng đồng đoàn kết, cởi mở và hội nhập, nơi mỗi thành viên đều có thể tìm thấy sự gắn bó, sẻ chia và niềm tự hào về nguồn cội Việt Nam, đồng thời nhận được sự hỗ trợ, giúp đỡ lẫn nhau trong đời sống, công việc và các hoạt động cộng đồng.</p>",
+            goals_title: "Mục tiêu của ACVNI",
+            goals: {
+                1: "Gìn giữ và lan tỏa bản sắc văn hóa Việt Nam thông qua các hoạt động văn hóa – nghệ thuật – truyền thống.",
+                2: "Hỗ trợ, kết nối và giúp đỡ cộng đồng người Việt tại Nice cùng phát triển, hòa nhập xã hội và chia sẻ kinh nghiệm sống.",
+                3: "Tổ chức các sự kiện cộng đồng lớn như Tết cổ truyền, Trung Thu, lễ hội văn hóa và giao lưu nghệ thuật.",
+                4: "Thúc đẩy giao lưu văn hóa Việt – Pháp, tăng cường sự hiểu biết và gắn kết giữa cộng đồng người Việt và xã hội sở tại.",
+                5: "Khuyến khích tinh thần đoàn kết, tương trợ và trách nhiệm xã hội thông qua các hoạt động thiện nguyện."
             },
-            culture: {
-                title: "Văn hóa",
-                desc: "Gìn giữ và chia sẻ bản sắc văn hóa Việt Nam qua các sự kiện nghệ thuật và ẩm thực."
-            },
-            education: {
-                title: "Giáo dục",
-                desc: "Hỗ trợ việc học tiếng Việt và giúp đỡ người mới đến hòa nhập cuộc sống."
-            }
+            vision_title: "Tầm nhìn",
+            vision_desc: "ACVNI mong muốn trở thành một điểm tựa văn hóa, xã hội và tinh thần của cộng đồng người Việt tại Nice; là cầu nối bền vững giữa Việt Nam – Pháp, giữa các thế hệ, góp phần xây dựng một cộng đồng người Việt đoàn kết, vững mạnh và hội nhập tại Nice."
+        },
+        mission: {
+            title: "Sứ Mệnh & Tầm Nhìn"
         },
         activities: {
-            title: "Hoạt động của cộng đồng",
+            title: "Hoạt động của hội",
             tet: {
                 title: "Tết Nguyên Đán",
                 desc: "Lễ hội đón mừng năm mới âm lịch"
@@ -237,6 +243,7 @@ const translations = {
             about: "About",
             activities: "Activities",
             events: "Events",
+            mission: "Mission",
             membership: "Membership",
             contact: "Contact"
         },
@@ -247,19 +254,21 @@ const translations = {
             btn_join: "Join Us"
         },
         about: {
-            title: "Who Are We?",
-            solidarity: {
-                title: "Solidarity",
-                desc: "Creating a strong support network for Vietnamese people and friends of Vietnam residing in Nice."
+            title: "About The Association",
+            intro: "<p>ACVNI is a non-profit organization established to connect, support, and accompany the Vietnamese community living, studying, and working in Nice and the Côte d’Azur region.</p><p>We aim to build a united, open, and integrated community where every member can find connection and pride in their roots, while receiving mutual support in life and work.</p>",
+            goals_title: "Our Goals",
+            goals: {
+                1: "Preserve and spread Vietnamese cultural identity through cultural, artistic, and traditional activities.",
+                2: "Support and connect the Vietnamese community in Nice for mutual development and social integration.",
+                3: "Organize major community events such as Tet (Lunar New Year), Mid-Autumn Festival, and cultural exchanges.",
+                4: "Promote Vietnam-France cultural exchange and strengthen ties with the local society.",
+                5: "Encourage solidarity and social responsibility through volunteer and community activities."
             },
-            culture: {
-                title: "Culture",
-                desc: "Preserving and sharing the richness of Vietnamese culture through artistic and culinary events."
-            },
-            education: {
-                title: "Education",
-                desc: "Supporting Vietnamese language learning and facilitating the integration of newcomers."
-            }
+            vision_title: "Our Vision",
+            vision_desc: "ACVNI aspires to become a cultural, social, and spiritual anchor for the Vietnamese community in Nice; a sustainable bridge between Vietnam and France, between generations, contributing to building a united and strong community."
+        },
+        mission: {
+            title: "Mission & Vision"
         },
         activities: {
             title: "Our Activities",
