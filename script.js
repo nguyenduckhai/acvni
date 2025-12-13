@@ -9,7 +9,7 @@ const translations = {
             contact: "Contact"
         },
         hero: {
-            title: "Communauté <span class='text-gold'>Vietnamienne</span> de Nice",
+            title: "Association de la communauté <span class='text-gold'>Vietnamienne</span> de Nice",
             subtitle: "Promouvoir la culture, l'entraide et l'amitié franco-vietnamienne sur la Côte d'Azur.",
             btn_discover: "Découvrir la Communauté",
             btn_join: "Nous Rejoindre"
@@ -110,7 +110,7 @@ const translations = {
             readmore: "En savoir plus &rarr;"
         },
         footer: {
-            copyright: "&copy; 2025 Communauté Vietnamienne de Nice. Tous droits réservés.",
+            copyright: "&copy; 2025 Association de la communauté Vietnamienne de Nice. Tous droits réservés.",
             legal: "Mentions Légales",
             privacy: "Politique de Confidentialité"
         }
