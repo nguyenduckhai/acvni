@@ -151,30 +151,50 @@
                     <h2 data-i18n="activities.title">Hoạt Động Của Hội</h2>
                     <div class="underline"></div>
                 </div>
-                <div class="gallery-grid">
-                    <div class="gallery-item">
-                        <div class="gallery-content">
-                            <h3 data-i18n="activities.tet.title">Tết Nguyên Đán</h3>
-                            <p data-i18n="activities.tet.desc">Lễ hội đón mừng năm mới âm lịch</p>
-                        </div>
+                <div class="featured-events-wrapper">
+                    <!-- Navigation Buttons -->
+                    <button class="carousel-button carousel-button--left is-hidden">
+                        <svg width="10" height="16" viewBox="0 0 10 16" fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8.5 15L1.5 8L8.5 1" />
+                        </svg>
+                    </button>
+
+                    <div class="carousel-track-container">
+                        <ul class="carousel-track">
+                            <!-- Slide 1 -->
+                            <li class="carousel-slide current-slide">
+                                <div class="featured-event-card">
+                                    <div class="featured-event-image">
+                                        <img src="https://scontent-cdg4-1.xx.fbcdn.net/v/t39.30808-6/597927636_10236810436214486_261777707820207150_n.jpg?stp=dst-jpg_tt6&amp;cstp=mx1414x2000&amp;ctp=p600x600&amp;_nc_cat=104&amp;ccb=1-7&amp;_nc_sid=6376bf&amp;_nc_ohc=VOWogrktONEQ7kNvwF6UQg_&amp;_nc_oc=AdlBvewT0SwJ1_mLSl4_JA5lv4F1cbpMjSxLfygpFZTu8iCVzMLvBEylPw4aqkB7-No&amp;_nc_zt=23&amp;_nc_ht=scontent-cdg4-1.xx&amp;_nc_gid=iTwvGWWpUKAwjI1AZ29dCQ&amp;oh=00_AflstZxHINKqnaH8THMoPgXPlCPVbAQkGyjn0r8NHKxGTw&amp;oe=6947A2F9"
+                                            alt="Sự kiện ACVNI">
+                                    </div>
+                                    <div class="featured-event-content">
+                                        <div class="event-meta">
+                                            <span class="event-tag" data-i18n="featured_event.date">TET 2026</span>
+                                            <span class="event-location" data-i18n="featured_event.location">Nice,
+                                                France</span>
+                                        </div>
+                                        <h3 data-i18n="featured_event.title">Title</h3>
+                                        <p data-i18n="featured_event.desc">Description</p>
+                                        <a href="https://www.facebook.com/groups/1884851371854868/permalink/2855903831416279/"
+                                            target="_blank" class="btn-primary" data-i18n="featured_event.btn">Xem Chi
+                                            Tiết</a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
-                    <div class="gallery-item">
-                        <div class="gallery-content">
-                            <h3 data-i18n="activities.class.title">Lớp Tiếng Việt</h3>
-                            <p data-i18n="activities.class.desc">Dành cho trẻ em và người lớn</p>
-                        </div>
-                    </div>
-                    <div class="gallery-item">
-                        <div class="gallery-content">
-                            <h3 data-i18n="activities.cooking.title">Lớp Học Nấu Ăn</h3>
-                            <p data-i18n="activities.cooking.desc">Khám phá hương vị ẩm thực Việt</p>
-                        </div>
-                    </div>
-                    <div class="gallery-item">
-                        <div class="gallery-content">
-                            <h3 data-i18n="activities.culture.title">Giao Lưu Văn Hóa</h3>
-                            <p data-i18n="activities.culture.desc">Tham quan và gặp gỡ giao lưu</p>
-                        </div>
+
+                    <button class="carousel-button carousel-button--right">
+                        <svg width="10" height="16" viewBox="0 0 10 16" fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1.5 1L8.5 8L1.5 15" />
+                        </svg>
+                    </button>
+
+                    <div class="carousel-nav">
+                        <button class="carousel-indicator current-slide"></button>
                     </div>
                 </div>
             </div>

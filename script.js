@@ -3,7 +3,7 @@ const translations = {
         nav: {
             home: "Accueil",
             about: "À Propos",
-            activities: "Activités",
+            activities: "Événement",
             events: "Événements",
             mission: "Mission",
             membership: "Adhésion",
@@ -33,7 +33,7 @@ const translations = {
             title: "Mission & Vision"
         },
         activities: {
-            title: "Nos Activités",
+            title: "Événement à la Une",
             tet: {
                 title: "Fête du Têt",
                 desc: "Célébration du Nouvel An Lunaire"
@@ -51,6 +51,14 @@ const translations = {
                 desc: "Visites et rencontres"
             }
         },
+        featured_event: {
+            title: "TÊT VIÊT NICE 2026 - OUVERTURE DE LA BILLETTERIE",
+            desc: "Chers amis qui attendez un printemps vietnamien au cœur de Nice, le moment tant attendu est arrivé ! Après des semaines de préparation minutieuse...",
+            date: "TÊT 2026",
+            location: "Nice, France",
+            btn: "Voir Détails & Acheter Billets"
+        },
+
         events: {
             title: "Prochains Événements",
             event1: {
@@ -122,7 +130,7 @@ const translations = {
         nav: {
             home: "Trang Chủ",
             about: "Giới Thiệu",
-            activities: "Hoạt Động",
+            activities: "Sự Kiện",
             events: "Sự Kiện",
             mission: "Sứ Mệnh",
             membership: "Thành viên",
@@ -152,7 +160,7 @@ const translations = {
             title: "Sứ Mệnh & Tầm Nhìn"
         },
         activities: {
-            title: "Hoạt động của hội",
+            title: "Sự kiện nổi bật",
             tet: {
                 title: "Tết Nguyên Đán",
                 desc: "Lễ hội đón mừng năm mới âm lịch"
@@ -170,6 +178,14 @@ const translations = {
                 desc: "Tham quan và gặp gỡ giao lưu"
             }
         },
+        featured_event: {
+            title: "TẾT VIỆT NICE 2026 - MỞ BÁN VÉ",
+            desc: "Thân gửi những trái tim đang mong chờ một mùa Xuân Việt giữa lòng Nice, điều tất cả chúng ta mong chờ nhất… đã đến rồi! Sau nhiều tuần chuẩn bị kỹ lưỡng...",
+            date: "TẾT 2026",
+            location: "Nice, France",
+            btn: "Xem Chi Tiết & Mua Vé"
+        },
+
         events: {
             title: "Sự kiện sắp tới",
             event1: {
@@ -241,7 +257,7 @@ const translations = {
         nav: {
             home: "Home",
             about: "About",
-            activities: "Activities",
+            activities: "Event",
             events: "Events",
             mission: "Mission",
             membership: "Membership",
@@ -271,7 +287,7 @@ const translations = {
             title: "Mission & Vision"
         },
         activities: {
-            title: "Our Activities",
+            title: "Featured Event",
             tet: {
                 title: "Tet Festival",
                 desc: "Lunar New Year Celebration"
@@ -289,6 +305,14 @@ const translations = {
                 desc: "Visits and meetups"
             }
         },
+        featured_event: {
+            title: "TET VIET NICE 2026 - TICKET SALE OPEN",
+            desc: "Dear hearts waiting for a Vietnamese Spring in the heart of Nice, the moment we have all been waiting for has arrived! After weeks of careful preparation...",
+            date: "TET 2026",
+            location: "Nice, France",
+            btn: "View Details & Buy Tickets"
+        },
+
         events: {
             title: "Upcoming Events",
             event1: {
@@ -409,6 +433,211 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Initialize Language
     updateContent(currentLang);
+
+    // Initialize Carousel
+    initCarousel();
+
+    function initCarousel() {
+        // Carousel Logic
+        const track = document.querySelector('.carousel-track');
+        const slides = Array.from(track.children);
+        const nextButton = document.querySelector('.carousel-button--right');
+        const prevButton = document.querySelector('.carousel-button--left');
+        const dotsNav = document.querySelector('.carousel-nav');
+        const dots = Array.from(dotsNav.children);
+
+        if (slides.length > 0) {
+            // Arrange the slides next to one another
+            // Since we are using flex with min-width 100%, they stack horizontally automatically in the flex container
+            // We just need to translate the track
+
+            const moveToSlide = (track, currentSlide, targetSlide) => {
+                if (!targetSlide) return; // Guard clause
+                // Calculate move amount. Since each slide is 100% width, we move by index * 100%
+                const targetIndex = slides.findIndex(slide => slide === targetSlide);
+                track.style.transform = 'translateX(-' + (targetIndex * 100) + '%)';
+
+                currentSlide.classList.remove('current-slide');
+                targetSlide.classList.add('current-slide');
+            };
+
+            const updateDots = (currentDot, targetDot) => {
+                if (!currentDot || !targetDot) return;
+                currentDot.classList.remove('current-slide');
+                targetDot.classList.add('current-slide');
+            };
+
+            const hideShowArrows = (slides, prevButton, nextButton, targetIndex) => {
+                if (targetIndex === 0) {
+                    prevButton.classList.add('is-hidden');
+                } else {
+                    prevButton.classList.remove('is-hidden');
+                }
+
+                if (targetIndex === slides.length - 1) {
+                    nextButton.classList.add('is-hidden');
+                } else {
+                    nextButton.classList.remove('is-hidden');
+                }
+            };
+
+            // Click left
+            prevButton.addEventListener('click', e => {
+                const currentSlide = track.querySelector('.current-slide');
+                const prevSlide = currentSlide.previousElementSibling;
+                const currentDot = dotsNav.querySelector('.current-slide');
+                const prevDot = currentDot.previousElementSibling;
+                const prevIndex = slides.findIndex(slide => slide === prevSlide);
+
+                if (prevSlide) {
+                    moveToSlide(track, currentSlide, prevSlide);
+                    updateDots(currentDot, prevDot);
+                    hideShowArrows(slides, prevButton, nextButton, prevIndex);
+                }
+            });
+
+            // Click right
+            nextButton.addEventListener('click', e => {
+                const currentSlide = track.querySelector('.current-slide');
+                const nextSlide = currentSlide.nextElementSibling;
+                const currentDot = dotsNav.querySelector('.current-slide');
+                const nextDot = currentDot.nextElementSibling;
+                const nextIndex = slides.findIndex(slide => slide === nextSlide);
+
+                if (nextSlide) {
+                    moveToSlide(track, currentSlide, nextSlide);
+                    updateDots(currentDot, nextDot);
+                    hideShowArrows(slides, prevButton, nextButton, nextIndex);
+                }
+            });
+
+            // Click Nav Indicators
+            dotsNav.addEventListener('click', e => {
+                // Find which indicator was clicked
+                const targetDot = e.target.closest('button');
+
+                if (!targetDot) return;
+
+                const currentSlide = track.querySelector('.current-slide');
+                const currentDot = dotsNav.querySelector('.current-slide');
+                const targetIndex = dots.findIndex(dot => dot === targetDot);
+                const targetSlide = slides[targetIndex];
+
+                moveToSlide(track, currentSlide, targetSlide);
+                updateDots(currentDot, targetDot);
+                hideShowArrows(slides, prevButton, nextButton, targetIndex);
+            });
+
+            // Initial setup for arrows hidden state
+            // Ensure first slide is active
+            hideShowArrows(slides, prevButton, nextButton, 0);
+
+            // Touch and Drag Logic
+            let isDragging = false;
+            let startPos = 0;
+            let currentTranslate = 0;
+            let prevTranslate = 0;
+            let animationID;
+            let currentIndex = 0;
+            let minBound = 0;
+            let maxBound = 0;
+
+            // Sync currentIndex with class state on init
+            const initialSlide = track.querySelector('.current-slide');
+            currentIndex = slides.findIndex(slide => slide === initialSlide);
+
+            const getPositionX = (event) => {
+                return event.type.includes('mouse') ? event.pageX : event.touches[0].pageX;
+            };
+
+            const animation = () => {
+                if (isDragging) {
+                    track.style.transform = `translateX(${currentTranslate}px)`;
+                    requestAnimationFrame(animation);
+                }
+            };
+
+            const touchStart = (event) => {
+                isDragging = true;
+                startPos = getPositionX(event);
+
+                // Capture current transform to avoid jumps
+                const style = window.getComputedStyle(track);
+                const matrix = new DOMMatrix(style.transform);
+                prevTranslate = matrix.m41;
+                currentTranslate = prevTranslate;
+
+                // Calculate bounds to prevent sliding too far (visual clamping)
+                const slideWidth = slides[0].clientWidth;
+                const centerPos = -currentIndex * slideWidth;
+                // Allow dragging 1 slide width in either direction maximum
+                minBound = centerPos - slideWidth;
+                maxBound = centerPos + slideWidth;
+
+                animationID = requestAnimationFrame(animation);
+                track.style.transition = 'none';
+            };
+
+            const touchMove = (event) => {
+                if (isDragging) {
+                    const currentPosition = getPositionX(event);
+                    const delta = currentPosition - startPos;
+                    let newTranslate = prevTranslate + delta;
+
+                    // Clamp visual movement
+                    if (newTranslate < minBound) newTranslate = minBound;
+                    if (newTranslate > maxBound) newTranslate = maxBound;
+
+                    currentTranslate = newTranslate;
+                }
+            };
+
+            const touchEnd = () => {
+                isDragging = false;
+                cancelAnimationFrame(animationID);
+                track.style.transition = 'transform 0.5s ease-in-out';
+
+                const movedBy = currentTranslate - prevTranslate;
+
+                // Threshold logic
+                if (movedBy < -100 && currentIndex < slides.length - 1) {
+                    currentIndex += 1;
+                } else if (movedBy > 100 && currentIndex > 0) {
+                    currentIndex -= 1;
+                }
+
+                const targetSlide = slides[currentIndex];
+                const currentSlide = track.querySelector('.current-slide');
+                const currentDot = dotsNav.querySelector('.current-slide');
+                const targetDot = dots[currentIndex];
+
+                moveToSlide(track, currentSlide, targetSlide);
+                updateDots(currentDot, targetDot);
+                hideShowArrows(slides, prevButton, nextButton, currentIndex);
+            };
+
+            const trackContainer = document.querySelector('.carousel-track-container');
+
+            trackContainer.addEventListener('touchstart', touchStart);
+            trackContainer.addEventListener('touchmove', touchMove);
+            trackContainer.addEventListener('touchend', touchEnd);
+
+            // Observe class changes to keep currentIndex in sync
+            const slideObserver = new MutationObserver((mutations) => {
+                mutations.forEach((mutation) => {
+                    if (mutation.type === "attributes" && mutation.attributeName === "class") {
+                        if (mutation.target.classList.contains('current-slide')) {
+                            currentIndex = slides.indexOf(mutation.target);
+                        }
+                    }
+                });
+            });
+
+            slides.forEach(slide => {
+                slideObserver.observe(slide, { attributes: true });
+            });
+        }
+    }
 
     // Event Listeners for Language Buttons
     langBtns.forEach(btn => {
