@@ -58,6 +58,13 @@ const translations = {
             location: "Nice, France",
             btn: "Voir Détails & Acheter Billets"
         },
+        featured_event_2: {
+            title: "Permanence Consulaire à Nice",
+            desc: "L'Ambassade du Vietnam en France organise une permanence consulaire à Nice. Date limite : 25/01/2026.",
+            date: "25/01/2026",
+            location: "Nice, France",
+            btn: "Voir Détails"
+        },
 
         events: {
             title: "Prochains Événements",
@@ -185,6 +192,13 @@ const translations = {
             location: "Nice, France",
             btn: "Xem Chi Tiết & Mua Vé"
         },
+        featured_event_2: {
+            title: "ĐẠI SỨ QUÁN LÀM VIỆC TẠI NICE",
+            desc: "ĐSQ Việt Nam tại Pháp tổ chức làm thủ tục lãnh sự tại Nice. Hạn đăng ký: 25/01/2026.",
+            date: "25/01/2026",
+            location: "Nice, France",
+            btn: "Xem Chi Tiết"
+        },
 
         events: {
             title: "Sự kiện sắp tới",
@@ -311,6 +325,13 @@ const translations = {
             date: "TET 2026",
             location: "Nice, France",
             btn: "View Details & Buy Tickets"
+        },
+        featured_event_2: {
+            title: "Consular Service in Nice",
+            desc: "The Embassy of Vietnam in France organizes consular procedures in Nice. Registration deadline: Jan 25, 2026.",
+            date: "Jan 25, 2026",
+            location: "Nice, France",
+            btn: "View Details"
         },
 
         events: {
