@@ -380,38 +380,8 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('acvni_lang', lang);
     }
 
-    // Theme Toggle Logic
-    const themeToggleBtn = document.getElementById('theme-toggle');
-    const moonIcon = themeToggleBtn.querySelector('.moon-icon');
-    const sunIcon = themeToggleBtn.querySelector('.sun-icon');
+    // Theme Toggle Logic removed - Forced Dark Mode
 
-    // Check for saved theme preference, otherwise use system preference
-    const savedTheme = localStorage.getItem('theme');
-    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-    let currentTheme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
-
-    function applyTheme(theme) {
-        document.documentElement.setAttribute('data-theme', theme);
-        localStorage.setItem('theme', theme);
-
-        if (theme === 'dark') {
-            moonIcon.style.display = 'none';
-            sunIcon.style.display = 'block';
-        } else {
-            moonIcon.style.display = 'block';
-            sunIcon.style.display = 'none';
-        }
-    }
-
-    // Initialize Theme
-    applyTheme(currentTheme);
-
-    // Toggle Event
-    themeToggleBtn.addEventListener('click', () => {
-        currentTheme = currentTheme === 'light' ? 'dark' : 'light';
-        applyTheme(currentTheme);
-    });
 
     // Initialize Language
     updateContent(currentLang);

@@ -3,26 +3,26 @@
     /* Palette extracted from Clove Therapy reference */
     --color-bg-dark: #3F4F4F;
     /* Dark Slate Green - Kept for specific brand darks */
-    --color-bg-light: #F2F0EB;
-    /* Light Beige/Cream - Kept for specific brand lights */
+
+    /* Dark Mode Defaults */
     --color-accent: #D49A80;
     /* Muted Coral/Peach */
     --color-accent-hover: #c48b70;
 
-    /* Semantic Variables (Light Mode Default) */
-    --bg-body: #ffffff;
-    --bg-alt: #F2F0EB;
-    --bg-dark-section: #3F4F4F;
-    --bg-card: #ffffff;
-    --bg-header-scrolled: rgba(255, 255, 255, 0.95);
+    /* Semantic Variables (Forced Dark Mode) */
+    --bg-body: #121212;
+    --bg-alt: #1e1e1e;
+    --bg-dark-section: #0a0f0f;
+    --bg-card: #1e1e1e;
+    --bg-header-scrolled: rgba(18, 18, 18, 0.95);
 
-    --text-main: #2C3E3E;
-    --text-muted: #666666;
-    --text-inv: #ffffff;
-    /* Inverse text color (usually white) */
+    --text-main: #e0e0e0;
+    --text-muted: #a0a0a0;
+    --text-inv: #e0e0e0;
 
-    --color-border: #e0e0e0;
-    --shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    --color-border: #333333;
+    --color-bg-light: #1e1e1e;
+    --shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 
     /* Fonts */
     --font-heading: 'Playfair Display', serif;
@@ -31,28 +31,6 @@
     --container-width: 1200px;
     --section-padding: 100px 20px;
     --transition: all 0.3s ease;
-}
-
-[data-theme="dark"] {
-    /* Dark Mode Overrides */
-    --bg-body: #121212;
-    --bg-alt: #1e1e1e;
-    --bg-dark-section: #0a0f0f;
-    /* Even darker slate */
-    --bg-card: #1e1e1e;
-    --bg-header-scrolled: rgba(18, 18, 18, 0.95);
-
-    --text-main: #e0e0e0;
-    --text-muted: #a0a0a0;
-    --text-inv: #e0e0e0;
-    /* Text on dark sections should still be light */
-
-    --color-border: #333333;
-    --color-bg-light: #1e1e1e;
-    /* Remap this legacy var if used directly for backgrounds */
-    --shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-
-    /* Adjust accent slightly if needed, but usually fine */
 }
 
 * {
@@ -868,6 +846,7 @@ footer {
 .theme-toggle-btn .sun-icon {
     fill: none;
 }
+
 /* Gallery Section Grid Styles */
 .gallery-grid {
     display: grid;
@@ -907,7 +886,8 @@ footer {
 }
 
 .top-right {
-    flex: 1; /* Takes roughly half */
+    flex: 1;
+    /* Takes roughly half */
     height: calc(50% - 7.5px);
 }
 
@@ -918,7 +898,8 @@ footer {
     height: calc(50% - 7.5px);
 }
 
-.bot-1, .bot-2 {
+.bot-1,
+.bot-2 {
     flex: 1;
     height: 100%;
 }
@@ -979,8 +960,13 @@ footer {
 }
 
 @keyframes zoom {
-    from {transform:scale(0)}
-    to {transform:scale(1)}
+    from {
+        transform: scale(0)
+    }
+
+    to {
+        transform: scale(1)
+    }
 }
 
 .close {
@@ -1001,7 +987,7 @@ footer {
     cursor: pointer;
 }
 
-@media only screen and (max-width: 700px){
+@media only screen and (max-width: 700px) {
     .lightbox-content {
         width: 100%;
     }
