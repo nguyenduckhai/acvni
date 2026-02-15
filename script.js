@@ -3,7 +3,7 @@ const translations = {
         nav: {
             home: "Accueil",
             about: "À Propos",
-            activities: "Événement",
+            gallery: "Galerie",
             events: "Événements",
             mission: "Mission",
             membership: "Adhésion",
@@ -27,13 +27,13 @@ const translations = {
                 5: "Encourager la solidarité et la responsabilité sociale par le biais d'activités bénévoles."
             },
             vision_title: "Notre Vision",
-            vision_desc: "L'ACVNI aspire à devenir un point d'ancrage culturel, social et spirituel pour la communauté vietnamienne de Nice ; un pont durable entre le Vietnam et la France, entre les générations, contribuant à bâtir une communauté vietnamienne unie, forte et intégrée."
+            vision_desc: "L'ACVNI aspire à devenir un point d'ancrage culturel, social et spirituel pour la communauté vietnamienne de Nice ; un pont durable entre le Vietnam et la France.",
         },
         mission: {
             title: "Mission & Vision"
         },
         activities: {
-            title: "Événement à la Une",
+            title: "Nos Activités",
             tet: {
                 title: "Fête du Têt",
                 desc: "Célébration du Nouvel An Lunaire"
@@ -52,31 +52,18 @@ const translations = {
             }
         },
         featured_event: {
-            title: "TÊT VIÊT NICE 2026 - OUVERTURE DE LA BILLETTERIE",
+            title: "TÊT VIÊT NICE 2026",
             desc: "Chers amis qui attendez un printemps vietnamien au cœur de Nice, le moment tant attendu est arrivé ! Après des semaines de préparation minutieuse...",
             date: "TÊT 2026",
             location: "Nice, France",
             btn: "Voir Détails & Acheter Billets"
         },
-        featured_event_2: {
-            title: "Permanence Consulaire à Nice",
-            desc: "L'Ambassade du Vietnam en France organise une permanence consulaire à Nice. Date limite : 25/01/2026.",
-            date: "25/01/2026",
-            location: "Nice, France",
-            btn: "Voir Détails"
-        },
-
         events: {
-            title: "Prochains Événements",
+            title: "Événement à la Une",
             event1: {
                 title: "Célébration du Têt 2026",
                 time: "18:00 - 23:00 | Salle des Fêtes de Nice",
                 desc: "Rejoignez-nous pour célébrer l'année du Cheval avec un grand banquet et des spectacles traditionnels."
-            },
-            event2: {
-                title: "Atelier Cuisine : Le Phở",
-                time: "10:00 - 14:00 | Centre Culturel",
-                desc: "Apprenez les secrets du bouillon traditionnel vietnamien avec nos chefs expérimentés."
             }
         },
         membership: {
@@ -108,24 +95,13 @@ const translations = {
         },
         form: {
             name: "Nom Complet",
-            email: "Email",
-            phone: "Téléphone",
-            type_label: "Type d'Adhésion",
-            message: "Message",
             submit: "Envoyer",
-            submit_join: "S'inscrire",
-            type_options: {
-                student: "Étudiant",
-                adult: "Adulte",
-                family: "Famille"
-            }
-        },
-        months: {
-            feb: "Fév",
-            mar: "Mar"
         },
         common: {
             readmore: "En savoir plus &rarr;"
+        },
+        gallery: {
+            title: "Galerie Photos"
         },
         footer: {
             copyright: "&copy; {year} Association de la communauté Vietnamienne de Nice. Tous droits réservés.",
@@ -137,7 +113,7 @@ const translations = {
         nav: {
             home: "Trang Chủ",
             about: "Giới Thiệu",
-            activities: "Sự Kiện",
+            gallery: "Gallery",
             events: "Sự Kiện",
             mission: "Sứ Mệnh",
             membership: "Thành viên",
@@ -151,23 +127,23 @@ const translations = {
         },
         about: {
             title: "Giới Thiệu về cộng đồng",
-            intro: "<p>Association de la Communauté Vietnamienne de Nice (ACVNI) là một tổ chức phi lợi nhuận được thành lập với mong muốn kết nối, hỗ trợ và đồng hành cùng cộng đồng người Việt Nam đang sinh sống, học tập và làm việc tại Nice và khu vực Côte d’Azur, cùng nhau phát triển bền vững trong xã hội sở tại.</p><p>ACVNI hướng tới việc xây dựng một cộng đồng đoàn kết, cởi mở và hội nhập, nơi mỗi thành viên đều có thể tìm thấy sự gắn bó, sẻ chia và niềm tự hào về nguồn cội Việt Nam, đồng thời nhận được sự hỗ trợ, giúp đỡ lẫn nhau trong đời sống, công việc và các hoạt động cộng đồng.</p>",
+            intro: "<p>ACVNI là tổ chức phi lợi nhuận hỗ trợ cộng đồng người Việt tại Nice và Côte d’Azur phát triển bền vững.</p><p>Chúng tôi xây dựng cộng đồng đoàn kết, nơi mỗi thành viên tìm thấy sự chia sẻ và niềm tự hào nguồn cội.</p>",
             goals_title: "Mục tiêu của ACVNI",
             goals: {
-                1: "Gìn giữ và lan tỏa bản sắc văn hóa Việt Nam thông qua các hoạt động văn hóa – nghệ thuật – truyền thống.",
-                2: "Hỗ trợ, kết nối và giúp đỡ cộng đồng người Việt tại Nice cùng phát triển, hòa nhập xã hội và chia sẻ kinh nghiệm sống.",
-                3: "Tổ chức các sự kiện cộng đồng lớn như Tết cổ truyền, Trung Thu, lễ hội văn hóa và giao lưu nghệ thuật.",
-                4: "Thúc đẩy giao lưu văn hóa Việt – Pháp, tăng cường sự hiểu biết và gắn kết giữa cộng đồng người Việt và xã hội sở tại.",
-                5: "Khuyến khích tinh thần đoàn kết, tương trợ và trách nhiệm xã hội thông qua các hoạt động thiện nguyện."
+                1: "Gìn giữ và lan tỏa bản sắc văn hóa Việt Nam.",
+                2: "Hỗ trợ cộng đồng hội nhập và phát triển.",
+                3: "Tổ chức các sự kiện văn hóa cộng đồng.",
+                4: "Thúc đẩy giao lưu văn hóa Việt – Pháp.",
+                5: "Khuyến khích tinh thần tương trợ và thiện nguyện."
             },
             vision_title: "Tầm nhìn",
-            vision_desc: "ACVNI mong muốn trở thành một điểm tựa văn hóa, xã hội và tinh thần của cộng đồng người Việt tại Nice; là cầu nối bền vững giữa Việt Nam – Pháp, giữa các thế hệ, góp phần xây dựng một cộng đồng người Việt đoàn kết, vững mạnh và hội nhập tại Nice."
+            vision_desc: "ACVNI mong muốn trở thành điểm tựa tinh thần của cộng đồng người Việt tại Nice, là cầu nối bền vững giữa Việt Nam và Pháp."
         },
         mission: {
             title: "Sứ Mệnh & Tầm Nhìn"
         },
         activities: {
-            title: "Sự kiện nổi bật",
+            title: "Các Hoạt Động",
             tet: {
                 title: "Tết Nguyên Đán",
                 desc: "Lễ hội đón mừng năm mới âm lịch"
@@ -186,31 +162,18 @@ const translations = {
             }
         },
         featured_event: {
-            title: "TẾT VIỆT NICE 2026 - MỞ BÁN VÉ",
-            desc: "Thân gửi những trái tim đang mong chờ một mùa Xuân Việt giữa lòng Nice, điều tất cả chúng ta mong chờ nhất… đã đến rồi! Sau nhiều tuần chuẩn bị kỹ lưỡng...",
+            title: "TẾT VIỆT NICE 2026",
+            desc: "Thân gửi những trái tim đang mong chờ một mùa Xuân Việt giữa lòng Nice, điều tất cả chúng ta mong chờ nhất… đã đến rồi!",
             date: "TẾT 2026",
             location: "Nice, France",
             btn: "Xem Chi Tiết & Mua Vé"
         },
-        featured_event_2: {
-            title: "ĐẠI SỨ QUÁN LÀM VIỆC TẠI NICE",
-            desc: "ĐSQ Việt Nam tại Pháp tổ chức làm thủ tục lãnh sự tại Nice. Hạn đăng ký: 25/01/2026.",
-            date: "25/01/2026",
-            location: "Nice, France",
-            btn: "Xem Chi Tiết"
-        },
-
         events: {
-            title: "Sự kiện sắp tới",
+            title: "Sự kiện nổi bật",
             event1: {
                 title: "Chào xuân Bính Ngọ 2026",
                 time: "18:00 - 23:00 | Hội trường Nice",
                 desc: "Hãy cùng chúng tôi đón chào năm mới với tiệc mừng và các tiết mục văn nghệ truyền thống."
-            },
-            event2: {
-                title: "Lớp nấu phở truyền thống",
-                time: "10:00 - 14:00 | Trung tâm Văn hóa",
-                desc: "Học bí quyết nấu nước dùng phở đậm đà từ các đầu bếp giàu kinh nghiệm."
             }
         },
         membership: {
@@ -242,24 +205,13 @@ const translations = {
         },
         form: {
             name: "Họ và Tên",
-            email: "Email",
-            phone: "Số Điện Thoại",
-            type_label: "Loại thành viên",
-            message: "Tin nhắn",
             submit: "Gửi tin nhắn",
-            submit_join: "Đăng ký",
-            type_options: {
-                student: "Sinh viên",
-                adult: "Người lớn",
-                family: "Gia đình"
-            }
-        },
-        months: {
-            feb: "Th2",
-            mar: "Th3"
         },
         common: {
             readmore: "Xem thêm &rarr;"
+        },
+        gallery: {
+            title: "Hình ảnh hoạt động"
         },
         footer: {
             copyright: "&copy; {year} Cộng đồng người Việt Nam tại Nice. Bảo lưu mọi quyền.",
@@ -271,7 +223,7 @@ const translations = {
         nav: {
             home: "Home",
             about: "About",
-            activities: "Event",
+            gallery: "Gallery",
             events: "Events",
             mission: "Mission",
             membership: "Membership",
@@ -284,24 +236,24 @@ const translations = {
             btn_join: "Join Us"
         },
         about: {
-            title: "About The Association",
-            intro: "<p>ACVNI is a non-profit organization established to connect, support, and accompany the Vietnamese community living, studying, and working in Nice and the Côte d’Azur region.</p><p>We aim to build a united, open, and integrated community where every member can find connection and pride in their roots, while receiving mutual support in life and work.</p>",
+            title: "About Us",
+            intro: "<p>ACVNI is a non-profit organization established to connect, support, and accompany the Vietnamese community in Nice and the Côte d’Azur region.</p><p>We aim to build a united community where every member can find connection and pride in their roots.</p>",
             goals_title: "Our Goals",
             goals: {
-                1: "Preserve and spread Vietnamese cultural identity through cultural, artistic, and traditional activities.",
-                2: "Support and connect the Vietnamese community in Nice for mutual development and social integration.",
-                3: "Organize major community events such as Tet (Lunar New Year), Mid-Autumn Festival, and cultural exchanges.",
-                4: "Promote Vietnam-France cultural exchange and strengthen ties with the local society.",
-                5: "Encourage solidarity and social responsibility through volunteer and community activities."
+                1: "Preserve and spread Vietnamese cultural identity.",
+                2: "Support and connect the Vietnamese community.",
+                3: "Organize major community events.",
+                4: "Promote Vietnam-France cultural exchange.",
+                5: "Encourage solidarity and social responsibility."
             },
             vision_title: "Our Vision",
-            vision_desc: "ACVNI aspires to become a cultural, social, and spiritual anchor for the Vietnamese community in Nice; a sustainable bridge between Vietnam and France, between generations, contributing to building a united and strong community."
+            vision_desc: "ACVNI aspires to become a cultural, social, and spiritual anchor for the Vietnamese community in Nice."
         },
         mission: {
             title: "Mission & Vision"
         },
         activities: {
-            title: "Featured Event",
+            title: "Our Activities",
             tet: {
                 title: "Tet Festival",
                 desc: "Lunar New Year Celebration"
@@ -320,37 +272,24 @@ const translations = {
             }
         },
         featured_event: {
-            title: "TET VIET NICE 2026 - TICKET SALE OPEN",
-            desc: "Dear hearts waiting for a Vietnamese Spring in the heart of Nice, the moment we have all been waiting for has arrived! After weeks of careful preparation...",
+            title: "TET VIET NICE 2026",
+            desc: "Dear hearts waiting for a Vietnamese Spring in the heart of Nice, the moment we have all been waiting for has arrived!",
             date: "TET 2026",
             location: "Nice, France",
             btn: "View Details & Buy Tickets"
         },
-        featured_event_2: {
-            title: "Consular Service in Nice",
-            desc: "The Embassy of Vietnam in France organizes consular procedures in Nice. Registration deadline: Jan 25, 2026.",
-            date: "Jan 25, 2026",
-            location: "Nice, France",
-            btn: "View Details"
-        },
-
         events: {
-            title: "Upcoming Events",
+            title: "Featured Event",
             event1: {
                 title: "Tet Celebration 2026",
                 time: "18:00 - 23:00 | Nice City Hall",
-                desc: "Join us to celebrate the Year of the Horse with a grand banquet and traditional performances."
-            },
-            event2: {
-                title: "Cooking Workshop: Phở",
-                time: "10:00 - 14:00 | Cultural Center",
-                desc: "Learn the secrets of traditional Vietnamese broth with our experienced chefs."
+                desc: "Join us to celebrate the Year of the Horse."
             }
         },
         membership: {
             title: "Become a Member",
             subtitle: "Why join us?",
-            desc: "By becoming a member of ACVNI, you actively participate in community life. You get preferential rates on events and support our charitable actions.",
+            desc: "By becoming a member of ACVNI, you actively participate in community life and support our charitable actions.",
             benefits: {
                 title: "Benefits:",
                 1: "✓ Priority access to events",
@@ -376,24 +315,13 @@ const translations = {
         },
         form: {
             name: "Full Name",
-            email: "Email",
-            phone: "Phone Number",
-            type_label: "Membership Type",
-            message: "Message",
             submit: "Send Message",
-            submit_join: "Register",
-            type_options: {
-                student: "Student",
-                adult: "Adult",
-                family: "Family"
-            }
-        },
-        months: {
-            feb: "Feb",
-            mar: "Mar"
         },
         common: {
             readmore: "Read more &rarr;"
+        },
+        gallery: {
+            title: "Gallery"
         },
         footer: {
             copyright: "&copy; {year} Vietnamese Community in Nice. All rights reserved.",
@@ -452,213 +380,41 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('acvni_lang', lang);
     }
 
-    // Initialize Language
-    updateContent(currentLang);
+    // Theme Toggle Logic
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const moonIcon = themeToggleBtn.querySelector('.moon-icon');
+    const sunIcon = themeToggleBtn.querySelector('.sun-icon');
 
-    // Initialize Carousel
-    initCarousel();
+    // Check for saved theme preference, otherwise use system preference
+    const savedTheme = localStorage.getItem('theme');
+    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-    function initCarousel() {
-        // Carousel Logic
-        const track = document.querySelector('.carousel-track');
-        const slides = Array.from(track.children);
-        const nextButton = document.querySelector('.carousel-button--right');
-        const prevButton = document.querySelector('.carousel-button--left');
-        const dotsNav = document.querySelector('.carousel-nav');
-        const dots = Array.from(dotsNav.children);
+    let currentTheme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
 
-        if (slides.length > 0) {
-            // Arrange the slides next to one another
-            // Since we are using flex with min-width 100%, they stack horizontally automatically in the flex container
-            // We just need to translate the track
+    function applyTheme(theme) {
+        document.documentElement.setAttribute('data-theme', theme);
+        localStorage.setItem('theme', theme);
 
-            const moveToSlide = (track, currentSlide, targetSlide) => {
-                if (!targetSlide) return; // Guard clause
-                // Calculate move amount. Since each slide is 100% width, we move by index * 100%
-                const targetIndex = slides.findIndex(slide => slide === targetSlide);
-                track.style.transform = 'translateX(-' + (targetIndex * 100) + '%)';
-
-                currentSlide.classList.remove('current-slide');
-                targetSlide.classList.add('current-slide');
-            };
-
-            const updateDots = (currentDot, targetDot) => {
-                if (!currentDot || !targetDot) return;
-                currentDot.classList.remove('current-slide');
-                targetDot.classList.add('current-slide');
-            };
-
-            const hideShowArrows = (slides, prevButton, nextButton, targetIndex) => {
-                if (targetIndex === 0) {
-                    prevButton.classList.add('is-hidden');
-                } else {
-                    prevButton.classList.remove('is-hidden');
-                }
-
-                if (targetIndex === slides.length - 1) {
-                    nextButton.classList.add('is-hidden');
-                } else {
-                    nextButton.classList.remove('is-hidden');
-                }
-            };
-
-            // Click left
-            prevButton.addEventListener('click', e => {
-                const currentSlide = track.querySelector('.current-slide');
-                const prevSlide = currentSlide.previousElementSibling;
-                const currentDot = dotsNav.querySelector('.current-slide');
-                const prevDot = currentDot.previousElementSibling;
-                const prevIndex = slides.findIndex(slide => slide === prevSlide);
-
-                if (prevSlide) {
-                    moveToSlide(track, currentSlide, prevSlide);
-                    updateDots(currentDot, prevDot);
-                    hideShowArrows(slides, prevButton, nextButton, prevIndex);
-                }
-            });
-
-            // Click right
-            nextButton.addEventListener('click', e => {
-                const currentSlide = track.querySelector('.current-slide');
-                const nextSlide = currentSlide.nextElementSibling;
-                const currentDot = dotsNav.querySelector('.current-slide');
-                const nextDot = currentDot.nextElementSibling;
-                const nextIndex = slides.findIndex(slide => slide === nextSlide);
-
-                if (nextSlide) {
-                    moveToSlide(track, currentSlide, nextSlide);
-                    updateDots(currentDot, nextDot);
-                    hideShowArrows(slides, prevButton, nextButton, nextIndex);
-                }
-            });
-
-            // Click Nav Indicators
-            dotsNav.addEventListener('click', e => {
-                // Find which indicator was clicked
-                const targetDot = e.target.closest('button');
-
-                if (!targetDot) return;
-
-                const currentSlide = track.querySelector('.current-slide');
-                const currentDot = dotsNav.querySelector('.current-slide');
-                const targetIndex = dots.findIndex(dot => dot === targetDot);
-                const targetSlide = slides[targetIndex];
-
-                moveToSlide(track, currentSlide, targetSlide);
-                updateDots(currentDot, targetDot);
-                hideShowArrows(slides, prevButton, nextButton, targetIndex);
-            });
-
-            // Initial setup for arrows hidden state
-            // Ensure first slide is active
-            hideShowArrows(slides, prevButton, nextButton, 0);
-
-            // Touch and Drag Logic
-            let isDragging = false;
-            let startPos = 0;
-            let currentTranslate = 0;
-            let prevTranslate = 0;
-            let animationID;
-            let currentIndex = 0;
-            let minBound = 0;
-            let maxBound = 0;
-
-            // Sync currentIndex with class state on init
-            const initialSlide = track.querySelector('.current-slide');
-            currentIndex = slides.findIndex(slide => slide === initialSlide);
-
-            const getPositionX = (event) => {
-                return event.type.includes('mouse') ? event.pageX : event.touches[0].pageX;
-            };
-
-            const animation = () => {
-                if (isDragging) {
-                    track.style.transform = `translateX(${currentTranslate}px)`;
-                    requestAnimationFrame(animation);
-                }
-            };
-
-            const touchStart = (event) => {
-                isDragging = true;
-                startPos = getPositionX(event);
-
-                // Capture current transform to avoid jumps
-                const style = window.getComputedStyle(track);
-                const matrix = new DOMMatrix(style.transform);
-                prevTranslate = matrix.m41;
-                currentTranslate = prevTranslate;
-
-                // Calculate bounds to prevent sliding too far (visual clamping)
-                const slideWidth = slides[0].clientWidth;
-                const centerPos = -currentIndex * slideWidth;
-                // Allow dragging 1 slide width in either direction maximum
-                minBound = centerPos - slideWidth;
-                maxBound = centerPos + slideWidth;
-
-                animationID = requestAnimationFrame(animation);
-                track.style.transition = 'none';
-            };
-
-            const touchMove = (event) => {
-                if (isDragging) {
-                    const currentPosition = getPositionX(event);
-                    const delta = currentPosition - startPos;
-                    let newTranslate = prevTranslate + delta;
-
-                    // Clamp visual movement
-                    if (newTranslate < minBound) newTranslate = minBound;
-                    if (newTranslate > maxBound) newTranslate = maxBound;
-
-                    currentTranslate = newTranslate;
-                }
-            };
-
-            const touchEnd = () => {
-                isDragging = false;
-                cancelAnimationFrame(animationID);
-                track.style.transition = 'transform 0.5s ease-in-out';
-
-                const movedBy = currentTranslate - prevTranslate;
-
-                // Threshold logic
-                if (movedBy < -100 && currentIndex < slides.length - 1) {
-                    currentIndex += 1;
-                } else if (movedBy > 100 && currentIndex > 0) {
-                    currentIndex -= 1;
-                }
-
-                const targetSlide = slides[currentIndex];
-                const currentSlide = track.querySelector('.current-slide');
-                const currentDot = dotsNav.querySelector('.current-slide');
-                const targetDot = dots[currentIndex];
-
-                moveToSlide(track, currentSlide, targetSlide);
-                updateDots(currentDot, targetDot);
-                hideShowArrows(slides, prevButton, nextButton, currentIndex);
-            };
-
-            const trackContainer = document.querySelector('.carousel-track-container');
-
-            trackContainer.addEventListener('touchstart', touchStart);
-            trackContainer.addEventListener('touchmove', touchMove);
-            trackContainer.addEventListener('touchend', touchEnd);
-
-            // Observe class changes to keep currentIndex in sync
-            const slideObserver = new MutationObserver((mutations) => {
-                mutations.forEach((mutation) => {
-                    if (mutation.type === "attributes" && mutation.attributeName === "class") {
-                        if (mutation.target.classList.contains('current-slide')) {
-                            currentIndex = slides.indexOf(mutation.target);
-                        }
-                    }
-                });
-            });
-
-            slides.forEach(slide => {
-                slideObserver.observe(slide, { attributes: true });
-            });
+        if (theme === 'dark') {
+            moonIcon.style.display = 'none';
+            sunIcon.style.display = 'block';
+        } else {
+            moonIcon.style.display = 'block';
+            sunIcon.style.display = 'none';
         }
     }
+
+    // Initialize Theme
+    applyTheme(currentTheme);
+
+    // Toggle Event
+    themeToggleBtn.addEventListener('click', () => {
+        currentTheme = currentTheme === 'light' ? 'dark' : 'light';
+        applyTheme(currentTheme);
+    });
+
+    // Initialize Language
+    updateContent(currentLang);
 
     // Event Listeners for Language Buttons
     langBtns.forEach(btn => {
@@ -673,16 +429,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelector('.nav-links');
     const links = document.querySelectorAll('.nav-links li a'); // Only close on link click, not lang switch
 
-    hamburger.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-        hamburger.classList.toggle('active');
-    });
+    if (hamburger) {
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+    }
 
     // Close mobile menu when clicking a link
     links.forEach(link => {
         link.addEventListener('click', () => {
             navLinks.classList.remove('active');
-            hamburger.classList.remove('active');
+            if (hamburger) hamburger.classList.remove('active');
         });
     });
 
@@ -711,20 +469,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // Navbar Scroll Effect
     const header = document.getElementById('header');
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            header.style.padding = '10px 0';
-            header.style.backgroundColor = 'rgba(1, 69, 44, 0.98)';
-            header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.3)';
+        if (window.scrollY > 10) {
+            header.classList.add('scrolled');
         } else {
-            header.style.padding = '15px 0';
-            header.style.backgroundColor = 'rgba(1, 69, 44, 0.95)';
-            header.style.boxShadow = 'none';
+            header.classList.remove('scrolled');
         }
     });
-
-    // Form Submission Handling
-    // Forms are now handled by Formspree via HTML action attributes
-    // We can keep custom validation here if needed, but for now we'll let the browser handle the submission.
 
     // Scroll Animation (Simple Intersection Observer)
     const observerOptions = {
@@ -741,12 +491,61 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, observerOptions);
 
-    // Add animation classes to elements
-    const animatedElements = document.querySelectorAll('.about-card, .gallery-item');
+    // Targets for animation: Service items, Zig-zag content, Cards
+    const animatedElements = document.querySelectorAll('.service-item, .split-content, .featured-event-card, .section-intro');
     animatedElements.forEach((el, index) => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(30px)';
         el.style.transition = `all 0.6s ease ${index * 0.1}s`;
         observer.observe(el);
     });
+    // Hero Slideshow Logic
+    const slides = document.querySelectorAll('.hero-slideshow .slide');
+    let currentSlide = 0;
+
+    if (slides.length > 0) {
+        setInterval(() => {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }, 5000); // Change slide every 5 seconds
+    }
+
+    // Lightbox Logic
+    const galleryItems = document.querySelectorAll('.gallery-item img');
+    // Create lightbox element dynamically if not present
+    let lightbox = document.getElementById('lightbox');
+    if (!lightbox) {
+        lightbox = document.createElement('div');
+        lightbox.id = 'lightbox';
+        lightbox.className = 'lightbox';
+        lightbox.innerHTML = '<span class="close">&times;</span><img class="lightbox-content" id="img01">';
+        document.body.appendChild(lightbox);
+    }
+
+    const lightboxImg = document.getElementById("img01");
+    const closeBtn = document.querySelector(".close");
+
+    galleryItems.forEach(img => {
+        img.style.cursor = 'pointer';
+        img.addEventListener('click', function () {
+            lightbox.style.display = "flex";
+            lightbox.style.alignItems = "center";
+            lightbox.style.justifyContent = "center";
+            lightboxImg.src = this.src;
+        });
+    });
+
+    if (closeBtn) {
+        closeBtn.addEventListener('click', () => {
+            lightbox.style.display = "none";
+        });
+    }
+
+    lightbox.addEventListener('click', (e) => {
+        if (e.target !== lightboxImg) {
+            lightbox.style.display = "none";
+        }
+    });
+
 });
