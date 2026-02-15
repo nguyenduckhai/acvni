@@ -116,12 +116,20 @@ const translations = {
         },
         gallery_page: {
             subtitle_1: "Activité Phare",
-            title_1: "Têt Lunaire <br>2025",
+            title_1: "Têt Lunaire <br>2026",
+            desc_1: "Accueillir la nouvelle année avec joie, partage et des moments mémorables en communauté. La fête du Têt est l'occasion la plus importante de l'année, où tout le monde se réunit.",
             subtitle_2: "Échange Culturel",
             title_2: "Festival d'Été <br>Nice 2024",
             subtitle_3: "Communauté",
             title_3: "Rencontre des <br>Nouveaux Étudiants",
             view_album: "Voir l'Album"
+        },
+        album_consular: {
+            title: "PERMANENCE CONSULAIRE",
+            subtitle: "SOUTIEN À LA COMMUNAUTÉ",
+            desc: "Une séance consulaire réussie organisée par l'Ambassade du Vietnam en France, dans une ambiance chaleureuse. Grâce au dévouement de l'Ambassade, au dynamisme de l'Association des Étudiants et à l'accueil de Blue Résidence, la communauté a bénéficié d'un soutien précieux. Un événement marquant qui renforce notre solidarité.",
+            date: "25/01/2026",
+            location: "Nice, France"
         }
     },
     vi: {
@@ -241,12 +249,20 @@ const translations = {
         },
         gallery_page: {
             subtitle_1: "Hoạt động nổi bật",
-            title_1: "TẾT NGUYÊN ĐÁN <br>2025",
+            title_1: "TẾT NGUYÊN ĐÁN <br>2026",
+            desc_1: "Đón chào năm mới với niềm vui, sự sẻ chia và những khoảnh khắc đáng nhớ bên cộng đồng. Sự kiện Tết Nguyên Đán là dịp quan trọng nhất trong năm, nơi mọi người cùng nhau sum họp.",
             subtitle_2: "Giao lưu văn hóa",
             title_2: "LỄ HỘI MÙA HÈ <br>NICE 2024",
             subtitle_3: "Cộng đồng",
             title_3: "GẶP GỠ <br>TÂN SINH VIÊN",
             view_album: "Xem Album Ảnh"
+        },
+        album_consular: {
+            title: "THỦ TỤC LÃNH SỰ",
+            subtitle: "HỖ TRỢ CỘNG ĐỒNG",
+            desc: "Buổi làm việc của Đại sứ quán Việt Nam tại Pháp đã diễn ra thành công tốt đẹp, trong không khí ấm áp, nghĩa tình. Sự hỗ trợ tận tâm của ĐSQ, cùng sự nhiệt huyết của Hội Sinh viên và không gian chu đáo từ Blue Résidence đã mang lại sự thuận lợi tối đa cho bà con kiều bào. Một hoạt động ý nghĩa, lan tỏa tinh thần đoàn kết và sẻ chia của người Việt nơi xa xứ.",
+            date: "25/01/2026",
+            location: "Nice, France"
         }
     },
     en: {
@@ -366,12 +382,20 @@ const translations = {
         },
         gallery_page: {
             subtitle_1: "Featured Activity",
-            title_1: "Lunar New Year <br>2025",
+            title_1: "Lunar New Year <br>2026",
+            desc_1: "Welcoming the new year with joy, sharing, and memorable moments with the community. The Lunar New Year event is the most important occasion of the year, where everyone gathers together.",
             subtitle_2: "Cultural Exchange",
             title_2: "Summer Festival <br>Nice 2024",
             subtitle_3: "Community",
             title_3: "Meet New <br>Students",
             view_album: "View Album"
+        },
+        album_consular: {
+            title: "CONSULAR SERVICE",
+            subtitle: "COMMUNITY SUPPORT",
+            desc: "A successful consular session by the Embassy of Vietnam in France, held in a warm and supportive atmosphere. Thanks to the dedicated Embassy staff, the enthusiastic Student Association, and Blue Résidence for the venue, our community received excellent assistance. A meaningful event strengthening our unity and shared spirit.",
+            date: "25/01/2026",
+            location: "Nice, France"
         }
     }
 };
@@ -506,8 +530,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, observerOptions);
 
-    // Targets for animation: Service items, Zig-zag content, Cards
-    const animatedElements = document.querySelectorAll('.service-item, .split-content, .featured-event-card, .section-intro');
+    // Targets for animation: Service items, Zig-zag content, Cards, Gallery Images, Album elements
+    const animatedElements = document.querySelectorAll('.service-item, .split-content, .featured-event-card, .section-intro, .showcase-image, .gallery-item, .album-hero-image, .grid-item, .album-info, .showcase-content');
     animatedElements.forEach((el, index) => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(30px)';
@@ -526,42 +550,51 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 5000); // Change slide every 5 seconds
     }
 
-    // Lightbox Logic
-    const galleryItems = document.querySelectorAll('.gallery-item img');
-    // Create lightbox element dynamically if not present
-    let lightbox = document.getElementById('lightbox');
-    if (!lightbox) {
-        lightbox = document.createElement('div');
-        lightbox.id = 'lightbox';
-        lightbox.className = 'lightbox';
-        lightbox.innerHTML = '<span class="close">&times;</span><img class="lightbox-content" id="img01">';
-        document.body.appendChild(lightbox);
-    }
+    // Lightbox Logic (Restored)
+    const lightboxImages = document.querySelectorAll('.grid-item img, .album-hero-image img');
 
-    const lightboxImg = document.getElementById("img01");
-    const closeBtn = document.querySelector(".close");
-
-    galleryItems.forEach(img => {
-        img.style.cursor = 'pointer';
-        img.addEventListener('click', function () {
-            lightbox.style.display = "flex";
-            lightbox.style.alignItems = "center";
-            lightbox.style.justifyContent = "center";
-            lightboxImg.src = this.src;
-        });
-    });
-
-    if (closeBtn) {
-        closeBtn.addEventListener('click', () => {
-            lightbox.style.display = "none";
-        });
-    }
-
-    lightbox.addEventListener('click', (e) => {
-        if (e.target !== lightboxImg) {
-            lightbox.style.display = "none";
+    if (lightboxImages.length > 0) {
+        // Create Modal HTML dynamically if not present
+        if (!document.querySelector('.lightbox-modal')) {
+            const modalHTML = `
+                <div id="lightboxModal" class="lightbox-modal">
+                    <span class="lightbox-close">&times;</span>
+                    <img class="lightbox-content" id="lightboxImg">
+                </div>
+            `;
+            document.body.insertAdjacentHTML('beforeend', modalHTML);
         }
-    });
+
+        const modal = document.getElementById('lightboxModal');
+        const modalImg = document.getElementById('lightboxImg');
+        const closeBtn = document.querySelector('.lightbox-close');
+
+        lightboxImages.forEach(img => {
+            img.addEventListener('click', () => {
+                modal.classList.add('active'); // Use class to toggle display flex
+                modalImg.src = img.src;
+                modalImg.alt = img.alt;
+            });
+        });
+
+        // Close logic
+        const closeLightbox = () => {
+            modal.classList.remove('active');
+        };
+
+        if (closeBtn) closeBtn.addEventListener('click', closeLightbox);
+
+        // Close on background click
+        if (modal) {
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    closeLightbox();
+                }
+            });
+        }
+    }
+
+    // Lightbox Logic Removed
 
     // Featured Events Slider Logic
     const track = document.querySelector('.slider-track');
@@ -638,6 +671,166 @@ document.addEventListener('DOMContentLoaded', () => {
             nextButton.style.display = 'none';
             prevButton.style.display = 'none';
         }
+    }
+
+    // Generic Image Load Animation
+    // Select images that are not part of the hero slideshow (as those have their own logic)
+    const imagesToAnimate = document.querySelectorAll('img:not(.hero-slideshow img)');
+
+    imagesToAnimate.forEach(img => {
+        // Prepare image for animation
+        img.style.opacity = '0';
+        img.style.transform = 'translateY(20px)';
+        img.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+
+        const onImageLoad = () => {
+            img.style.opacity = '1';
+            img.style.transform = 'translateY(0)';
+
+            // Remove inline styles after animation to allow CSS hover effects to work
+            setTimeout(() => {
+                img.style.transition = '';
+                img.style.transform = '';
+                img.style.opacity = '';
+                // Add a class to ensure opacity stays 1 if needed by CSS (though default is usually 1)
+                img.classList.add('loaded');
+            }, 1000); // Wait slightly longer than transition (0.8s)
+        };
+
+        if (img.complete) {
+            // If already loaded
+            setTimeout(onImageLoad, 100);
+        } else {
+            // Wait for load
+            img.addEventListener('load', onImageLoad);
+        }
+    });
+
+    // Gallery Filtering Logic (Replace ScrollSpy)
+    const filterLinks = document.querySelectorAll('.header-year-link');
+    const yearGroups = document.querySelectorAll('.year-group');
+
+    if (filterLinks.length > 0 && yearGroups.length > 0) {
+        // Initial state: show active year
+        const initialFilter = document.querySelector('.header-year-link.active').getAttribute('data-filter');
+        filterYear(initialFilter);
+
+        filterLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+
+                // Update active link
+                filterLinks.forEach(l => l.classList.remove('active'));
+                link.classList.add('active');
+
+                // Filter content
+                const filterValue = link.getAttribute('data-filter');
+                filterYear(filterValue);
+            });
+        });
+
+        function filterYear(yearId) {
+            yearGroups.forEach(group => {
+                if (group.id === yearId) {
+                    group.style.display = 'block';
+                    // Trigger animations for children if needed
+                    const images = group.querySelectorAll('img');
+                    images.forEach(img => {
+                        img.style.opacity = '1';
+                        img.style.transform = 'translateY(0)';
+                    });
+                } else {
+                    group.style.display = 'none';
+                }
+            });
+            // Scroll to top of main content slightly to ensure visibility
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    }
+
+    // Dynamic Image Loader for Consular Album (specific logic)
+    if (window.location.pathname.includes('album_consular.html')) {
+        const gridContainer = document.querySelector('.album-grid');
+        // Check for images 2 through 10 (or more reasonably)
+        // Since we cannot listDir in client JS easily without server listing, 
+        // we can try to fetch them or assume a naming convention if user adds them.
+        // User asked: "Can the album update if i add new images"
+        // A simple way is to attempt to load image2.jpg, image3.jpg etc.
+
+        const loadExtraImages = async () => {
+            const baseUrl = 'assets/album2/image';
+            const extensions = ['.jpg', '.webp', '.png', '.jpeg'];
+            let imageIndex = 2; // Start from 2 since 1 is used
+            let consecutiveFailures = 0;
+
+            // Simple loop to try loading images
+            while (consecutiveFailures < 3 && imageIndex < 20) {
+                // Try each extension
+                let found = false;
+                for (let ext of extensions) {
+                    const url = `${baseUrl}${imageIndex}${ext}`;
+                    try {
+                        const response = await fetch(url, { method: 'HEAD' });
+                        if (response.ok) {
+                            // Image exists, append to grid
+                            // We'll create a new row or append to existing structure
+                            // Simplified: Just append to a new flexible grid container or reuse grid-row-2 logic
+
+                            // If it's the first extra image, maybe create a new container or just append to .album-grid
+                            // Let's make a generic grid-row-2 for every 2 images found
+
+                            // For simplicity in this static setup, let's just create a grid item and append it.
+                            // We might need to restructure .album-grid to be a flex/grid wrap container instead of fixed rows
+
+                            // Let's create a wrapper if not exists
+                            let dynamicGrid = document.querySelector('.dynamic-photo-grid');
+                            if (!dynamicGrid) {
+                                dynamicGrid = document.createElement('div');
+                                dynamicGrid.className = 'grid-row-2'; // Reuse 2-col layout
+                                dynamicGrid.style.marginTop = '20px';
+                                dynamicGrid.style.display = 'grid'; // Ensure grid
+                                gridContainer.appendChild(dynamicGrid);
+                            }
+
+                            // If last row is full (2 items), make new one? 
+                            // Actually grid-row-2 is 2 col. element. If we keep adding items to it, does it wrap?
+                            // defined as grid-template-columns: 1fr 1fr;
+                            // It will wrap if auto-flow is row.
+
+                            const item = document.createElement('div');
+                            item.className = 'grid-item';
+                            item.innerHTML = `<img src="${url}" alt="More Event Photo ${imageIndex}">`;
+
+                            // Add click listener for lightbox
+                            item.querySelector('img').addEventListener('click', (e) => {
+                                const modal = document.getElementById('lightboxModal');
+                                const modalImg = document.getElementById('lightboxImg');
+                                if (modal && modalImg) {
+                                    modal.classList.add('active');
+                                    modalImg.src = e.target.src;
+                                }
+                            });
+
+                            dynamicGrid.appendChild(item);
+
+                            found = true;
+                            break; // Found this index
+                        }
+                    } catch (e) {
+                        // Ignore error
+                    }
+                }
+
+                if (found) {
+                    consecutiveFailures = 0;
+                } else {
+                    consecutiveFailures++;
+                }
+                imageIndex++;
+            }
+        };
+
+        loadExtraImages();
     }
 
 });

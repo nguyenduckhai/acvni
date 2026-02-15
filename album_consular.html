@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Chi tiết album ảnh - ACVNI">
+    <title>Album - ACVNI</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Roboto:wght@300;400;500&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/webp" href="assets/logo_new.webp">
+</head>
+
+<body>
+    <!-- Reusing Header -->
+    <header id="header" class="scrolled simple-header">
+        <div class="container navbar">
+            <a href="index.html" class="logo">
+                <img src="assets/logo_new.webp" alt="ACVNI Logo">
+            </a>
+
+            <div class="lang-switcher">
+                <button class="lang-btn active" data-lang="vi">VI</button>
+                <span class="separator">|</span>
+                <button class="lang-btn" data-lang="fr">FR</button>
+                <span class="separator">|</span>
+                <button class="lang-btn" data-lang="en">EN</button>
+            </div>
+        </div>
+    </header>
+
+    <main style="padding-top: 120px; padding-bottom: 80px;">
+        <div class="container album-container">
+            <!-- Header Section: Title & Intro -->
+            <div class="album-header-grid">
+                <div class="album-info">
+                    <h4 class="album-subtitle" data-i18n="album_consular.subtitle">Hỗ Trợ Cộng Đồng</h4>
+                    <h1 class="album-title">THỦ TỤC LÃNH SỰ</h1>
+
+                    <div class="album-desc">
+                        <p data-i18n="album_consular.desc">Buổi làm việc của Đại sứ quán Việt Nam tại Pháp đã diễn ra
+                            thành công tốt đẹp...</p>
+                    </div>
+
+                    <div class="album-meta">
+                        <div class="meta-item">
+                            <span class="meta-label">Date</span>
+                            <span class="meta-value" data-i18n="album_consular.date">25/01/2026</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Location</span>
+                            <span class="meta-value" data-i18n="album_consular.location">Nice, France</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="album-hero-image">
+                    <img src="assets/album2/image1.jpg" alt="Consular Service Event">
+                </div>
+            </div>
+
+            <!-- Masonry/Grid Layout for Images -->
+            <!-- Masonry/Grid Layout for Images -->
+            <div class="album-grid">
+
+                <!-- Row: Image 1 (Large Hero below header) already used? Let's show others -->
+                <!-- The header already shows image1. let's start grid with image 2 & 3 -->
+
+                <div class="grid-row-2">
+                    <div class="grid-item">
+                        <img src="assets/album2/image2.jpg" alt="Consular Event Photo 2" loading="lazy">
+                    </div>
+                    <div class="grid-item">
+                        <img src="assets/album2/image3.jpg" alt="Consular Event Photo 3" loading="lazy">
+                    </div>
+                </div>
+
+                <div class="grid-row-1">
+                    <div class="grid-item large">
+                        <img src="assets/album2/image4.jpg" alt="Consular Event Photo 4" loading="lazy">
+                    </div>
+                </div>
+
+                <div class="grid-row-2">
+                    <div class="grid-item">
+                        <img src="assets/album2/image5.jpg" alt="Consular Event Photo 5" loading="lazy">
+                    </div>
+                    <div class="grid-item">
+                        <img src="assets/album2/image6.jpg" alt="Consular Event Photo 6" loading="lazy">
+                    </div>
+                </div>
+
+                <div class="grid-row-1">
+                    <div class="grid-item">
+                        <img src="assets/album2/image7.jpg" alt="Consular Event Photo 7" loading="lazy">
+                    </div>
+                </div>
+
+                <div class="grid-row-2">
+                    <div class="grid-item">
+                        <img src="assets/album2/image8.jpg" alt="Consular Event Photo 8" loading="lazy">
+                    </div>
+                    <div class="grid-item">
+                        <img src="assets/album2/image9.jpg" alt="Consular Event Photo 9" loading="lazy">
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- "Select Works" / Footer Nav -->
+            <div class="album-footer-nav" style="margin-top: 100px;">
+                <h4 class="showcase-subtitle" style="margin-bottom: 40px;">Các Album Khác</h4>
+                <div class="other-albums-grid">
+                    <a href="album.html" class="other-album-card">
+                        <img src="assets/album1/image1.JPG" alt="Tet 2025">
+                        <span data-i18n="gallery_page.title_1">TẾT NGUYÊN ĐÁN 2025</span>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>ACVNI</h3>
+                    <p>Cộng đồng người Việt tại Nice</p>
+                </div>
+                <div class="footer-links-group">
+                    <a href="gallery.html">Quay lại Thư viện</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 ACVNI.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="style.css">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/jpeg" href="assets/logo_new.jpg">
+    <link rel="icon" type="image/webp" href="assets/logo_new.webp">
 </head>
 
 <body>
@@ -27,8 +27,13 @@
     <header id="header" class="scrolled simple-header">
         <div class="container navbar">
             <a href="index.html" class="logo">
-                <img src="assets/logo_new.jpg" alt="ACVNI Logo">
+                <img src="assets/logo_new.webp" alt="ACVNI Logo">
             </a>
+
+            <!-- Year Navigation (Gallery Only) -->
+            <div class="gallery-header-nav">
+                <a href="#" class="header-year-link active" data-filter="year-2026">2026</a>
+            </div>
 
             <div class="lang-switcher">
                 <button class="lang-btn active" data-lang="vi">VI</button>
@@ -42,48 +47,42 @@
 
     <main style="padding-top: 100px;">
 
+
+
         <!-- Gallery Layout based on Reference Image -->
-        <!-- Row 1 -->
-        <section class="gallery-showcase">
-            <div class="container showcase-grid">
-                <div class="showcase-content">
-                    <h4 class="showcase-subtitle" data-i18n="gallery_page.subtitle_1">Hoạt động nổi bật</h4>
-                    <h1 class="showcase-title" data-i18n="gallery_page.title_1">TẾT NGUYÊN ĐÁN <br>2025</h1>
-                    <a href="album.html" class="showcase-link" data-i18n="gallery_page.view_album">Xem Album Ảnh</a>
+        <!-- Year 2026 Group -->
+        <div id="year-2026" class="year-group">
+            <!-- Tet Nguyen Dan (Oldest 2025) -->
+            <section class="gallery-showcase">
+                <div class="container showcase-grid">
+                    <div class="showcase-content">
+                        <h4 class="showcase-subtitle" data-i18n="gallery_page.subtitle_1">Hoạt động nổi bật</h4>
+                        <h1 class="showcase-title" data-i18n="gallery_page.title_1">TẾT NGUYÊN ĐÁN <br>2026</h1>
+                        <a href="album.html" class="showcase-link" data-i18n="gallery_page.view_album">Xem Album Ảnh</a>
+                    </div>
+                    <div class="showcase-image">
+                        <img src="assets/album1/image1.JPG" alt="Tet Nguyen Dan" loading="lazy" decoding="async">
+                    </div>
                 </div>
-                <div class="showcase-image">
-                    <img src="assets/slide1.JPG" alt="Tet Nguyen Dan">
-                </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- Row 2 -->
-        <section class="gallery-showcase">
-            <div class="container showcase-grid reverse">
-                <div class="showcase-content">
-                    <h4 class="showcase-subtitle" data-i18n="gallery_page.subtitle_2">Giao lưu văn hóa</h4>
-                    <h1 class="showcase-title" data-i18n="gallery_page.title_2">LỄ HỘI MÙA HÈ <br>NICE 2024</h1>
-                    <a href="album.html" class="showcase-link" data-i18n="gallery_page.view_album">Xem Album Ảnh</a>
+            <!-- Consular Service (Newest 2026) -->
+            <section class="gallery-showcase">
+                <div class="container showcase-grid reverse">
+                    <div class="showcase-content">
+                        <h4 class="showcase-subtitle" data-i18n="album_consular.subtitle">Hỗ Trợ Cộng Đồng</h4>
+                        <h1 class="showcase-title" data-i18n="album_consular.title">THỦ TỤC <br>LÃNH SỰ</h1>
+                        <a href="album_consular.html" class="showcase-link" data-i18n="gallery_page.view_album">Xem
+                            Album Ảnh</a>
+                    </div>
+                    <div class="showcase-image">
+                        <img src="assets/album2/image1.jpg" alt="Consular Service" loading="lazy" decoding="async">
+                    </div>
                 </div>
-                <div class="showcase-image">
-                    <img src="assets/slide2.JPG" alt="Le Hoi Mua He">
-                </div>
-            </div>
-        </section>
+            </section>
+        </div>
 
-        <!-- Row 3 -->
-        <section class="gallery-showcase">
-            <div class="container showcase-grid">
-                <div class="showcase-content">
-                    <h4 class="showcase-subtitle" data-i18n="gallery_page.subtitle_3">Cộng đồng</h4>
-                    <h1 class="showcase-title" data-i18n="gallery_page.title_3">GẶP GỠ <br>TÂN SINH VIÊN</h1>
-                    <a href="album.html" class="showcase-link" data-i18n="gallery_page.view_album">Xem Album Ảnh</a>
-                </div>
-                <div class="showcase-image">
-                    <img src="assets/slide3.JPG" alt="Gap Go Tan Sinh Vien">
-                </div>
-            </div>
-        </section>
+
 
     </main>
 

@@ -22,14 +22,14 @@
     <link rel="stylesheet" href="style.css">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/jpeg" href="assets/logo_new.jpg">
+    <link rel="icon" type="image/webp" href="assets/logo_new.webp">
 </head>
 
 <body>
     <header id="header">
         <div class="container navbar">
             <a href="#" class="logo">
-                <img src="assets/logo_new.jpg" alt="ACVNI Logo">
+                <img src="assets/logo_new.webp" alt="ACVNI Logo">
                 <span>ACVNI</span>
             </a>
 
@@ -38,6 +38,7 @@
                 <li><a href="#mission" data-i18n="nav.mission">Sứ Mệnh</a></li>
                 <li><a href="#gallery" data-i18n="nav.gallery">Gallery</a></li>
                 <li><a href="#events" data-i18n="nav.events">Sự Kiện</a></li>
+                <li><a href="#membership" data-i18n="nav.membership">Thành viên</a></li>
 
                 <li><a href="#contact" class="btn-primary" data-i18n="nav.contact" style="color:white;">Liên Hệ</a></li>
                 <li class="lang-switcher">
@@ -63,9 +64,9 @@
         <!-- Hero Section -->
         <section id="home" class="hero">
             <div class="hero-slideshow">
-                <div class="slide active" style="background-image: url('assets/slide1.JPG');"></div>
-                <div class="slide" style="background-image: url('assets/slide2.JPG');"></div>
-                <div class="slide" style="background-image: url('assets/slide3.JPG');"></div>
+                <div class="slide active" style="background-image: url('assets/album2/image2.jpg');"></div>
+                <div class="slide" style="background-image: url('assets/album1/image4.JPG');"></div>
+                <div class="slide" style="background-image: url('assets/album1/image12.JPG');"></div>
             </div>
             <div class="hero-overlay"></div>
             <div class="container hero-content">
@@ -89,7 +90,7 @@
         <section id="mission" class="split-section">
             <div class="split-container">
                 <div class="split-image">
-                    <img src="assets/slide1.JPG" alt="Communauté">
+                    <img src="assets/album1/image3.JPG" alt="Communauté">
                 </div>
                 <div class="split-content">
                     <h3 data-i18n="mission.title">Sứ Mệnh & Tầm Nhìn</h3>
@@ -108,12 +109,12 @@
         </section>
 
         <!-- Use 2nd Zig zag for Membership Tease maybe? Or reversed layout -->
-        <section class="split-section box-reverse">
+        <section id="membership" class="split-section box-reverse">
             <div class="split-container split-reverse" style="direction: rtl;">
                 <!-- CSS grid handles RTL visual swap or just order -->
                 <div class="split-image" style="direction: ltr;">
                     <!-- Map/Location placeholder or another event image -->
-                    <img src="assets/slide2.JPG" alt="Activities Map">
+                    <img src="assets/album2/image1.jpg" alt="Activities Map">
                 </div>
                 <div class="split-content" style="direction: ltr; text-align: left;">
                     <h3 data-i18n="membership.subtitle">Tại sao nên tham gia?</h3>
@@ -132,24 +133,25 @@
                 <div class="gallery-grid">
                     <!-- Main Left Image -->
                     <div class="gallery-item main-left">
-                        <img src="assets/slide1.JPG" alt="Gallery Image 1">
+                        <img src="assets/album1/image5.jpg" alt="Gallery Image 1">
                     </div>
 
                     <!-- Right Column -->
                     <div class="gallery-col-right">
                         <!-- Top Right Image -->
-                        <div class="gallery-item top-right">
-                            <img src="assets/slide2.JPG" alt="Gallery Image 2">
+                        <div class="gallery-item top-right" style="background: black;">
+                            <img src="assets/album1/image6.JPG" alt="Gallery Image 2"
+                                style="width: 100%; height: 100%; object-fit: cover;">
                         </div>
 
                         <!-- Bottom Row -->
                         <div class="gallery-row-bottom">
                             <div class="gallery-item bot-1">
-                                <img src="assets/slide3.JPG" alt="Gallery Image 3">
+                                <img src="assets/album2/image2.jpg" alt="Gallery Image 3">
                             </div>
                             <!-- Reusing slide1 for the 4th slot as requested to reuse slide images -->
                             <div class="gallery-item bot-2">
-                                <img src="assets/slide1.JPG" alt="Gallery Image 4">
+                                <img src="assets/album2/image6.jpg" alt="Gallery Image 4">
                             </div>
                         </div>
                     </div>
@@ -178,8 +180,8 @@
                             <!-- New First Event: Consular Service -->
                             <li class="featured-event-card current-slide">
                                 <div class="featured-event-image">
-                                    <!-- Use slide2 for now, or update if we have a better image -->
-                                    <img src="assets/slide2.JPG" alt="Lãnh sự tại Nice">
+                                    <!-- Use external image as requested -->
+                                    <img src="assets/consular_event.webp" alt="Lãnh sự tại Nice">
                                 </div>
                                 <div class="featured-event-content">
                                     <div class="event-meta">
@@ -190,8 +192,8 @@
                                     <h3 data-i18n="featured_event_consular.title">ĐẠI SỨ QUÁN LÀM VIỆC TẠI NICE</h3>
                                     <p data-i18n="featured_event_consular.desc">ĐSQ Việt Nam tại Pháp tổ chức làm thủ
                                         tục lãnh sự tại Nice. Hạn đăng ký: 25/01/2026.</p>
-                                    <a href="https://www.facebook.com/groups/1884851371854868/permalink/2901772600162735/"
-                                        target="_blank" class="btn-primary" data-i18n="featured_event.btn">Xem Chi
+                                    <a href="album_consular.html" class="btn-primary" data-i18n="featured_event.btn">Xem
+                                        Chi
                                         Tiết</a>
                                 </div>
                             </li>
@@ -199,7 +201,7 @@
                             <!-- Event 2: Tet 2026 (Former first event) -->
                             <li class="featured-event-card">
                                 <div class="featured-event-image">
-                                    <img src="assets/featured_event.jpg" alt="Sự kiện ACVNI">
+                                    <img src="assets/featured_event.webp" alt="Sự kiện ACVNI">
                                 </div>
                                 <div class="featured-event-content">
                                     <div class="event-meta">
