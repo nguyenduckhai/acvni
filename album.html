@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Chi tiết album ảnh - ACVNI">
+    <title>Album - ACVNI</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Roboto:wght@300;400;500&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="assets/logo_new.jpg">
+</head>
+
+<body>
+    <!-- Reusing Header -->
+    <header id="header" class="scrolled simple-header">
+        <div class="container navbar">
+            <a href="index.html" class="logo">
+                <img src="assets/logo_new.jpg" alt="ACVNI Logo">
+            </a>
+
+            <div class="lang-switcher">
+                <button class="lang-btn active" data-lang="vi">VI</button>
+                <span class="separator">|</span>
+                <button class="lang-btn" data-lang="fr">FR</button>
+                <span class="separator">|</span>
+                <button class="lang-btn" data-lang="en">EN</button>
+            </div>
+        </div>
+    </header>
+
+    <main style="padding-top: 120px; padding-bottom: 80px;">
+        <div class="container album-container">
+            <!-- Header Section: Title & Intro -->
+            <div class="album-header-grid">
+                <div class="album-info">
+                    <h4 class="album-subtitle" data-i18n="gallery_page.subtitle_1">Hoạt động nổi bật</h4>
+                    <h1 class="album-title" data-i18n="gallery_page.title_1">TẾT NGUYÊN ĐÁN 2025</h1>
+
+                    <div class="album-desc">
+                        <p>Đón chào năm mới với niềm vui, sự sẻ chia và những khoảnh khắc đáng nhớ bên cộng đồng. Sự
+                            kiện Tết Nguyên Đán là dịp quan trọng nhất trong năm, nơi mọi người cùng nhau sum họp.</p>
+                    </div>
+
+                    <div class="album-meta">
+                        <div class="meta-item">
+                            <span class="meta-label">Date</span>
+                            <span class="meta-value">25/01/2026</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Location</span>
+                            <span class="meta-value">Nice, France</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="album-hero-image">
+                    <img src="assets/slide1.JPG" alt="Main Event Image">
+                </div>
+            </div>
+
+            <!-- Masonry/Grid Layout for Images -->
+            <div class="album-grid">
+                <!-- Row 1: Two images side by side -->
+                <div class="grid-row-2">
+                    <div class="grid-item">
+                        <img src="assets/slide2.JPG" alt="Event Moment 1">
+                    </div>
+                    <div class="grid-item">
+                        <img src="assets/slide3.JPG" alt="Event Moment 2">
+                    </div>
+                </div>
+
+                <!-- Row 2: Large Feature Image -->
+                <div class="grid-row-1">
+                    <div class="grid-item large">
+                        <!-- Reusing slide1 for demo widely -->
+                        <img src="assets/slide1.JPG" alt="Event Highlight">
+                    </div>
+                </div>
+            </div>
+
+            <!-- "Select Works" / Footer Nav -->
+            <div class="album-footer-nav" style="margin-top: 100px;">
+                <h4 class="showcase-subtitle" style="margin-bottom: 40px;">Các Album Khác</h4>
+                <div class="other-albums-grid">
+                    <a href="#" class="other-album-card">
+                        <img src="assets/slide2.JPG" alt="Other Album">
+                        <span>Lễ Hội Mùa Hè 2024</span>
+                    </a>
+                    <a href="#" class="other-album-card">
+                        <img src="assets/slide3.JPG" alt="Other Album">
+                        <span>Gặp Gỡ Tân Sinh Viên</span>
+                    </a>
+                    <a href="#" class="other-album-card">
+                        <img src="assets/slide1.JPG" alt="Other Album">
+                        <span>Tết 2023</span>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>ACVNI</h3>
+                    <p>Cộng đồng người Việt tại Nice</p>
+                </div>
+                <div class="footer-links-group">
+                    <a href="gallery.html">Quay lại Thư viện</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 ACVNI.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

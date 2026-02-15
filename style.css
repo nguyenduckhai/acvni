@@ -484,9 +484,41 @@ header.scrolled .nav-links a:hover,
 
 /* Featured Event / Carousel Replacement */
 /* We will style the featured event section to look like a clean featured highlight (Full width or split) */
+.featured-events-slider {
+    display: flex;
+    flex-direction: row;
+    /* Horizontal by default */
+    gap: 40px;
+    overflow-x: auto;
+    /* Allow scrolling if many events */
+    padding-bottom: 20px;
+    /* Space for scrollbar if needed */
+}
+
+/* Ensure desktop cards have a fixed width or flex basis */
+.featured-events-slider .featured-event-card {
+    flex: 0 0 600px;
+    /* Generic width for desktop cards */
+    min-width: 600px;
+    /* Reset existing grid layout if it conflicts */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: center;
+    background: var(--bg-card);
+    /* Ensure card bg */
+    border-radius: 8px;
+    /* Slight radius */
+    padding: 20px;
+    /* Internal padding */
+}
+
+/* Featured Event / Carousel Replacement */
 .featured-event-wrapper {
     background: var(--bg-alt);
     padding: 80px 0;
+    overflow: hidden;
+    /* Hide scrollbar of container if needed */
 }
 
 /* Carousel Specific Overrides to fit new theme */
@@ -990,5 +1022,409 @@ footer {
 @media only screen and (max-width: 700px) {
     .lightbox-content {
         width: 100%;
+    }
+}
+
+/* Feature Event Slider & Mobile Scroll Snap */
+/* Featured Event Slider Container */
+.events-slider-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.slider-track-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.slider-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Event Card in Slider */
+.slider-track .featured-event-card {
+    min-width: 100%;
+    /* Show one slide at a time */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+    background: var(--bg-card);
+    padding: 0 40px;
+    /* Internal padding */
+    box-sizing: border-box;
+}
+
+/* Navigation Buttons */
+.slider-btn {
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 10;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: background 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slider-btn:hover {
+    background: var(--color-accent);
+}
+
+.prev-btn {
+    left: -25px;
+    /* Pull out slightly */
+}
+
+.next-btn {
+    right: -25px;
+}
+
+/* Hide buttons if only 1 slide? (Logic in JS) */
+.slider-btn.hidden {
+    display: none;
+}
+
+@media (max-width: 900px) {
+    .slider-track .featured-event-card {
+        grid-template-columns: 1fr;
+        padding: 0 10px;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .slider-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+
+    .prev-btn {
+        left: 0;
+    }
+
+    .next-btn {
+        right: 0;
+    }
+
+    .featured-event-content {
+        text-align: center;
+    }
+
+    .event-meta {
+        justify-content: center;
+    }
+}
+
+/* Gallery Showcase Styles - Inspired by Reference */
+.gallery-showcase {
+    min-height: 85vh;
+    /* Almost full viewport height for each section */
+    display: flex;
+    align-items: center;
+    background-color: var(--bg-body);
+    /* Standard background */
+    padding: 80px 0;
+}
+
+.showcase-grid {
+    display: grid;
+    grid-template-columns: 0.6fr 1fr;
+    /* Text narrower, image wider */
+    gap: 80px;
+    align-items: center;
+    max-width: 1400px;
+    /* Wider container for this layout */
+    width: 100%;
+}
+
+.showcase-grid.reverse {
+    /* Alternative layout if desired, user image showed left text/right img. 
+       Use reversing for variety? Or stay consistent? 
+       Reference had text left, img right. Let's keep consistent for "203 ISSUE" style.
+       But I added 'reverse' class in HTML for variety later. Let's implement it.
+    */
+    grid-template-columns: 1fr 0.6fr;
+    text-align: right;
+}
+
+.showcase-grid.reverse .showcase-content {
+    order: 2;
+    text-align: left;
+    /* Keep text left aligned usually looks better unless explicitly RTL style */
+}
+
+.showcase-grid.reverse .showcase-image {
+    order: 1;
+}
+
+
+/* Text Styling matching Reference */
+.showcase-subtitle {
+    font-family: var(--font-heading);
+    font-style: italic;
+    font-size: 1.5rem;
+    color: var(--color-accent);
+    /* Orange/Gold */
+    margin-bottom: 20px;
+    font-weight: 400;
+}
+
+.showcase-title {
+    font-family: var(--font-body);
+    /* Bold Sans Serif like "203 ISSUE" */
+    font-weight: 700;
+    font-size: 4rem;
+    /* Specific Large Size */
+    line-height: 1.1;
+    color: var(--text-main);
+    /* White/Light Grey */
+    text-transform: uppercase;
+    margin-bottom: 40px;
+    letter-spacing: -1px;
+}
+
+.showcase-link {
+    font-size: 1.1rem;
+    color: var(--color-accent);
+    text-decoration: none;
+    border-bottom: 2px solid var(--color-accent);
+    /* Underline style */
+    padding-bottom: 5px;
+    transition: all 0.3s ease;
+}
+
+.showcase-link:hover {
+    color: var(--text-main);
+    border-color: var(--text-main);
+}
+
+.showcase-image {
+    width: 100%;
+    height: 70vh;
+    /* Tall image */
+    overflow: hidden;
+    position: relative;
+}
+
+.showcase-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1.2s cubic-bezier(0.2, 1, 0.3, 1);
+    /* Smooth elegant zoom */
+}
+
+.showcase-grid:hover .showcase-image img {
+    transform: scale(1.05);
+}
+
+@media (max-width: 900px) {
+
+    .showcase-grid,
+    .showcase-grid.reverse {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+
+    .showcase-grid.reverse .showcase-content {
+        order: 0;
+        /* Reset order */
+        text-align: center;
+    }
+
+    .showcase-grid.reverse .showcase-image {
+        order: 1;
+    }
+
+    .showcase-title {
+        font-size: 3rem;
+    }
+
+    .showcase-image {
+        height: 50vh;
+    }
+}
+
+/* Album Detail Page Styles - Inspired by 'STREET STYLE' / 'PIA QUINN' Layout */
+
+.album-container {
+    max-width: 1400px;
+}
+
+.album-header-grid {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    /* Left fixed width sidebar-like, Right content */
+    gap: 60px;
+    margin-bottom: 80px;
+}
+
+.album-info {
+    position: sticky;
+    top: 120px;
+    /* if we want it to scroll with content, remove sticky. Design seems to have them aligned top */
+    align-self: start;
+}
+
+.album-subtitle {
+    font-family: var(--font-heading);
+    font-style: italic;
+    color: var(--color-accent);
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    font-weight: 400;
+}
+
+.album-title {
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 3rem;
+    line-height: 1.1;
+    color: var(--text-main);
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    letter-spacing: -1px;
+}
+
+.album-desc p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+    margin-bottom: 40px;
+}
+
+.album-meta {
+    margin-top: 50px;
+}
+
+.meta-item {
+    margin-bottom: 10px;
+    display: block;
+}
+
+.meta-label {
+    display: block;
+    color: var(--color-accent);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.meta-value {
+    color: var(--text-main);
+    font-size: 1rem;
+}
+
+.album-hero-image {
+    width: 100%;
+    height: 80vh;
+    /* Tall hero image */
+}
+
+.album-hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Grid Layout for photos - Aligned with Right Column */
+.grid-row-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+    margin-left: 410px;
+    /* 350px sidebar + 60px gap */
+}
+
+.grid-row-1 {
+    margin-left: 410px;
+    /* 350px sidebar + 60px gap */
+    margin-bottom: 80px;
+}
+
+.grid-item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    border-radius: 4px;
+}
+
+.grid-item.large img {
+    height: 80vh;
+}
+
+
+/* Footer Links */
+.other-albums-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.other-album-card {
+    display: block;
+    text-decoration: none;
+    color: var(--text-main);
+}
+
+.other-album-card img {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    margin-bottom: 10px;
+    transition: transform 0.3s;
+}
+
+.other-album-card:hover img {
+    transform: scale(1.02);
+}
+
+.other-album-card span {
+    font-size: 0.9rem;
+    color: var(--color-accent);
+}
+
+
+@media (max-width: 900px) {
+    .album-header-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .album-info {
+        position: static;
+        margin-bottom: 40px;
+    }
+
+    .grid-row-2,
+    .grid-row-1 {
+        margin-left: 0;
+        /* Reset margin */
+    }
+
+    .album-hero-image {
+        height: 50vh;
     }
 }

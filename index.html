@@ -156,7 +156,7 @@
                 </div>
 
                 <div style="margin-top: 50px;">
-                    <a href="#events" class="btn-primary" data-i18n="common.readmore">Xem thêm</a>
+                    <a href="gallery.html" class="btn-primary" data-i18n="common.readmore">Xem thêm</a>
                 </div>
             </div>
         </section>
@@ -170,20 +170,54 @@
 
                 <!-- The Main Featured Event (Dynamic from JS/HTML) -->
                 <!-- We hardcode the active one here from previous step as intended by user -->
-                <div class="featured-event-card">
-                    <div class="featured-event-image">
-                        <img src="assets/featured_event.jpg" alt="Sự kiện ACVNI">
+                <div class="events-slider-container">
+                    <button class="slider-btn prev-btn" aria-label="Previous Event">&#10094;</button>
+
+                    <div class="slider-track-container">
+                        <ul class="slider-track">
+                            <!-- New First Event: Consular Service -->
+                            <li class="featured-event-card current-slide">
+                                <div class="featured-event-image">
+                                    <!-- Use slide2 for now, or update if we have a better image -->
+                                    <img src="assets/slide2.JPG" alt="Lãnh sự tại Nice">
+                                </div>
+                                <div class="featured-event-content">
+                                    <div class="event-meta">
+                                        <span class="event-tag"
+                                            data-i18n="featured_event_consular.date">25/01/2026</span>
+                                        <span class="event-location" style="margin-left: 10px;">Nice, France</span>
+                                    </div>
+                                    <h3 data-i18n="featured_event_consular.title">ĐẠI SỨ QUÁN LÀM VIỆC TẠI NICE</h3>
+                                    <p data-i18n="featured_event_consular.desc">ĐSQ Việt Nam tại Pháp tổ chức làm thủ
+                                        tục lãnh sự tại Nice. Hạn đăng ký: 25/01/2026.</p>
+                                    <a href="https://www.facebook.com/groups/1884851371854868/permalink/2901772600162735/"
+                                        target="_blank" class="btn-primary" data-i18n="featured_event.btn">Xem Chi
+                                        Tiết</a>
+                                </div>
+                            </li>
+
+                            <!-- Event 2: Tet 2026 (Former first event) -->
+                            <li class="featured-event-card">
+                                <div class="featured-event-image">
+                                    <img src="assets/featured_event.jpg" alt="Sự kiện ACVNI">
+                                </div>
+                                <div class="featured-event-content">
+                                    <div class="event-meta">
+                                        <span class="event-tag" data-i18n="featured_event.date">TET 2026</span>
+                                        <span class="event-location" data-i18n="featured_event.location">Nice,
+                                            France</span>
+                                    </div>
+                                    <h3 data-i18n="featured_event.title">Title</h3>
+                                    <p data-i18n="featured_event.desc">Description</p>
+                                    <a href="https://www.facebook.com/groups/1884851371854868/permalink/2855903831416279/"
+                                        target="_blank" class="btn-primary" data-i18n="featured_event.btn">Xem Chi
+                                        Tiết</a>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
-                    <div class="featured-event-content">
-                        <div class="event-meta">
-                            <span class="event-tag" data-i18n="featured_event.date">TET 2026</span>
-                            <span class="event-location" data-i18n="featured_event.location">Nice, France</span>
-                        </div>
-                        <h3 data-i18n="featured_event.title">Title</h3>
-                        <p data-i18n="featured_event.desc">Description</p>
-                        <a href="https://www.facebook.com/groups/1884851371854868/permalink/2855903831416279/"
-                            target="_blank" class="btn-primary" data-i18n="featured_event.btn">Xem Chi Tiết</a>
-                    </div>
+
+                    <button class="slider-btn next-btn" aria-label="Next Event">&#10095;</button>
                 </div>
             </div>
         </section>

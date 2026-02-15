@@ -56,7 +56,13 @@ const translations = {
             desc: "Chers amis qui attendez un printemps vietnamien au cœur de Nice, le moment tant attendu est arrivé ! Après des semaines de préparation minutieuse...",
             date: "TÊT 2026",
             location: "Nice, France",
-            btn: "Voir Détails & Acheter Billets"
+            btn: "Voir Détails"
+        },
+        featured_event_consular: {
+            title: "PERMANENCE CONSULAIRE À NICE",
+            desc: "L'Ambassade du Vietnam en France organise une permanence consulaire à Nice. Date limite d'inscription : 25/01/2026.",
+            date: "25/01/2026",
+            location: "Nice, France"
         },
         events: {
             title: "Événement à la Une",
@@ -107,6 +113,15 @@ const translations = {
             copyright: "&copy; {year} Association de la communauté Vietnamienne de Nice. Tous droits réservés.",
             legal: "Mentions Légales",
             privacy: "Politique de Confidentialité"
+        },
+        gallery_page: {
+            subtitle_1: "Activité Phare",
+            title_1: "Têt Lunaire <br>2025",
+            subtitle_2: "Échange Culturel",
+            title_2: "Festival d'Été <br>Nice 2024",
+            subtitle_3: "Communauté",
+            title_3: "Rencontre des <br>Nouveaux Étudiants",
+            view_album: "Voir l'Album"
         }
     },
     vi: {
@@ -166,7 +181,13 @@ const translations = {
             desc: "Thân gửi những trái tim đang mong chờ một mùa Xuân Việt giữa lòng Nice, điều tất cả chúng ta mong chờ nhất… đã đến rồi!",
             date: "TẾT 2026",
             location: "Nice, France",
-            btn: "Xem Chi Tiết & Mua Vé"
+            btn: "Xem Chi Tiết"
+        },
+        featured_event_consular: {
+            title: "ĐẠI SỨ QUÁN LÀM VIỆC TẠI NICE",
+            desc: "ĐSQ Việt Nam tại Pháp tổ chức làm thủ tục lãnh sự tại Nice. Hạn đăng ký: 25/01/2026.",
+            date: "25/01/2026",
+            location: "Nice, France"
         },
         events: {
             title: "Sự kiện nổi bật",
@@ -217,6 +238,15 @@ const translations = {
             copyright: "&copy; {year} Cộng đồng người Việt Nam tại Nice. Bảo lưu mọi quyền.",
             legal: "Pháp lý",
             privacy: "Chính sách bảo mật"
+        },
+        gallery_page: {
+            subtitle_1: "Hoạt động nổi bật",
+            title_1: "TẾT NGUYÊN ĐÁN <br>2025",
+            subtitle_2: "Giao lưu văn hóa",
+            title_2: "LỄ HỘI MÙA HÈ <br>NICE 2024",
+            subtitle_3: "Cộng đồng",
+            title_3: "GẶP GỠ <br>TÂN SINH VIÊN",
+            view_album: "Xem Album Ảnh"
         }
     },
     en: {
@@ -276,7 +306,13 @@ const translations = {
             desc: "Dear hearts waiting for a Vietnamese Spring in the heart of Nice, the moment we have all been waiting for has arrived!",
             date: "TET 2026",
             location: "Nice, France",
-            btn: "View Details & Buy Tickets"
+            btn: "View Details"
+        },
+        featured_event_consular: {
+            title: "CONSULAR SERVICE IN NICE",
+            desc: "The Embassy of Vietnam in France organizes consular procedures in Nice. Registration deadline: 25/01/2026.",
+            date: "25/01/2026",
+            location: "Nice, France"
         },
         events: {
             title: "Featured Event",
@@ -327,6 +363,15 @@ const translations = {
             copyright: "&copy; {year} Vietnamese Community in Nice. All rights reserved.",
             legal: "Legal Notice",
             privacy: "Privacy Policy"
+        },
+        gallery_page: {
+            subtitle_1: "Featured Activity",
+            title_1: "Lunar New Year <br>2025",
+            subtitle_2: "Cultural Exchange",
+            title_2: "Summer Festival <br>Nice 2024",
+            subtitle_3: "Community",
+            title_3: "Meet New <br>Students",
+            view_album: "View Album"
         }
     }
 };
@@ -517,5 +562,82 @@ document.addEventListener('DOMContentLoaded', () => {
             lightbox.style.display = "none";
         }
     });
+
+    // Featured Events Slider Logic
+    const track = document.querySelector('.slider-track');
+    const slidesArr = Array.from(track.children);
+    const nextButton = document.querySelector('.next-btn');
+    const prevButton = document.querySelector('.prev-btn');
+
+    if (track && slidesArr.length > 0) {
+        let currentSlideIndex = 0;
+
+        const updateSlidePosition = () => {
+            // Move the track by -100% * index
+            const amountToMove = -100 * currentSlideIndex;
+            track.style.transform = `translateX(${amountToMove}%)`;
+
+            // Handle Button State (Optional: Loop or Disable)
+            // Let's loop for smoother UX or just disable at ends? 
+            // User asked to "move to new event and the other", looping is usually nicer.
+            // But let's stick to simple bounds first.
+
+            prevButton.style.visibility = currentSlideIndex === 0 ? 'hidden' : 'visible';
+            nextButton.style.visibility = currentSlideIndex === slidesArr.length - 1 ? 'hidden' : 'visible';
+        };
+
+        // Initialize button state
+        updateSlidePosition();
+
+        nextButton.addEventListener('click', () => {
+            if (currentSlideIndex < slidesArr.length - 1) {
+                currentSlideIndex++;
+                updateSlidePosition();
+            }
+        });
+
+        prevButton.addEventListener('click', () => {
+            if (currentSlideIndex > 0) {
+                currentSlideIndex--;
+                updateSlidePosition();
+            }
+        });
+
+        // Touch Swipe Support
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        track.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+
+        track.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, { passive: true });
+
+        const handleSwipe = () => {
+            const swipeThreshold = 50;
+            if (touchEndX < touchStartX - swipeThreshold) {
+                // Swiped Left -> Next Slide
+                if (currentSlideIndex < slidesArr.length - 1) {
+                    currentSlideIndex++;
+                    updateSlidePosition();
+                }
+            } else if (touchEndX > touchStartX + swipeThreshold) {
+                // Swiped Right -> Prev Slide
+                if (currentSlideIndex > 0) {
+                    currentSlideIndex--;
+                    updateSlidePosition();
+                }
+            }
+        };
+
+        // Hide buttons if only 1 slide
+        if (slidesArr.length <= 1) {
+            nextButton.style.display = 'none';
+            prevButton.style.display = 'none';
+        }
+    }
 
 });
