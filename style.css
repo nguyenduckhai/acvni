@@ -1610,3 +1610,217 @@ footer {
     text-decoration: none;
     cursor: pointer;
 }
+
+/* ==========================================================================
+   Combined Events & Gallery Section (Premium Centered Slider)
+   ========================================================================== */
+.section-combined {
+    background-color: var(--bg-dark-section);
+    padding: 100px 0;
+    overflow: hidden;
+}
+
+.combined-slider-container {
+    position: relative;
+    width: 100%;
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.combined-slider-track-container {
+    width: 100%;
+    overflow: visible;
+    padding: 40px 0;
+}
+
+.combined-slider-track {
+    display: flex;
+    justify-content: flex-start;
+    transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.combined-slide {
+    flex: 0 0 70%;
+    height: 550px;
+    margin: 0 40px;
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    opacity: 0.5;
+    transform: scale(0.85);
+    transition: all 0.8s ease;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    background: #000;
+}
+
+.combined-slide.active {
+    opacity: 1;
+    transform: scale(1);
+    z-index: 10;
+}
+
+.combined-slide-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: transform 1.2s ease;
+    filter: brightness(0.5);
+}
+
+.combined-slide.active .combined-slide-bg {
+    transform: scale(1.1);
+    filter: brightness(0.5);
+}
+
+.combined-slide-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 80px 50px 50px;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.95));
+    color: #ffffff;
+    text-align: left;
+    transform: translateY(30px);
+    opacity: 0;
+    transition: all 0.6s ease 0.4s;
+    pointer-events: none;
+}
+
+.combined-slide.active .combined-slide-content {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.combined-slide-content h3 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    font-family: var(--font-heading);
+}
+
+.combined-slide-content p {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin-bottom: 30px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.combined-slide-btns {
+    display: flex;
+    gap: 20px;
+}
+
+.combined-btn-prev,
+.combined-btn-next {
+    position: absolute;
+    top: 50%;
+    width: 60px;
+    height: 60px;
+    background: var(--bg-body);
+    border: 1px solid var(--color-accent);
+    border-radius: 50%;
+    color: var(--color-accent);
+    cursor: pointer;
+    z-index: 100;
+    transform: translateY(-50%);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    box-shadow: var(--shadow);
+}
+
+.combined-btn-prev {
+    left: 40px;
+}
+
+.combined-btn-next {
+    right: 40px;
+}
+
+.combined-btn-prev:hover,
+.combined-btn-next:hover {
+    background: var(--color-accent);
+    color: #fff;
+    transform: translateY(-50%) scale(1.1);
+}
+
+@media (max-width: 900px) {
+    .combined-slide {
+        flex: 0 0 85%;
+        height: 450px;
+        margin: 0 20px;
+    }
+
+    .combined-slide-content h3 {
+        font-size: 2rem;
+    }
+
+    .combined-btn-prev,
+    .combined-btn-next {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+/* Mobile Refinements for Combined Slider */
+@media (max-width: 600px) {
+    .section-combined {
+        padding: 60px 0;
+    }
+
+    .combined-slider-track-container {
+        padding: 20px 0;
+    }
+
+    .combined-slide {
+        flex: 0 0 88%;
+        height: 480px;
+        margin: 0 10px;
+        border-radius: 8px;
+    }
+
+    .combined-slide-content {
+        padding: 40px 25px 30px;
+    }
+
+    .combined-slide-content h3 {
+        font-size: 1.6rem;
+        margin-bottom: 10px;
+    }
+
+    .combined-slide-content p {
+        font-size: 0.9rem;
+        margin-bottom: 20px;
+    }
+
+    .combined-slide-btns {
+        flex-direction: row;
+        gap: 15px;
+        margin-top: 20px;
+    }
+
+    .combined-slide-btns .btn-primary,
+    .combined-slide-btns .btn-secondary {
+        /* Keep theme but make them more elegant in mobile row */
+        flex: 1;
+        padding: 10px 5px;
+        font-size: 0.8rem;
+        min-width: 0;
+        white-space: nowrap;
+        text-align: center;
+        border-radius: 50px;
+    }
+
+    .combined-btn-prev,
+    .combined-btn-next {
+        display: none !important;
+    }
+}

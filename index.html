@@ -37,8 +37,7 @@
                 <li><a href="#about" data-i18n="nav.about">Giới Thiệu</a></li>
                 <li><a href="#mission" data-i18n="nav.mission">Sứ Mệnh</a></li>
                 <li><a href="#membership" data-i18n="nav.membership">Thành viên</a></li>
-                <li><a href="#gallery" data-i18n="nav.gallery">Gallery</a></li>
-                <li><a href="#events" data-i18n="nav.events">Sự Kiện</a></li>
+                <li><a href="#events-gallery" data-i18n="nav.events">Sự Kiện</a></li>
 
                 <li><a href="#contact" class="btn-primary" data-i18n="nav.contact" style="color:white;">Liên Hệ</a></li>
                 <li class="lang-switcher">
@@ -64,9 +63,9 @@
         <!-- Hero Section -->
         <section id="home" class="hero">
             <div class="hero-slideshow">
-                <div class="slide" style="background-image: url('assets/album2/image3.jpg');"></div>
+                <div class="slide" style="background-image: url('assets/album1/image7.jpg');"></div>
                 <div class="slide active" style="background-image: url('assets/album1/image14.JPG');"></div>
-                <div class="slide" style="background-image: url('assets/album1/image12.JPG');"></div>
+                <div class="slide" style="background-image: url('assets/album1/image6.JPG');"></div>
             </div>
             <div class="hero-overlay"></div>
             <div class="container hero-content">
@@ -90,7 +89,7 @@
         <section id="mission" class="split-section">
             <div class="split-container">
                 <div class="split-image">
-                    <img src="assets/album1/image3.JPG" alt="Communauté">
+                    <img src="assets/album1/image12.JPG" alt="Communauté">
                 </div>
                 <div class="split-content">
                     <h3 data-i18n="mission.title">Sứ Mệnh & Tầm Nhìn</h3>
@@ -114,7 +113,7 @@
                 <!-- CSS grid handles RTL visual swap or just order -->
                 <div class="split-image" style="direction: ltr;">
                     <!-- Map/Location placeholder or another event image -->
-                    <img src="assets/album2/image3.jpg" alt="Activities Map">
+                    <img src="assets/album2/image1.jpg" alt="Activities Map">
                 </div>
                 <div class="split-content" style="direction: ltr; text-align: left;">
                     <h3 data-i18n="membership.subtitle">Tại sao nên tham gia?</h3>
@@ -125,113 +124,74 @@
         </section>
 
 
-        <!-- Gallery Section (Replaces Activities) -->
-        <section id="gallery" class="section-dark">
+        <!-- Combined Events & Gallery Section -->
+        <section id="events-gallery" class="section-combined">
             <div class="container">
-                <h2 data-i18n="gallery.title">Hình ảnh hoạt động</h2>
-
-                <div class="gallery-grid">
-                    <!-- Main Left Image -->
-                    <div class="gallery-item main-left">
-                        <img src="assets/album1/image5.jpg" alt="Gallery Image 1">
-                    </div>
-
-                    <!-- Right Column -->
-                    <div class="gallery-col-right">
-                        <!-- Top Right Image -->
-                        <div class="gallery-item top-right" style="background: black;">
-                            <img src="assets/album1/image6.JPG" alt="Gallery Image 2"
-                                style="width: 100%; height: 100%; object-fit: cover;">
-                        </div>
-
-                        <!-- Bottom Row -->
-                        <div class="gallery-row-bottom">
-                            <div class="gallery-item bot-1">
-                                <img src="assets/album2/image2.jpg" alt="Gallery Image 3">
-                            </div>
-                            <!-- Reusing slide1 for the 4th slot as requested to reuse slide images -->
-                            <div class="gallery-item bot-2">
-                                <img src="assets/album2/image6.jpg" alt="Gallery Image 4">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div style="margin-top: 50px;">
-                    <a href="gallery.html" class="btn-primary" data-i18n="common.readmore">Xem thêm</a>
-                </div>
+                <h2 style="text-align:center; font-size: 2.5rem; margin-bottom:50px;" data-i18n="nav.events">Sự kiện &
+                    Hình ảnh</h2>
             </div>
-        </section>
 
-        <!-- Events Grid (Light background) - Replaces basic carousel visuals -->
-        <!-- We keep the "Featured Event" logic but display it nicely -->
-        <section id="events" class="featured-event-wrapper">
-            <div class="container">
-                <h2 style="text-align:center; font-size: 2.5rem; margin-bottom:50px;" data-i18n="events.title">Sự kiện
-                    sắp tới</h2>
+            <div class="combined-slider-container">
+                <button class="slider-btn combined-btn-prev" aria-label="Previous Slide">&#10094;</button>
 
-                <!-- The Main Featured Event (Dynamic from JS/HTML) -->
-                <!-- We hardcode the active one here from previous step as intended by user -->
-                <div class="events-slider-container">
-                    <button class="slider-btn prev-btn" aria-label="Previous Event">&#10094;</button>
-
-                    <div class="slider-track-container">
-                        <ul class="slider-track">
-                            <!-- New First Event: Consular Service -->
-                            <li class="featured-event-card current-slide">
-                                <div class="featured-event-image">
-                                    <!-- Use external image as requested -->
-                                    <img src="assets/consular_event.webp" alt="Lãnh sự tại Nice">
+                <div class="combined-slider-track-container">
+                    <div class="combined-slider-track">
+                        <!-- Event 1: Tet 2026 -->
+                        <div class="combined-slide active">
+                            <div class="combined-slide-bg" style="background-image: url('assets/album1/image1.JPG');">
+                            </div>
+                            <div class="combined-slide-content">
+                                <div class="event-meta">
+                                    <span class="event-tag" data-i18n="featured_event.date">TET 2026</span>
+                                    <span class="event-location">Nice, France</span>
                                 </div>
-                                <div class="featured-event-content">
-                                    <div class="event-meta">
-                                        <span class="event-tag"
-                                            data-i18n="featured_event_consular.date">25/01/2026</span>
-                                        <span class="event-location" style="margin-left: 10px;">Nice, France</span>
-                                    </div>
-                                    <h3 data-i18n="featured_event_consular.title">ĐẠI SỨ QUÁN LÀM VIỆC TẠI NICE</h3>
-                                    <p data-i18n="featured_event_consular.desc">ĐSQ Việt Nam tại Pháp tổ chức làm thủ
-                                        tục lãnh sự tại Nice. Hạn đăng ký: 25/01/2026.</p>
-                                    <a href="album_consular.html" class="btn-primary" data-i18n="featured_event.btn">Xem
-                                        Chi
-                                        Tiết</a>
-                                </div>
-                            </li>
-
-                            <!-- Event 2: Tet 2026 (Former first event) -->
-                            <li class="featured-event-card">
-                                <div class="featured-event-image">
-                                    <img src="assets/featured_event.webp" alt="Sự kiện ACVNI">
-                                </div>
-                                <div class="featured-event-content">
-                                    <div class="event-meta">
-                                        <span class="event-tag" data-i18n="featured_event.date">TET 2026</span>
-                                        <span class="event-location" data-i18n="featured_event.location">Nice,
-                                            France</span>
-                                    </div>
-                                    <h3 data-i18n="featured_event.title">Title</h3>
-                                    <p data-i18n="featured_event.desc">Description</p>
+                                <h3 data-i18n="gallery_page.title_1">TẾT NGUYÊN ĐÁN 2026</h3>
+                                <p data-i18n="gallery_page.desc_1">Đón chào năm mới với niềm vui và sự sẻ chia.</p>
+                                <div class="combined-slide-btns">
                                     <a href="https://www.facebook.com/groups/1884851371854868/permalink/2855903831416279/"
-                                        target="_blank" class="btn-primary" data-i18n="featured_event.btn">Xem Chi
-                                        Tiết</a>
+                                        target="_blank" class="btn-primary" data-i18n="featured_event.btn">Xem Sự
+                                        Kiện</a>
+                                    <a href="album.html" class="btn-secondary" data-i18n="gallery_page.view_album">Xem
+                                        Gallery</a>
                                 </div>
-                            </li>
-                        </ul>
-                    </div>
+                            </div>
+                        </div>
 
-                    <button class="slider-btn next-btn" aria-label="Next Event">&#10095;</button>
+                        <!-- Event 2: Consular Service -->
+                        <div class="combined-slide">
+                            <div class="combined-slide-bg" style="background-image: url('assets/album2/image1.jpg');">
+                            </div>
+                            <div class="combined-slide-content">
+                                <div class="event-meta">
+                                    <span class="event-tag" data-i18n="featured_event_consular.date">25/01/2026</span>
+                                    <span class="event-location" style="margin-left: 10px;">Nice, France</span>
+                                </div>
+                                <h3 data-i18n="album_consular.title">THỦ TỤC LÃNH SỰ</h3>
+                                <p data-i18n="album_consular.desc">ĐSQ Việt Nam tại Pháp tổ chức làm thủ tục lãnh sự tại
+                                    Nice.</p>
+                                <div class="combined-slide-btns">
+                                    <a href="album_consular.html" class="btn-primary" data-i18n="featured_event.btn">Xem
+                                        Sự Kiện</a>
+                                    <a href="album_consular.html" class="btn-secondary"
+                                        data-i18n="gallery_page.view_album">Xem Gallery</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
+                <button class="slider-btn combined-btn-next" aria-label="Next Slide">&#10095;</button>
             </div>
         </section>
 
         <!-- Quote Section -->
         <section class="section-quote">
             <div class="container">
-                <blockquote>
+                <blockquote data-i18n="quote.text">
                     "ACVNI mong muốn trở thành một điểm tựa văn hóa, xã hội và tinh thần của cộng đồng người Việt tại
                     Nice."
                 </blockquote>
-                <cite>- Ban Chấp Hành ACVNI</cite>
+                <cite data-i18n="quote.author">- Ban Chấp Hành ACVNI</cite>
             </div>
         </section>
 
@@ -269,7 +229,7 @@
             <div class="footer-content">
                 <div class="footer-logo">
                     <h3>ACVNI</h3>
-                    <p data-i18n="hero.subtitle">Cộng đồng người Việt tại Nice</p>
+                    <p data-i18n="footer.subtitle">Cộng đồng người Việt Nam tại Nice</p>
                     <div style="margin-top: 20px;">
                         <a href="https://www.facebook.com/groups/1884851371854868/" target="_blank"
                             style="margin-right: 15px;">Facebook</a>
@@ -281,7 +241,7 @@
                     <div class="link-col">
                         <h4>Nav</h4>
                         <a href="#about" data-i18n="nav.about">About</a>
-                        <a href="#gallery" data-i18n="nav.gallery">Gallery</a>
+                        <a href="#events-gallery" data-i18n="nav.events">Events</a>
                         <a href="#membership" data-i18n="nav.membership">Membership</a>
                     </div>
                     <div class="link-col">

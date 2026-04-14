@@ -104,7 +104,10 @@ const translations = {
             submit: "Envoyer",
         },
         common: {
-            readmore: "En savoir plus &rarr;"
+            readmore: "En savoir plus &rarr;",
+            date: "Date",
+            location: "Lieu",
+            back_home: "Retour à l'accueil"
         },
         gallery: {
             title: "Galerie Photos"
@@ -112,7 +115,8 @@ const translations = {
         footer: {
             copyright: "&copy; {year} Association de la communauté Vietnamienne de Nice. Tous droits réservés.",
             legal: "Mentions Légales",
-            privacy: "Politique de Confidentialité"
+            privacy: "Politique de Confidentialité",
+            subtitle: "Communauté Vietnamienne de Nice"
         },
         gallery_page: {
             subtitle_1: "Activité Phare",
@@ -122,7 +126,8 @@ const translations = {
             title_2: "Festival d'Été <br>Nice 2024",
             subtitle_3: "Communauté",
             title_3: "Rencontre des <br>Nouveaux Étudiants",
-            view_album: "Voir l'Album"
+            view_album: "Voir l'Album",
+            other_albums: "Autres Albums"
         },
         album_consular: {
             title: "PERMANENCE CONSULAIRE",
@@ -130,6 +135,10 @@ const translations = {
             desc: "Une séance consulaire réussie organisée par l'Ambassade du Vietnam en France, dans une ambiance chaleureuse. Grâce au dévouement de l'Ambassade, au dynamisme de l'Association des Étudiants et à l'accueil de Blue Résidence, la communauté a bénéficié d'un soutien précieux. Un événement marquant qui renforce notre solidarité.",
             date: "25/01/2026",
             location: "Nice, France"
+        },
+        quote: {
+            text: "\"L'ACVNI aspire à être un pilier culturel, social et spirituel pour la communauté vietnamienne de Nice.\"",
+            author: "- Le Comité de l'ACVNI"
         }
     },
     vi: {
@@ -237,7 +246,10 @@ const translations = {
             submit: "Gửi tin nhắn",
         },
         common: {
-            readmore: "Xem thêm &rarr;"
+            readmore: "Xem thêm &rarr;",
+            date: "Ngày",
+            location: "Địa điểm",
+            back_home: "Quay lại trang chủ"
         },
         gallery: {
             title: "Hình ảnh hoạt động"
@@ -245,7 +257,8 @@ const translations = {
         footer: {
             copyright: "&copy; {year} Cộng đồng người Việt Nam tại Nice. Bảo lưu mọi quyền.",
             legal: "Pháp lý",
-            privacy: "Chính sách bảo mật"
+            privacy: "Chính sách bảo mật",
+            subtitle: "Cộng đồng người Việt Nam tại Nice"
         },
         gallery_page: {
             subtitle_1: "Hoạt động nổi bật",
@@ -255,7 +268,8 @@ const translations = {
             title_2: "LỄ HỘI MÙA HÈ <br>NICE 2024",
             subtitle_3: "Cộng đồng",
             title_3: "GẶP GỠ <br>TÂN SINH VIÊN",
-            view_album: "Xem Album Ảnh"
+            view_album: "Xem Album Ảnh",
+            other_albums: "Các Album Khác"
         },
         album_consular: {
             title: "THỦ TỤC LÃNH SỰ",
@@ -263,6 +277,10 @@ const translations = {
             desc: "Buổi làm việc của Đại sứ quán Việt Nam tại Pháp đã diễn ra thành công tốt đẹp, trong không khí ấm áp, nghĩa tình. Sự hỗ trợ tận tâm của ĐSQ, cùng sự nhiệt huyết của Hội Sinh viên và không gian chu đáo từ Blue Résidence đã mang lại sự thuận lợi tối đa cho bà con kiều bào. Một hoạt động ý nghĩa, lan tỏa tinh thần đoàn kết và sẻ chia của người Việt nơi xa xứ.",
             date: "25/01/2026",
             location: "Nice, France"
+        },
+        quote: {
+            text: "\"ACVNI mong muốn trở thành một điểm tựa văn hóa, xã hội và tinh thần của cộng đồng người Việt tại Nice.\"",
+            author: "- Ban Chấp Hành ACVNI"
         }
     },
     en: {
@@ -370,7 +388,10 @@ const translations = {
             submit: "Send Message",
         },
         common: {
-            readmore: "Read more &rarr;"
+            readmore: "Read more &rarr;",
+            date: "Date",
+            location: "Location",
+            back_home: "Back to home"
         },
         gallery: {
             title: "Gallery"
@@ -378,7 +399,8 @@ const translations = {
         footer: {
             copyright: "&copy; {year} Vietnamese Community in Nice. All rights reserved.",
             legal: "Legal Notice",
-            privacy: "Privacy Policy"
+            privacy: "Privacy Policy",
+            subtitle: "Vietnamese Community in Nice"
         },
         gallery_page: {
             subtitle_1: "Featured Activity",
@@ -388,7 +410,8 @@ const translations = {
             title_2: "Summer Festival <br>Nice 2024",
             subtitle_3: "Community",
             title_3: "Meet New <br>Students",
-            view_album: "View Album"
+            view_album: "View Album",
+            other_albums: "Other Albums"
         },
         album_consular: {
             title: "CONSULAR SERVICE",
@@ -396,6 +419,10 @@ const translations = {
             desc: "A successful consular session by the Embassy of Vietnam in France, held in a warm and supportive atmosphere. Thanks to the dedicated Embassy staff, the enthusiastic Student Association, and Blue Résidence for the venue, our community received excellent assistance. A meaningful event strengthening our unity and shared spirit.",
             date: "25/01/2026",
             location: "Nice, France"
+        },
+        quote: {
+            text: "\"ACVNI aims to be a cultural, social, and spiritual anchor for the Vietnamese community in Nice.\"",
+            author: "- ACVNI Executive Board"
         }
     }
 };
@@ -596,82 +623,80 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Lightbox Logic Removed
 
-    // Featured Events Slider Logic
-    const track = document.querySelector('.slider-track');
-    const slidesArr = Array.from(track.children);
-    const nextButton = document.querySelector('.next-btn');
-    const prevButton = document.querySelector('.prev-btn');
+    // Slider Logic (Featured Events & Gallery Albums)
+    const sliderContainers = document.querySelectorAll('.events-slider-container');
 
-    if (track && slidesArr.length > 0) {
-        let currentSlideIndex = 0;
+    sliderContainers.forEach(container => {
+        const track = container.querySelector('.slider-track');
+        const slidesArr = Array.from(track.children);
+        const nextButton = container.querySelector('.next-btn');
+        const prevButton = container.querySelector('.prev-btn');
 
-        const updateSlidePosition = () => {
-            // Move the track by -100% * index
-            const amountToMove = -100 * currentSlideIndex;
-            track.style.transform = `translateX(${amountToMove}%)`;
+        if (track && slidesArr.length > 0) {
+            let currentSlideIndex = 0;
 
-            // Handle Button State (Optional: Loop or Disable)
-            // Let's loop for smoother UX or just disable at ends? 
-            // User asked to "move to new event and the other", looping is usually nicer.
-            // But let's stick to simple bounds first.
+            const updateSlidePosition = () => {
+                const amountToMove = -100 * currentSlideIndex;
+                track.style.transform = `translateX(${amountToMove}%)`;
 
-            prevButton.style.visibility = currentSlideIndex === 0 ? 'hidden' : 'visible';
-            nextButton.style.visibility = currentSlideIndex === slidesArr.length - 1 ? 'hidden' : 'visible';
-        };
+                if (prevButton) prevButton.style.visibility = currentSlideIndex === 0 ? 'hidden' : 'visible';
+                if (nextButton) nextButton.style.visibility = currentSlideIndex === slidesArr.length - 1 ? 'hidden' : 'visible';
+            };
 
-        // Initialize button state
-        updateSlidePosition();
+            updateSlidePosition();
 
-        nextButton.addEventListener('click', () => {
-            if (currentSlideIndex < slidesArr.length - 1) {
-                currentSlideIndex++;
-                updateSlidePosition();
+            if (nextButton) {
+                nextButton.addEventListener('click', () => {
+                    if (currentSlideIndex < slidesArr.length - 1) {
+                        currentSlideIndex++;
+                        updateSlidePosition();
+                    }
+                });
             }
-        });
 
-        prevButton.addEventListener('click', () => {
-            if (currentSlideIndex > 0) {
-                currentSlideIndex--;
-                updateSlidePosition();
+            if (prevButton) {
+                prevButton.addEventListener('click', () => {
+                    if (currentSlideIndex > 0) {
+                        currentSlideIndex--;
+                        updateSlidePosition();
+                    }
+                });
             }
-        });
 
-        // Touch Swipe Support
-        let touchStartX = 0;
-        let touchEndX = 0;
+            // Touch Swipe Support
+            let touchStartX = 0;
+            let touchEndX = 0;
 
-        track.addEventListener('touchstart', (e) => {
-            touchStartX = e.changedTouches[0].screenX;
-        }, { passive: true });
+            track.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            }, { passive: true });
 
-        track.addEventListener('touchend', (e) => {
-            touchEndX = e.changedTouches[0].screenX;
-            handleSwipe();
-        }, { passive: true });
+            track.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+            }, { passive: true });
 
-        const handleSwipe = () => {
-            const swipeThreshold = 50;
-            if (touchEndX < touchStartX - swipeThreshold) {
-                // Swiped Left -> Next Slide
-                if (currentSlideIndex < slidesArr.length - 1) {
-                    currentSlideIndex++;
-                    updateSlidePosition();
+            const handleSwipe = () => {
+                const swipeThreshold = 50;
+                if (touchEndX < touchStartX - swipeThreshold) {
+                    if (currentSlideIndex < slidesArr.length - 1) {
+                        currentSlideIndex++;
+                        updateSlidePosition();
+                    }
+                } else if (touchEndX > touchStartX + swipeThreshold) {
+                    if (currentSlideIndex > 0) {
+                        currentSlideIndex--;
+                        updateSlidePosition();
+                    }
                 }
-            } else if (touchEndX > touchStartX + swipeThreshold) {
-                // Swiped Right -> Prev Slide
-                if (currentSlideIndex > 0) {
-                    currentSlideIndex--;
-                    updateSlidePosition();
-                }
-            }
-        };
+            };
 
-        // Hide buttons if only 1 slide
-        if (slidesArr.length <= 1) {
-            nextButton.style.display = 'none';
-            prevButton.style.display = 'none';
+            if (slidesArr.length <= 1) {
+                if (nextButton) nextButton.style.display = 'none';
+                if (prevButton) prevButton.style.display = 'none';
+            }
         }
-    }
+    });
 
     // Generic Image Load Animation
     // Select images that are not part of the hero slideshow (as those have their own logic)
@@ -834,3 +859,72 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 });
+
+// Combined Slider Logic (New merged Events/Gallery)
+const combinedTrack = document.querySelector('.combined-slider-track');
+const combinedSlides = Array.from(document.querySelectorAll('.combined-slide'));
+const combinedNext = document.querySelector('.combined-btn-next');
+const combinedPrev = document.querySelector('.combined-btn-prev');
+
+if (combinedTrack && combinedSlides.length > 0) {
+    let activeIndex = 0;
+
+    function updateCombinedSlider() {
+        combinedSlides.forEach((slide, index) => {
+            if (index === activeIndex) {
+                slide.classList.add('active');
+            } else {
+                slide.classList.remove('active');
+            }
+        });
+
+        // Calculate centering
+        const container = document.querySelector('.combined-slider-track-container');
+        if (!container) return;
+        const containerWidth = container.offsetWidth;
+        const slideWidth = combinedSlides[0].offsetWidth;
+        const slideStyle = window.getComputedStyle(combinedSlides[0]);
+        const marginLeft = parseInt(slideStyle.marginLeft);
+        const marginRight = parseInt(slideStyle.marginRight);
+        const fullSlideWidth = slideWidth + marginLeft + marginRight;
+
+        // Centering logic: offset moves the track so specified slide center hits container center
+        const offset = (containerWidth / 2) - (slideWidth / 2) - (activeIndex * fullSlideWidth) - marginLeft;
+
+        combinedTrack.style.transform = `translateX(${offset}px)`;
+    }
+
+    // Initial setup
+    window.addEventListener('resize', updateCombinedSlider);
+    // Small delay to ensure browser has calculated dimensions
+    setTimeout(updateCombinedSlider, 200);
+
+    if (combinedNext) {
+        combinedNext.addEventListener('click', () => {
+            activeIndex = (activeIndex + 1) % combinedSlides.length;
+            updateCombinedSlider();
+        });
+    }
+
+    if (combinedPrev) {
+        combinedPrev.addEventListener('click', () => {
+            activeIndex = (activeIndex - 1 + combinedSlides.length) % combinedSlides.length;
+            updateCombinedSlider();
+        });
+    }
+
+    // Touch Swipe
+    let startX = 0;
+    combinedTrack.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+    }, { passive: true });
+
+    combinedTrack.addEventListener('touchend', (e) => {
+        const endX = e.changedTouches[0].clientX;
+        const diff = startX - endX;
+        if (Math.abs(diff) > 50) {
+            if (diff > 0) combinedNext.click();
+            else combinedPrev.click();
+        }
+    }, { passive: true });
+}
