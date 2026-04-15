@@ -52,7 +52,7 @@ const translations = {
             }
         },
         featured_event: {
-            title: "TÊT VIÊT NICE 2026",
+            title: "TÊT VIÊT 2026 NICE",
             desc: "Chers amis qui attendez un printemps vietnamien au cœur de Nice, le moment tant attendu est arrivé ! Après des semaines de préparation minutieuse...",
             date: "TÊT 2026",
             location: "Nice, France",
@@ -116,12 +116,15 @@ const translations = {
             copyright: "&copy; {year} Association de la communauté Vietnamienne de Nice. Tous droits réservés.",
             legal: "Mentions Légales",
             privacy: "Politique de Confidentialité",
-            subtitle: "Communauté Vietnamienne de Nice"
+            subtitle: "Communauté Vietnamienne de Nice",
+            siret: "SIRET : 103 707 923 00019",
+            president: "Présidente : PHUNG Thao Huyen",
+            email: "Email : contact.acvni@gmail.com"
         },
         gallery_page: {
             subtitle_1: "Activité Phare",
-            title_1: "Têt Lunaire <br>2026",
-            desc_1: "Accueillir la nouvelle année avec joie, partage et des moments mémorables en communauté. La fête du Têt est l'occasion la plus importante de l'année, où tout le monde se réunit.",
+            title_1: "TÊT VIÊT 2026 NICE",
+            desc_1: "Accueillir la nouvelle année avec joie, partage et des moments mémorables en communauté. La fête du TÊT VIỆT 2026 NICE est l'occasion la plus importante de l'année, où tout le monde se réunit.",
             subtitle_2: "Échange Culturel",
             title_2: "Festival d'Été <br>Nice 2024",
             subtitle_3: "Communauté",
@@ -177,7 +180,7 @@ const translations = {
         activities: {
             title: "Các Hoạt Động",
             tet: {
-                title: "Tết Nguyên Đán",
+                title: "TẾT VIỆT 2026 NICE",
                 desc: "Lễ hội đón mừng năm mới âm lịch"
             },
             class: {
@@ -194,7 +197,7 @@ const translations = {
             }
         },
         featured_event: {
-            title: "TẾT VIỆT NICE 2026",
+            title: "TẾT VIỆT 2026 NICE",
             desc: "Thân gửi những trái tim đang mong chờ một mùa Xuân Việt giữa lòng Nice, điều tất cả chúng ta mong chờ nhất… đã đến rồi!",
             date: "TẾT 2026",
             location: "Nice, France",
@@ -258,12 +261,15 @@ const translations = {
             copyright: "&copy; {year} Cộng đồng người Việt Nam tại Nice. Bảo lưu mọi quyền.",
             legal: "Pháp lý",
             privacy: "Chính sách bảo mật",
-            subtitle: "Cộng đồng người Việt Nam tại Nice"
+            subtitle: "Cộng đồng người Việt Nam tại Nice",
+            siret: "SIRET: 103 707 923 00019",
+            president: "Chủ tịch: PHUNG Thao Huyen",
+            email: "Email: contact.acvni@gmail.com"
         },
         gallery_page: {
             subtitle_1: "Hoạt động nổi bật",
-            title_1: "TẾT NGUYÊN ĐÁN <br>2026",
-            desc_1: "Đón chào năm mới với niềm vui, sự sẻ chia và những khoảnh khắc đáng nhớ bên cộng đồng. Sự kiện Tết Nguyên Đán là dịp quan trọng nhất trong năm, nơi mọi người cùng nhau sum họp.",
+            title_1: "TẾT VIỆT 2026 NICE",
+            desc_1: "Đón chào năm mới với niềm vui, sự sẻ chia và những khoảnh khắc đáng nhớ bên cộng đồng. Sự kiện TẾT VIỆT 2026 NICE là dịp quan trọng nhất trong năm, nơi mọi người cùng nhau sum họp.",
             subtitle_2: "Giao lưu văn hóa",
             title_2: "LỄ HỘI MÙA HÈ <br>NICE 2024",
             subtitle_3: "Cộng đồng",
@@ -336,7 +342,7 @@ const translations = {
             }
         },
         featured_event: {
-            title: "TET VIET NICE 2026",
+            title: "TET VIET 2026 NICE",
             desc: "Dear hearts waiting for a Vietnamese Spring in the heart of Nice, the moment we have all been waiting for has arrived!",
             date: "TET 2026",
             location: "Nice, France",
@@ -400,12 +406,15 @@ const translations = {
             copyright: "&copy; {year} Vietnamese Community in Nice. All rights reserved.",
             legal: "Legal Notice",
             privacy: "Privacy Policy",
-            subtitle: "Vietnamese Community in Nice"
+            subtitle: "Vietnamese Community in Nice",
+            siret: "SIRET: 103 707 923 00019",
+            president: "President: PHUNG Thao Huyen",
+            email: "Email: contact.acvni@gmail.com"
         },
         gallery_page: {
             subtitle_1: "Featured Activity",
-            title_1: "Lunar New Year <br>2026",
-            desc_1: "Welcoming the new year with joy, sharing, and memorable moments with the community. The Lunar New Year event is the most important occasion of the year, where everyone gathers together.",
+            title_1: "TET VIET 2026 NICE",
+            desc_1: "Welcoming the new year with joy, sharing, and memorable moments with the community. The TET VIET 2026 NICE event is the most important occasion of the year, where everyone gathers together.",
             subtitle_2: "Cultural Exchange",
             title_2: "Summer Festival <br>Nice 2024",
             subtitle_3: "Community",

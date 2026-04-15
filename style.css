@@ -672,6 +672,20 @@ footer {
     font-size: 0.9rem;
 }
 
+.footer-info {
+    margin-top: 15px;
+    border-left: 1px solid var(--color-accent);
+    padding-left: 15px;
+    opacity: 0.8;
+}
+
+.footer-info p {
+    font-size: 0.8rem !important;
+    margin-bottom: 4px;
+    color: var(--text-muted);
+    font-family: var(--font-body);
+}
+
 .footer-links-group {
     display: flex;
     gap: 60px;
