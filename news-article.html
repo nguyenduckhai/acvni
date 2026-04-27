@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Chi tiết tin tức - ACVNI">
+    <title>Tin Tức - ACVNI</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Roboto:wght@300;400;500&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/webp" href="assets/logo_new.webp">
+</head>
+
+<body>
+    <!-- Reusing Header -->
+    <header id="header" class="scrolled simple-header">
+        <div class="container navbar">
+            <a href="index.html" class="logo">
+                <img src="assets/logo_new.webp" alt="ACVNI Logo">
+            </a>
+
+            <div class="lang-switcher">
+                <button class="lang-btn active" data-lang="vi">VI</button>
+                <span class="separator">|</span>
+                <button class="lang-btn" data-lang="fr">FR</button>
+                <span class="separator">|</span>
+                <button class="lang-btn" data-lang="en">EN</button>
+            </div>
+        </div>
+    </header>
+
+    <main id="article-main">
+        <article>
+            <div class="article-header" id="dynamic-article-header">
+                <p data-i18n="article_page.loading">Đang tải bài viết...</p>
+            </div>
+
+            <div class="article-featured-img" id="dynamic-article-cover">
+            </div>
+
+            <div class="article-content" id="dynamic-article-content">
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>ACVNI</h3>
+                    <p data-i18n="footer.subtitle">Cộng đồng người Việt Nam tại Nice</p>
+                    <div class="footer-info">
+                        <p data-i18n="footer.siret">SIRET: 103 707 923 00019</p>
+                        <p data-i18n="footer.president">Chủ tịch: PHUNG Thao Huyen</p>
+                        <p data-i18n="footer.email">Email: contact.acvni@gmail.com</p>
+                    </div>
+                </div>
+                <div class="footer-links-group">
+                    <a href="news.html" data-i18n="article_page.back_to_news">Quay lại Trang Tin Tức</a>
+                    <a href="index.html" data-i18n="common.back_home">Trang chủ</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 ACVNI.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="notion-client.js"></script>
+</body>
+
+</html>

@@ -8,6 +8,7 @@ const translations = {
             mission: "Mission",
             activities: "Activités",
             membership: "Adhésion",
+            news: "Actualités",
             contact: "Contact"
         },
         hero: {
@@ -177,6 +178,22 @@ const translations = {
         quote: {
             text: "\"L'ACVNI aspire à être un pilier culturel, social et spirituel pour la communauté vietnamienne de Nice.\"",
             author: "- Le Comité de l'ACVNI"
+        },
+        news_page: {
+            title: "Actualités & Activités",
+            subtitle: "Restez au courant des derniers événements, activités et histoires de la communauté vietnamienne à Nice.",
+            loading: "Chargement des actualités",
+            empty: "Aucune actualité à afficher."
+        },
+        article_page: {
+            loading: "Chargement de l'article...",
+            not_found_title: "Article introuvable",
+            error_title: "Erreur lors du chargement de l'article",
+            error_desc: "Veuillez réessayer plus tard.",
+            written_by: "Écrit par:",
+            published: "Date de publication:",
+            back_to_news: "Retour aux Actualités",
+            by: "Par"
         }
     },
     vi: {
@@ -188,6 +205,7 @@ const translations = {
             mission: "Sứ Mệnh",
             activities: "Hoạt động",
             membership: "Thành viên",
+            news: "Tin tức",
             contact: "Liên hệ"
         },
         hero: {
@@ -357,6 +375,22 @@ const translations = {
         quote: {
             text: "\"ACVNI mong muốn trở thành một điểm tựa văn hóa, xã hội và tinh thần của cộng đồng người Việt tại Nice.\"",
             author: "- Ban Chấp Hành ACVNI"
+        },
+        news_page: {
+            title: "Tin Tức & Hoạt Động",
+            subtitle: "Cập nhật những thông tin mới nhất về các sự kiện, hoạt động và những câu chuyện nổi bật từ cộng đồng người Việt tại Nice.",
+            loading: "Đang tải tin tức",
+            empty: "Không có tin tức nào để hiển thị."
+        },
+        article_page: {
+            loading: "Đang tải bài viết...",
+            not_found_title: "Không tìm thấy bài viết",
+            error_title: "Lỗi khi tải bài viết",
+            error_desc: "Vui lòng thử lại sau.",
+            written_by: "Viết bởi:",
+            published: "Ngày đăng:",
+            back_to_news: "Quay lại Trang Tin Tức",
+            by: "Bởi"
         }
     },
     en: {
@@ -368,6 +402,7 @@ const translations = {
             mission: "Mission",
             activities: "Activities",
             membership: "Membership",
+            news: "News",
             contact: "Contact"
         },
         hero: {
@@ -537,6 +572,22 @@ const translations = {
         quote: {
             text: "\"ACVNI aims to be a cultural, social, and spiritual anchor for the Vietnamese community in Nice.\"",
             author: "- ACVNI Executive Board"
+        },
+        news_page: {
+            title: "News & Activities",
+            subtitle: "Stay updated on the latest events, activities, and stories from the Vietnamese community in Nice.",
+            loading: "Loading news",
+            empty: "No news to display."
+        },
+        article_page: {
+            loading: "Loading article...",
+            not_found_title: "Article not found",
+            error_title: "Error loading article",
+            error_desc: "Please try again later.",
+            written_by: "Written by:",
+            published: "Published Date:",
+            back_to_news: "Back to News",
+            by: "By"
         }
     }
 };
@@ -627,13 +678,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // Smooth Scrolling for Anchor Links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-
             const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
+            if (!targetId || !targetId.startsWith('#') || targetId === '#') return; // Not an internal link, let normal click happen
 
             const targetElement = document.querySelector(targetId);
             if (targetElement) {
+                e.preventDefault(); // Only prevent default if we actually found a target to scroll to
                 const headerOffset = 80;
                 const elementPosition = targetElement.getBoundingClientRect().top;
                 const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
