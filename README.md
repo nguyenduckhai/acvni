@@ -1,54 +1,36 @@
-# ACVNI Website
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-This is the repository for the ACVNI (Association de la communauté Vietnamienne de Nice) website.
+## Getting Started
 
-The website uses a Node.js backend proxy to securely fetch dynamic news and blog posts from a Notion Database.
+First, run the development server:
 
-## 🚀 Getting Started for Developers
-
-Follow these instructions to set up the project locally.
-
-### 1. Prerequisites
-- You must have **Node.js** installed on your machine.
-- You must have access to the Notion Integration Token and the Database ID.
-
-### 2. Setup & Installation
-Clone the repository and install the required Node dependencies:
 ```bash
-npm install
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
-*(This installs `express`, `cors`, `dotenv`, and `@notionhq/client`)*
 
-### 3. Environment Variables (IMPORTANT)
-The Notion API strictly requires credentials that **should never** be committed to Git. You must create a `.env` file in the root directory.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-Create a file named `.env` and add your Notion credentials:
-```env
-NOTION_SECRET=ntn_your_notion_integration_token_here
-NOTION_PORTFOLIO_DATABASE_ID=your_database_id_here
-```
-> **Note:** The `.env` file is safely ignored by Git via `.gitignore`. Do not expose your `NOTION_SECRET` publicly.
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-### 4. Running the Local Server
-Because the Notion API blocks direct browser requests (CORS), you must run the local Node proxy server to view the dynamic news section.
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-Run the following command in your terminal:
-```bash
-node server.js
-```
-The console should display: `Server running at http://localhost:3000`
+## Learn More
 
-### 5. View the Site
-Open your browser and navigate to:
-- **Main Website**: [http://localhost:3000/](http://localhost:3000/)
-- **News/Blog Section**: [http://localhost:3000/news.html](http://localhost:3000/news.html)
+To learn more about Next.js, take a look at the following resources:
 
----
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-## 📝 Notion Database Architecture
-If you are modifying the frontend Javascript (`notion-client.js`), ensure your Notion Database strictly contains these property names:
-- `Title` (Title type)
-- `Published Date` (Date type)
-- `Author` (Text/People type)
-- `Thumnail` (Files & media type)
-- `Category` (Select/Multi-select type)
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
