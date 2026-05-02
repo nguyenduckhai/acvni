@@ -1,11 +1,20 @@
 'use client';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import Link from 'next/link';
 import { useLanguage } from '@/components/LanguageProvider';
 
 export default function Home() {
     const { t } = useLanguage();
     const [currentSlide, setCurrentSlide] = useState(0);
+    const [currentEventSlide, setCurrentEventSlide] = useState(0);
+    const trackRef = useRef<HTMLDivElement>(null);
+    const containerRef = useRef<HTMLDivElement>(null);
+    const [sliderOffset, setSliderOffset] = useState(0);
+
+    // Touch swipe state
+    const [touchStart, setTouchStart] = useState(0);
+    const [touchEnd, setTouchEnd] = useState(0);
+
     const slides = [
         '/assets/album1/image7.jpg',
         '/assets/album1/image14.JPG',
@@ -18,6 +27,58 @@ export default function Home() {
         }, 5000);
         return () => clearInterval(interval);
     }, [slides.length]);
+
+    useEffect(() => {
+        const updateCombinedSlider = () => {
+            if (!trackRef.current || !containerRef.current) return;
+            const containerWidth = containerRef.current.offsetWidth;
+            const slideNodes = trackRef.current.querySelectorAll('.combined-slide');
+            if (slideNodes.length === 0) return;
+            
+            const firstSlide = slideNodes[0] as HTMLElement;
+            const slideWidth = firstSlide.offsetWidth;
+            const slideStyle = window.getComputedStyle(firstSlide);
+            const marginLeft = parseInt(slideStyle.marginLeft) || 0;
+            const marginRight = parseInt(slideStyle.marginRight) || 0;
+            const fullSlideWidth = slideWidth + marginLeft + marginRight;
+
+            const offset = (containerWidth / 2) - (slideWidth / 2) - (currentEventSlide * fullSlideWidth) - marginLeft;
+            setSliderOffset(offset);
+        };
+
+        window.addEventListener('resize', updateCombinedSlider);
+        updateCombinedSlider();
+        
+        const to = setTimeout(updateCombinedSlider, 100);
+        
+        return () => {
+            window.removeEventListener('resize', updateCombinedSlider);
+            clearTimeout(to);
+        };
+    }, [currentEventSlide]);
+
+    const handleTouchStart = (e: React.TouchEvent) => {
+        setTouchStart(e.targetTouches[0].clientX);
+        setTouchEnd(e.targetTouches[0].clientX); // Reset touch end on start to prevent accidental triggers
+    };
+
+    const handleTouchMove = (e: React.TouchEvent) => {
+        setTouchEnd(e.targetTouches[0].clientX);
+    };
+
+    const handleTouchEnd = () => {
+        if (!touchStart || !touchEnd) return;
+        const distance = touchStart - touchEnd;
+        const isLeftSwipe = distance > 50;
+        const isRightSwipe = distance < -50;
+        
+        if (isLeftSwipe) {
+            setCurrentEventSlide((prev) => (prev === 2 ? 0 : prev + 1));
+        }
+        if (isRightSwipe) {
+            setCurrentEventSlide((prev) => (prev === 0 ? 2 : prev - 1));
+        }
+    };
 
     return (
         <>
@@ -127,9 +188,18 @@ export default function Home() {
                 </div>
 
                 <div className="combined-slider-container">
-                    <div className="combined-slider-track-container">
-                        <div className="combined-slider-track">
-                            <div className="combined-slide active" style={{ position: 'relative' }}>
+                    <button className="slider-btn combined-btn-prev" aria-label="Previous Slide" onClick={() => setCurrentEventSlide((prev) => (prev === 0 ? 2 : prev - 1))}>&#10094;</button>
+
+                    <div 
+                        className="combined-slider-track-container" 
+                        ref={containerRef}
+                        onTouchStart={handleTouchStart}
+                        onTouchMove={handleTouchMove}
+                        onTouchEnd={handleTouchEnd}
+                    >
+                        <div className="combined-slider-track" ref={trackRef} style={{ transform: `translateX(${sliderOffset}px)` }}>
+                            {/* Event 1: Charity */}
+                            <div className={`combined-slide ${currentEventSlide === 0 ? 'active' : ''}`} style={{ position: 'relative' }}>
                                 <div className="combined-slide-bg" style={{ backgroundImage: "url('https://scontent-cdg4-3.xx.fbcdn.net/v/t39.30808-6/559871407_10236311362217948_2959636437633749231_n.jpg?stp=cp6_dst-jpg_tt6&cstp=mx2048x1536&ctp=p600x600&_nc_cat=111&ccb=1-7&_nc_sid=295ae4&_nc_ohc=7rj2I7Nm-mYQ7kNvwFGeNKD&_nc_oc=AdpKelTBPBx-Re2RaBfCipGDogAnDnS_l3Q2W-Oz4rGxiURFur6I0ZnkXLrhKrS0_eQ&_nc_zt=23&_nc_ht=scontent-cdg4-3.xx&_nc_gid=-PEb9W08q8CZc_9ACDhKZg&_nc_ss=7a30f&oh=00_Af1V8WiFYA6fmj3S38kzXyWK_iZtnbDxv4Io0ggdYTFkoQ&oe=69EB0792')" }}></div>
                                 <div className="combined-slide-content">
                                     <div className="event-meta">
@@ -142,8 +212,42 @@ export default function Home() {
                                     </div>
                                 </div>
                             </div>
+
+                            {/* Event 2: Tet 2026 */}
+                            <div className={`combined-slide ${currentEventSlide === 1 ? 'active' : ''}`} style={{ position: 'relative' }}>
+                                <div className="combined-slide-bg" style={{ backgroundImage: "url('/assets/album1/image1.JPG')" }}></div>
+                                <div className="combined-slide-content">
+                                    <div className="event-meta">
+                                        <span className="event-tag">{t('featured_event.date')}</span>
+                                        <span className="event-location" style={{ marginLeft: '10px' }}>Nice, France</span>
+                                    </div>
+                                    <h3>{t('gallery_page.title_1')}</h3>
+                                    <div className="combined-slide-btns">
+                                        <a href="https://www.facebook.com/groups/1884851371854868/permalink/2855903831416279/" target="_blank" rel="noreferrer" className="btn-primary">{t('featured_event.btn')}</a>
+                                        <Link href="/album" className="btn-secondary">{t('gallery_page.view_album')}</Link>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Event 3: Consular Service */}
+                            <div className={`combined-slide ${currentEventSlide === 2 ? 'active' : ''}`} style={{ position: 'relative' }}>
+                                <div className="combined-slide-bg" style={{ backgroundImage: "url('/assets/album2/image1.jpg')" }}></div>
+                                <div className="combined-slide-content">
+                                    <div className="event-meta">
+                                        <span className="event-tag">{t('featured_event_consular.date')}</span>
+                                        <span className="event-location" style={{ marginLeft: '10px' }}>Nice, France</span>
+                                    </div>
+                                    <h3>{t('album_consular.title')}</h3>
+                                    <div className="combined-slide-btns">
+                                        <a href="https://www.facebook.com/groups/1884851371854868/permalink/2901772600162735/" target="_blank" rel="noreferrer" className="btn-primary">{t('featured_event.btn')}</a>
+                                        <Link href="/album_consular" className="btn-secondary">{t('gallery_page.view_album')}</Link>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
+                    
+                    <button className="slider-btn combined-btn-next" aria-label="Next Slide" onClick={() => setCurrentEventSlide((prev) => (prev === 2 ? 0 : prev + 1))}>&#10095;</button>
                 </div>
             </section>
 

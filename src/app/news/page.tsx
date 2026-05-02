@@ -55,7 +55,7 @@ export default function NewsPage() {
                 {!loading && !error && articles.length === 0 && <p>{t('news_page.empty')}</p>}
 
                 {!loading && !error && featuredArticle && (
-                    <Link href={`/news/${featuredArticle.id}`} className={`news-featured ${!getPropValue(featuredArticle.properties.Thumnail, lang) ? 'news-featured-no-img' : ''}`} style={{ display: 'flex' }}>
+                    <Link href={`/news/${featuredArticle.id}`} className={`news-featured ${!getPropValue(featuredArticle.properties.Thumnail, lang) ? 'news-featured-no-img' : ''}`}>
                         {getPropValue(featuredArticle.properties.Thumnail, lang) && (
                             <img src={getPropValue(featuredArticle.properties.Thumnail, lang)} alt="Featured" />
                         )}
