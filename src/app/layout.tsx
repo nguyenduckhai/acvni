@@ -20,7 +20,9 @@ export const metadata: Metadata = {
   title: "ACVNI - Cộng đồng người Việt Nam tại Nice",
   description: "Phát huy văn hóa và tương trợ cộng đồng người Việt tại Nice.",
   icons: {
-    icon: "/assets/logo_new.webp"
+    icon: "/assets/logo_new.webp",
+    shortcut: "/assets/logo_new.webp",
+    apple: "/assets/logo_new.webp",
   }
 };
 
