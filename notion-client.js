@@ -96,10 +96,12 @@ document.addEventListener('DOMContentLoaded', async () => {
                         const date = getPropValue(article.properties['Published Date']) || '';
                         const author = getPropValue(article.properties.Author) || 'ACVNI';
                         const coverUrl = getPropValue(article.properties.Thumnail);
+                        const finalImgUrl = coverUrl || 'assets/logo_new.webp';
+                        const imgStyle = coverUrl ? '' : 'object-fit: contain; padding: 2rem; background-color: var(--bg-alt, #f5f5f5);';
 
                         const cardHtml = `
                             <a href="news-article.html?id=${article.id}" class="news-card">
-                                ${coverUrl ? `<div class="news-card-img"><img src="${coverUrl}" alt="${title}"></div>` : ''}
+                                <div class="news-card-img"><img src="${finalImgUrl}" alt="${title}" style="${imgStyle}"></div>
                                 <div class="news-card-content">
                                     <h3 class="news-card-title">${title}</h3>
                                     <p class="news-card-desc"></p>
@@ -242,10 +244,12 @@ document.addEventListener('DOMContentLoaded', async () => {
                             const aTitle = getPropValue(article.properties.Title) || 'Untitled';
                             const aDate = getPropValue(article.properties['Published Date']) || '';
                             const aCoverUrl = getPropValue(article.properties.Thumnail);
+                            const finalACoverUrl = aCoverUrl || 'assets/logo_new.webp';
+                            const aImgStyle = aCoverUrl ? '' : 'object-fit: contain; padding: 10px; background-color: var(--bg-alt, #f5f5f5);';
                             
                             latestHtml += `
                                 <div class="latest-news-item">
-                                    ${aCoverUrl ? `<img src="${aCoverUrl}" alt="${aTitle}" class="latest-news-img">` : ''}
+                                    <img src="${finalACoverUrl}" alt="${aTitle}" class="latest-news-img" style="${aImgStyle}">
                                     <div class="latest-news-info">
                                         <h4><a href="news-article.html?id=${article.id}">${aTitle}</a></h4>
                                         <span>${aDate}</span>
