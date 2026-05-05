@@ -39,10 +39,10 @@
         </div>
     </header>
 
-    <main id="article-main">
-        <article>
+    <main id="article-main" class="article-layout container">
+        <article class="article-main-content">
             <div class="article-header" id="dynamic-article-header">
-                <p data-i18n="article_page.loading">Đang tải bài viết...</p>
+                <div class="loading-spinner" data-i18n="article_page.loading">Đang tải bài viết</div>
             </div>
 
             <div class="article-featured-img" id="dynamic-article-cover">
@@ -51,6 +51,14 @@
             <div class="article-content" id="dynamic-article-content">
             </div>
         </article>
+
+        <aside class="article-sidebar">
+            <h3 data-i18n="article_page.latest_news">Tin Tức Mới Nhất</h3>
+            <div class="latest-news-list" id="dynamic-latest-news">
+                <!-- Injected via notion-client.js -->
+                <div class="loading-spinner" style="padding: 20px;"></div>
+            </div>
+        </aside>
     </main>
 
     <footer>

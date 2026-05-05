@@ -191,14 +191,15 @@ const translations = {
             empty: "Aucune actualité à afficher."
         },
         article_page: {
-            loading: "Chargement de l'article...",
+            loading: "Chargement de l'article",
             not_found_title: "Article introuvable",
             error_title: "Erreur lors du chargement de l'article",
             error_desc: "Veuillez réessayer plus tard.",
             written_by: "Écrit par:",
             published: "Date de publication:",
             back_to_news: "Retour aux Actualités",
-            by: "Par"
+            by: "Par",
+            latest_news: "Dernières actualités"
         }
     },
     vi: {
@@ -393,14 +394,15 @@ const translations = {
             empty: "Không có tin tức nào để hiển thị."
         },
         article_page: {
-            loading: "Đang tải bài viết...",
+            loading: "Đang tải bài viết",
             not_found_title: "Không tìm thấy bài viết",
             error_title: "Lỗi khi tải bài viết",
             error_desc: "Vui lòng thử lại sau.",
             written_by: "Viết bởi:",
             published: "Ngày đăng:",
             back_to_news: "Quay lại Trang Tin Tức",
-            by: "Bởi"
+            by: "Bởi",
+            latest_news: "Tin Tức Mới Nhất"
         }
     },
     en: {
@@ -595,14 +597,15 @@ const translations = {
             empty: "No news to display."
         },
         article_page: {
-            loading: "Loading article...",
+            loading: "Loading article",
             not_found_title: "Article not found",
             error_title: "Error loading article",
             error_desc: "Please try again later.",
             written_by: "Written by:",
             published: "Published Date:",
             back_to_news: "Back to News",
-            by: "By"
+            by: "By",
+            latest_news: "Latest News"
         }
     }
 };
