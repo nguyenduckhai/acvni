@@ -179,6 +179,11 @@ const translations = {
             text: "\"L'ACVNI aspire à être un pilier culturel, social et spirituel pour la communauté vietnamienne de Nice.\"",
             author: "- Le Comité de l'ACVNI"
         },
+        news_section: {
+            title: "Actualités & Annonces",
+            desc: "Restez informé des dernières actualités, activités et annonces de la communauté vietnamienne à Nice et ses environs.",
+            btn: "Voir les actualités"
+        },
         news_page: {
             title: "Actualités & Activités",
             subtitle: "Restez au courant des derniers événements, activités et histoires de la communauté vietnamienne à Nice.",
@@ -376,6 +381,11 @@ const translations = {
             text: "\"ACVNI mong muốn trở thành một điểm tựa văn hóa, xã hội và tinh thần của cộng đồng người Việt tại Nice.\"",
             author: "- Ban Chấp Hành ACVNI"
         },
+        news_section: {
+            title: "Tin Tức & Thông Báo",
+            desc: "Cập nhật những thông tin mới nhất về các hoạt động, sự kiện và tin tức nổi bật từ cộng đồng người Việt Nam tại Nice và khu vực lân cận.",
+            btn: "Xem Tin Tức"
+        },
         news_page: {
             title: "Tin Tức & Hoạt Động",
             subtitle: "Cập nhật những thông tin mới nhất về các sự kiện, hoạt động và những câu chuyện nổi bật từ cộng đồng người Việt tại Nice.",
@@ -572,6 +582,11 @@ const translations = {
         quote: {
             text: "\"ACVNI aims to be a cultural, social, and spiritual anchor for the Vietnamese community in Nice.\"",
             author: "- ACVNI Executive Board"
+        },
+        news_section: {
+            title: "News & Announcements",
+            desc: "Stay updated on the latest news, activities, and announcements from the Vietnamese community in Nice and surrounding areas.",
+            btn: "View News"
         },
         news_page: {
             title: "News & Activities",
