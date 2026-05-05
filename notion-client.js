@@ -46,101 +46,99 @@ document.addEventListener('DOMContentLoaded', async () => {
         const paginationContainer = document.querySelector('.pagination');
 
         try {
-            // Show loading state
+            const pageSize = 6; 
+
+            // Show loading state initially
             const loadingText = t ? t.news_page.loading : 'Đang tải tin tức';
             newsGrid.innerHTML = `<div class="loading-spinner">${loadingText}</div>`;
 
-            const response = await fetch('/api/news');
-            if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-            const articles = await response.json();
+            // 1. Fetch total count of news items
+            const countResponse = await fetch('/api/news/count');
+            if (!countResponse.ok) throw new Error('Failed to fetch count');
+            const countData = await countResponse.json();
+            const totalArticles = countData.count;
 
-            newsGrid.innerHTML = '';
-            if (articles.length === 0) {
+            if (totalArticles === 0) {
+                newsGrid.innerHTML = '';
                 const emptyText = t ? t.news_page.empty : 'Không có tin tức nào để hiển thị.';
                 newsGrid.innerHTML = `<p>${emptyText}</p>`;
                 if (paginationContainer) paginationContainer.innerHTML = '';
                 return;
             }
 
-            const pageSize = 9; // 1 featured + 8 grid items per page
-            const totalPages = Math.ceil(articles.length / pageSize);
+            const totalPages = Math.ceil(totalArticles / pageSize);
 
-            // Render basic pagination dynamically
-            if (paginationContainer) {
-                paginationContainer.innerHTML = '';
-                if (totalPages > 1) {
-                    for (let i = 1; i <= totalPages; i++) {
-                        paginationContainer.innerHTML += `<a href="#" class="page-link ${i === 1 ? 'active' : ''}">${i}</a>`;
+            const renderPage = async (pageNumber) => {
+                try {
+                    newsGrid.innerHTML = `<div class="loading-spinner">${loadingText}</div>`;
+                    
+                    const response = await fetch(`/api/news?page=${pageNumber}&limit=${pageSize}`);
+                    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                    
+                    const result = await response.json();
+                    const currentArticles = result.data;
+
+                    newsGrid.innerHTML = '';
+
+                    let gridArticles = currentArticles.filter(article => {
+                        const title = getPropValue(article.properties.Title);
+                        return title && title.trim() !== '';
+                    });
+
+                    if (gridArticles.length === 0) {
+                        const emptyText = t ? t.news_page.empty : 'Không có tin tức nào để hiển thị.';
+                        newsGrid.innerHTML = `<p style="text-align: center; padding: 40px 0; width: 100%; grid-column: 1 / -1; color: #666; font-style: italic;">${emptyText}</p>`;
                     }
+
+                    // Render Grid
+                    gridArticles.forEach(article => {
+                        const title = getPropValue(article.properties.Title) || 'Untitled';
+                        const date = getPropValue(article.properties['Published Date']) || '';
+                        const author = getPropValue(article.properties.Author) || 'ACVNI';
+                        const coverUrl = getPropValue(article.properties.Thumnail);
+
+                        const cardHtml = `
+                            <a href="news-article.html?id=${article.id}" class="news-card">
+                                ${coverUrl ? `<div class="news-card-img"><img src="${coverUrl}" alt="${title}"></div>` : ''}
+                                <div class="news-card-content">
+                                    <h3 class="news-card-title">${title}</h3>
+                                    <p class="news-card-desc"></p>
+                                    <div class="news-card-meta">
+                                        <span>${author}</span>
+                                        <span>${date}</span>
+                                    </div>
+                                </div>
+                            </a>
+                        `;
+                        newsGrid.insertAdjacentHTML('beforeend', cardHtml);
+                    });
+
+                    // Render Pagination
+                    if (paginationContainer) {
+                        paginationContainer.innerHTML = '';
+                        if (totalPages > 1) {
+                            for (let i = 1; i <= totalPages; i++) {
+                                const btn = document.createElement('a');
+                                btn.href = '#';
+                                btn.className = `page-link ${i === pageNumber ? 'active' : ''}`;
+                                btn.textContent = i;
+                                btn.addEventListener('click', (e) => {
+                                    e.preventDefault();
+                                    renderPage(i);
+                                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                                });
+                                paginationContainer.appendChild(btn);
+                            }
+                        }
+                    }
+                } catch (error) {
+                    console.error('Failed to load page:', error);
+                    const errorMsg = t ? `${t.article_page.error_title}. ${t.article_page.error_desc}` : 'Không thể tải tin tức lúc này. Vui lòng thử lại sau.';
+                    newsGrid.innerHTML = `<p>${errorMsg}</p>`;
                 }
-            }
+            };
 
-            // For this demo, just show the first page items
-            const currentArticles = articles.slice(0, pageSize);
-            const featuredArticle = currentArticles[0];
-            const gridArticles = currentArticles.slice(1);
-
-            // Render Featured News
-            const existingFeatured = document.querySelector('.news-featured');
-            if (existingFeatured && featuredArticle) {
-                const title = getPropValue(featuredArticle.properties.Title) || 'Untitled';
-                const date = getPropValue(featuredArticle.properties['Published Date']) || '';
-                const author = getPropValue(featuredArticle.properties.Author) || 'ACVNI';
-                const coverUrl = getPropValue(featuredArticle.properties.Thumnail);
-
-                existingFeatured.style.display = 'flex';
-                existingFeatured.href = `news-article.html?id=${featuredArticle.id}`;
-
-                const byText = t ? t.article_page.by : 'Bởi';
-
-                if (coverUrl) {
-                    existingFeatured.classList.remove('news-featured-no-img');
-                    existingFeatured.innerHTML = `
-                        <img src="${coverUrl}" alt="${title}">
-                        <div class="news-featured-content">
-                            <h2>${title}</h2>
-                            <div class="news-featured-meta">
-                                <span>${byText} ${author}</span>
-                                <span>${date}</span>
-                            </div>
-                        </div>
-                    `;
-                } else {
-                    existingFeatured.classList.add('news-featured-no-img');
-                    existingFeatured.innerHTML = `
-                        <div class="news-featured-content">
-                            <h2>${title}</h2>
-                            <div class="news-featured-meta" style="margin-top: 20px;">
-                                <span>${byText} ${author}</span>
-                                <span>${date}</span>
-                            </div>
-                        </div>
-                    `;
-                }
-            }
-
-            // Render Grid
-            gridArticles.forEach(article => {
-                const title = getPropValue(article.properties.Title) || 'Untitled';
-                const date = getPropValue(article.properties['Published Date']) || '';
-                const author = getPropValue(article.properties.Author) || 'ACVNI';
-                const coverUrl = getPropValue(article.properties.Thumnail);
-
-                const cardHtml = `
-                    <a href="news-article.html?id=${article.id}" class="news-card">
-                        ${coverUrl ? `<div class="news-card-img"><img src="${coverUrl}" alt="${title}"></div>` : ''}
-                        <div class="news-card-content">
-                            <h3 class="news-card-title">${title}</h3>
-                            <p class="news-card-desc"></p>
-                            <div class="news-card-meta">
-                                <span>${author}</span>
-                                <span>${date}</span>
-                            </div>
-                        </div>
-                    </a>
-                `;
-                newsGrid.insertAdjacentHTML('beforeend', cardHtml);
-            });
+            renderPage(1);
 
         } catch (error) {
             console.error('Failed to load news from Notion:', error);
@@ -223,6 +221,48 @@ document.addEventListener('DOMContentLoaded', async () => {
             });
 
             contentContainer.innerHTML = contentHtml;
+
+            // Load Latest News for Sidebar
+            try {
+                const newsResponse = await fetch('/api/news?limit=4');
+                if (newsResponse.ok) {
+                    const result = await newsResponse.json();
+                    const allNews = result.data;
+                    const latestNewsContainer = document.getElementById('dynamic-latest-news');
+                    
+                    // Filter out current article, empty titles, and take top 3
+                    const latestArticles = allNews.filter(a => {
+                        const t = getPropValue(a.properties.Title);
+                        return a.id !== articleId && t && t.trim() !== '';
+                    }).slice(0, 3);
+                    
+                    if (latestArticles.length > 0) {
+                        let latestHtml = '';
+                        latestArticles.forEach(article => {
+                            const aTitle = getPropValue(article.properties.Title) || 'Untitled';
+                            const aDate = getPropValue(article.properties['Published Date']) || '';
+                            const aCoverUrl = getPropValue(article.properties.Thumnail);
+                            
+                            latestHtml += `
+                                <div class="latest-news-item">
+                                    ${aCoverUrl ? `<img src="${aCoverUrl}" alt="${aTitle}" class="latest-news-img">` : ''}
+                                    <div class="latest-news-info">
+                                        <h4><a href="news-article.html?id=${article.id}">${aTitle}</a></h4>
+                                        <span>${aDate}</span>
+                                    </div>
+                                </div>
+                            `;
+                        });
+                        latestNewsContainer.innerHTML = latestHtml;
+                    } else {
+                        const emptyText = t ? t.news_page.empty : 'Không có tin tức nào để hiển thị.';
+                        latestNewsContainer.innerHTML = `<p>${emptyText}</p>`;
+                    }
+                }
+            } catch (err) {
+                console.error('Failed to load latest news:', err);
+                document.getElementById('dynamic-latest-news').innerHTML = '';
+            }
 
         } catch (error) {
             console.error('Failed to load article:', error);

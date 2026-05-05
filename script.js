@@ -179,6 +179,11 @@ const translations = {
             text: "\"L'ACVNI aspire à être un pilier culturel, social et spirituel pour la communauté vietnamienne de Nice.\"",
             author: "- Le Comité de l'ACVNI"
         },
+        news_section: {
+            title: "Actualités & Annonces",
+            desc: "Restez informé des dernières actualités, activités et annonces de la communauté vietnamienne à Nice et ses environs.",
+            btn: "Voir les actualités"
+        },
         news_page: {
             title: "Actualités & Activités",
             subtitle: "Restez au courant des derniers événements, activités et histoires de la communauté vietnamienne à Nice.",
@@ -186,14 +191,15 @@ const translations = {
             empty: "Aucune actualité à afficher."
         },
         article_page: {
-            loading: "Chargement de l'article...",
+            loading: "Chargement de l'article",
             not_found_title: "Article introuvable",
             error_title: "Erreur lors du chargement de l'article",
             error_desc: "Veuillez réessayer plus tard.",
             written_by: "Écrit par:",
             published: "Date de publication:",
             back_to_news: "Retour aux Actualités",
-            by: "Par"
+            by: "Par",
+            latest_news: "Dernières actualités"
         }
     },
     vi: {
@@ -376,6 +382,11 @@ const translations = {
             text: "\"ACVNI mong muốn trở thành một điểm tựa văn hóa, xã hội và tinh thần của cộng đồng người Việt tại Nice.\"",
             author: "- Ban Chấp Hành ACVNI"
         },
+        news_section: {
+            title: "Tin Tức & Thông Báo",
+            desc: "Cập nhật những thông tin mới nhất về các hoạt động, sự kiện và tin tức nổi bật từ cộng đồng người Việt Nam tại Nice và khu vực lân cận.",
+            btn: "Xem Tin Tức"
+        },
         news_page: {
             title: "Tin Tức & Hoạt Động",
             subtitle: "Cập nhật những thông tin mới nhất về các sự kiện, hoạt động và những câu chuyện nổi bật từ cộng đồng người Việt tại Nice.",
@@ -383,14 +394,15 @@ const translations = {
             empty: "Không có tin tức nào để hiển thị."
         },
         article_page: {
-            loading: "Đang tải bài viết...",
+            loading: "Đang tải bài viết",
             not_found_title: "Không tìm thấy bài viết",
             error_title: "Lỗi khi tải bài viết",
             error_desc: "Vui lòng thử lại sau.",
             written_by: "Viết bởi:",
             published: "Ngày đăng:",
             back_to_news: "Quay lại Trang Tin Tức",
-            by: "Bởi"
+            by: "Bởi",
+            latest_news: "Tin Tức Mới Nhất"
         }
     },
     en: {
@@ -573,6 +585,11 @@ const translations = {
             text: "\"ACVNI aims to be a cultural, social, and spiritual anchor for the Vietnamese community in Nice.\"",
             author: "- ACVNI Executive Board"
         },
+        news_section: {
+            title: "News & Announcements",
+            desc: "Stay updated on the latest news, activities, and announcements from the Vietnamese community in Nice and surrounding areas.",
+            btn: "View News"
+        },
         news_page: {
             title: "News & Activities",
             subtitle: "Stay updated on the latest events, activities, and stories from the Vietnamese community in Nice.",
@@ -580,14 +597,15 @@ const translations = {
             empty: "No news to display."
         },
         article_page: {
-            loading: "Loading article...",
+            loading: "Loading article",
             not_found_title: "Article not found",
             error_title: "Error loading article",
             error_desc: "Please try again later.",
             written_by: "Written by:",
             published: "Published Date:",
             back_to_news: "Back to News",
-            by: "By"
+            by: "By",
+            latest_news: "Latest News"
         }
     }
 };
