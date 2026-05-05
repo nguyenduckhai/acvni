@@ -3,7 +3,7 @@ const translations = {
         nav: {
             home: "Accueil",
             about: "À Propos",
-            gallery: "Galerie",
+            gallery: "Galerie d'événements",
             events: "Événements",
             mission: "Mission",
             activities: "Activités",
@@ -123,7 +123,13 @@ const translations = {
             },
             register_online_title: "Adhésion en ligne",
             register_online_desc: "Cliquez sur le bouton ci-dessous pour remplir le formulaire d'adhésion.",
-            open_form_btn: "Ouvrir le formulaire d'adhésion"
+            open_form_btn: "Ouvrir le formulaire d'adhésion",
+            title_new: "DEVENIR MEMBRE DE L'ACVNI",
+            desc_html: `<p style="margin-bottom: 15px;">Cotisation membre : 10€/an<br>Cotisation étudiant : 5€/an<br>Cotisation invité : gratuit</p><p style="margin-bottom: 10px; font-weight: bold;">Avantages :</p><ul style="list-style: none; padding-left: 0;"><li style="margin-bottom: 8px;">• Assistance et conseils pour les démarches consulaires vietnamiennes</li><li style="margin-bottom: 8px;">• Assistance administrative en France</li><li style="margin-bottom: 8px;">• Priorité pour les billets des grands événements de l'association</li><li style="margin-bottom: 8px;">• Participation aux programmes avec les autorités vietnamiennes</li><li style="margin-bottom: 8px;">• Aide à la recherche d'emploi et de logement</li><li style="margin-bottom: 8px;">• Élargissement de votre réseau</li></ul>`,
+            btn_join_now: "S'inscrire maintenant",
+            donation_title_section: "FAIRE UN DON",
+            donation_desc_section: "Si vous ne souhaitez pas encore devenir membre mais que vous appréciez les valeurs et les actions de l'ACVNI (TÊT VIỆT 2026 NICE, permanence consulaire, conseils...), et souhaitez soutenir notre développement à long terme.",
+            btn_donate_now: "Faire un don"
         },
         contact: {
             title: "Contactez-Nous",
@@ -133,7 +139,9 @@ const translations = {
             send_email_title: "Envoyez-nous un email",
             send_email_desc: "Cliquez ci-dessous pour ouvrir votre application de messagerie",
             open_mail_app: "Ouvrir l'application Email",
-            support_info: "Supporte : Gmail (Android), Mail (iOS), Outlook, etc."
+            support_info: "Supporte : Gmail (Android), Mail (iOS), Outlook, etc.",
+            donation_title: "Faire un don",
+            donation_btn: "Soutenir l'ACVNI"
         },
         form: {
             name: "Nom Complet",
@@ -206,7 +214,7 @@ const translations = {
         nav: {
             home: "Trang Chủ",
             about: "Giới Thiệu",
-            gallery: "Gallery",
+            gallery: "Thư viện ảnh sự kiện",
             events: "Sự Kiện",
             mission: "Sứ Mệnh",
             activities: "Hoạt động",
@@ -326,7 +334,13 @@ const translations = {
             },
             register_online_title: "Đăng ký trực tuyến",
             register_online_desc: "Nhấn vào nút bên dưới để điền đơn đăng ký thành viên.",
-            open_form_btn: "Mở Đơn Đăng Ký"
+            open_form_btn: "Mở Đơn Đăng Ký",
+            title_new: "TRỞ THÀNH HỘI VIÊN ACVNI",
+            desc_html: `<p style="margin-bottom: 15px;">Phí hội viên: 10€/năm<br>Phí sinh viên: 5€/năm<br>Phí khách mời: miễn phí</p><p style="margin-bottom: 10px; font-weight: bold;">Quyền lợi hội viên:</p><ul style="list-style: none; padding-left: 0;"><li style="margin-bottom: 8px;">• Hỗ trợ & tư vấn thủ tục lãnh sự Việt Nam</li><li style="margin-bottom: 8px;">• Tư vấn, hỗ trợ giấy tờ – hành chính tại Pháp</li><li style="margin-bottom: 8px;">• Ưu tiên vé các sự kiện lớn của Hội</li><li style="margin-bottom: 8px;">• Tham gia các chương trình kết nối với cơ quan Nhà nước Việt Nam</li><li style="margin-bottom: 8px;">• Hỗ trợ giới thiệu việc làm, nhà ở</li><li style="margin-bottom: 8px;">• Mở rộng mạng lưới quan hệ và cơ hội phát triển</li></ul>`,
+            btn_join_now: "Đăng ký ngay",
+            donation_title_section: "ỦNG HỘ",
+            donation_desc_section: "Nếu Quý vị chưa muốn tham gia thành viên của hội nhưng trân trọng những giá trị ACVNI đã cống hiến (TẾT VIỆT 2026 NICE, Sự kiện mời Đại Sứ Quán Việt Nam về Nice làm giấy tờ cho bà con, tư vấn….), đang và sẽ xây dựng, muốn ủng hộ đồng hành cùng sự phát triển lâu dài của hội.",
+            btn_donate_now: "Ủng hộ ngay"
         },
         contact: {
             title: "Liên hệ",
@@ -336,7 +350,9 @@ const translations = {
             send_email_title: "Gửi email cho chúng tôi",
             send_email_desc: "Nhấn vào bên dưới để mở ứng dụng email của bạn",
             open_mail_app: "Mở Ứng Dụng Email",
-            support_info: "Hỗ trợ: Gmail (Android), Mail (iOS), Outlook, v.v."
+            support_info: "Hỗ trợ: Gmail (Android), Mail (iOS), Outlook, v.v.",
+            donation_title: "Quyên góp",
+            donation_btn: "Ủng hộ ACVNI"
         },
         form: {
             name: "Họ và Tên",
@@ -409,7 +425,7 @@ const translations = {
         nav: {
             home: "Home",
             about: "About",
-            gallery: "Gallery",
+            gallery: "Gallery event",
             events: "Events",
             mission: "Mission",
             activities: "Activities",
@@ -529,7 +545,13 @@ const translations = {
             },
             register_online_title: "Register Online",
             register_online_desc: "Click the button below to fill out the membership form.",
-            open_form_btn: "Open Registration Form"
+            open_form_btn: "Open Registration Form",
+            title_new: "BECOME AN ACVNI MEMBER",
+            desc_html: `<p style="margin-bottom: 15px;">Member fee: 10€/year<br>Student fee: 5€/year<br>Guest fee: free</p><p style="margin-bottom: 10px; font-weight: bold;">Member benefits:</p><ul style="list-style: none; padding-left: 0;"><li style="margin-bottom: 8px;">• Support & advice on Vietnamese consular procedures</li><li style="margin-bottom: 8px;">• Advice and support for administrative paperwork in France</li><li style="margin-bottom: 8px;">• Priority tickets for major association events</li><li style="margin-bottom: 8px;">• Participation in connection programs with Vietnamese state agencies</li><li style="margin-bottom: 8px;">• Support in job and housing introductions</li><li style="margin-bottom: 8px;">• Expanding your network and development opportunities</li></ul>`,
+            btn_join_now: "Register now",
+            donation_title_section: "MAKE A DONATION",
+            donation_desc_section: "If you do not wish to become a member yet but appreciate the values and actions ACVNI has contributed (TET VIET 2026 NICE, consular services, consulting...), and want to support the long-term development of our association.",
+            btn_donate_now: "Donate now"
         },
         contact: {
             title: "Contact Us",
@@ -539,7 +561,9 @@ const translations = {
             send_email_title: "Send us an email",
             send_email_desc: "Click below to open your email application",
             open_mail_app: "Open Email App",
-            support_info: "Supports: Gmail (Android), Mail (iOS), Outlook, etc."
+            support_info: "Supports: Gmail (Android), Mail (iOS), Outlook, etc.",
+            donation_title: "Make a Donation",
+            donation_btn: "Support ACVNI"
         },
         form: {
             name: "Full Name",

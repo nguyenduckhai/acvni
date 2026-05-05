@@ -39,9 +39,8 @@
                 <li><a href="#activities" data-i18n="nav.activities">Hoạt động</a></li>
                 <li><a href="#membership" data-i18n="nav.membership">Thành viên</a></li>
                 <li><a href="news.html" data-i18n="nav.news">Tin tức</a></li>
-                <li><a href="#events-gallery" data-i18n="nav.events">Sự Kiện</a></li>
+                <li><a href="#events-gallery" data-i18n="nav.gallery">Thư viện Ảnh</a></li>
 
-                <li><a href="#contact" class="btn-primary" data-i18n="nav.contact" style="color:white;">Liên Hệ</a></li>
                 <li class="lang-switcher">
                     <button class="lang-btn active" data-lang="vi">VI</button>
                     <span class="separator">|</span>
@@ -166,10 +165,25 @@
                     <img src="assets/album2/image1.jpg" alt="Activities Map">
                 </div>
                 <div class="split-content" style="direction: ltr; text-align: left;">
-                    <h3 data-i18n="membership.subtitle">Tại sao nên tham gia?</h3>
-                    <p data-i18n="membership.desc">Tham gia ACVNI là cơ hội để kết nối với cộng đồng người Việt tại
-                        Nice, gặp gỡ, chia sẻ và hỗ trợ lẫn nhau.</p>
-                    <a href="#contact" class="btn-primary" data-i18n="hero.btn_join">Đăng ký ngay</a>
+                    <h3 data-i18n="membership.title_new">TRỞ THÀNH HỘI VIÊN ACVNI</h3>
+                    <div data-i18n="membership.desc_html"
+                        style="margin-bottom: 25px; line-height: 1.6; color: var(--text-main);">
+                        <!-- Content injected by script.js -->
+                    </div>
+                    <a href="https://www.helloasso.com/associations/association-de-la-communaute-vietnamienne-de-nice/adhesions/cotisation-membre-acvni-phi-hoi-vien-acvni"
+                        target="_blank" class="btn-primary" data-i18n="membership.btn_join_now">Đăng ký ngay</a>
+
+                    <div style="margin-top: 40px; padding-top: 30px; border-top: 1px solid rgba(0,0,0,0.1);">
+                        <h3 data-i18n="membership.donation_title_section">ỦNG HỘ</h3>
+                        <p data-i18n="membership.donation_desc_section">
+                            Nếu Quý vị chưa muốn tham gia thành viên của hội nhưng trân trọng những giá trị ACVNI đã
+                            cống hiến (TẾT VIỆT 2026 NICE, Sự kiện mời Đại Sứ Quán Việt Nam về Nice làm giấy tờ cho bà
+                            con, tư vấn….), đang và sẽ xây dựng, muốn ủng hộ đồng hành cùng sự phát triển lâu dài của
+                            hội.
+                        </p>
+                        <a href="https://www.helloasso.com/associations/association-de-la-communaute-vietnamienne-de-nice/formulaires/1"
+                            target="_blank" class="btn-secondary" data-i18n="membership.btn_donate_now">Ủng hộ ngay</a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -178,11 +192,12 @@
         <section id="news" class="split-section">
             <div class="split-container">
                 <div class="split-image">
-                    <img src="assets/album1/image5.jpg" alt="News Image">
+                    <img src="assets/news_bg.jpg" alt="News Image">
                 </div>
                 <div class="split-content">
                     <h3 data-i18n="news_section.title">Tin Tức & Thông Báo</h3>
-                    <p data-i18n="news_section.desc">Cập nhật những thông tin mới nhất về các hoạt động, sự kiện và tin tức nổi bật từ cộng đồng người Việt Nam tại Nice và khu vực lân cận.</p>
+                    <p data-i18n="news_section.desc">Cập nhật những thông tin mới nhất về các hoạt động, sự kiện và tin
+                        tức nổi bật từ cộng đồng người Việt Nam tại Nice và khu vực lân cận.</p>
                     <a href="news.html" class="btn-primary" data-i18n="news_section.btn">Xem Tin Tức</a>
                 </div>
             </div>
@@ -191,8 +206,8 @@
         <!-- Combined Events & Gallery Section -->
         <section id="events-gallery" class="section-combined">
             <div class="container">
-                <h2 style="text-align:center; font-size: 2.5rem; margin-bottom:50px;" data-i18n="nav.events">Sự kiện &
-                    Hình ảnh</h2>
+                <h2 style="text-align:center; font-size: 2.5rem; margin-bottom:50px;" data-i18n="nav.gallery">Thư viện
+                    Ảnh</h2>
             </div>
 
             <div class="combined-slider-container">
@@ -258,33 +273,7 @@
             </div>
         </section>
 
-        <!-- Bottom CTA - Membership & Contact Form Container -->
-        <!-- User asked to "add this in" for sections not in image. Forms are not in image really. -->
-        <section id="contact" class="section-cta">
-            <div class="container">
-                <h2 data-i18n="contact.title">Liên Hệ Với Chúng Tôi</h2>
-                <p data-i18n="contact.desc" style="max-width: 600px; margin: 0 auto 40px; color: #ccc;">ACVNI luôn sẵn
-                    sàng lắng nghe, kết nối và đồng hành cùng cộng đồng người Việt Nam tại Nice.
-                </p>
 
-                <div class="form-wrapper">
-                    <!-- Simple Contact Form / Membership Link -->
-                    <div style="text-align: center;">
-                        <h3 style="color: var(--color-text-main); margin-bottom: 20px;"
-                            data-i18n="membership.register_online_title">Đăng ký thành viên</h3>
-                        <a href="https://forms.gle/iByjqJptMSL3dV6b6" target="_blank" class="btn-primary"
-                            data-i18n="membership.open_form_btn">Mở Đơn Đăng Ký</a>
-
-                        <div style="margin-top: 40px; border-top: 1px solid #eee; padding-top: 30px;">
-                            <h3 style="color: var(--color-text-main); margin-bottom: 20px;"
-                                data-i18n="contact.send_email_title">Gửi Email</h3>
-                            <a href="mailto:contact.acvni@gmail.com" class="btn-secondary"
-                                data-i18n="contact.open_mail_app">Mở Ứng Dụng Email</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
 
     </main>
 
