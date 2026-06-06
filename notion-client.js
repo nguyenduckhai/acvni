@@ -3,6 +3,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     const localeMap = { 'vi': 'vi-VN', 'fr': 'fr-FR', 'en': 'en-US' };
     const dateLocale = localeMap[currentLang] || 'vi-VN';
 
+    const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.protocol === 'file:';
+    const API_BASE = isLocal && window.location.port !== '3000' ? 'http://localhost:3000' : '';
+
     // Helper to safely get Notion property values
     const getPropValue = (prop) => {
         if (!prop) return '';
@@ -53,7 +56,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             newsGrid.innerHTML = `<div class="loading-spinner">${loadingText}</div>`;
 
             // 1. Fetch total count of news items
-            const countResponse = await fetch('/api/news/count');
+            const countResponse = await fetch(`${API_BASE}/api/news/count`);
             if (!countResponse.ok) throw new Error('Failed to fetch count');
             const countData = await countResponse.json();
             const totalArticles = countData.count;
@@ -72,7 +75,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 try {
                     newsGrid.innerHTML = `<div class="loading-spinner">${loadingText}</div>`;
                     
-                    const response = await fetch(`/api/news?page=${pageNumber}&limit=${pageSize}`);
+                    const response = await fetch(`${API_BASE}/api/news?page=${pageNumber}&limit=${pageSize}`);
                     if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
                     
                     const result = await response.json();
@@ -163,7 +166,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
 
         try {
-            const response = await fetch(`/api/news/${articleId}`);
+            const response = await fetch(`${API_BASE}/api/news/${articleId}`);
             if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
 
             const { page, blocks } = await response.json();
@@ -226,7 +229,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
             // Load Latest News for Sidebar
             try {
-                const newsResponse = await fetch('/api/news?limit=4');
+                const newsResponse = await fetch(`${API_BASE}/api/news?limit=4`);
                 if (newsResponse.ok) {
                     const result = await newsResponse.json();
                     const allNews = result.data;

@@ -80,7 +80,9 @@ const translations = {
             item6: {
                 title: "6. Lien France-Vietnam",
                 desc: "Promotion de la coopération culturelle, éducative et économique entre les deux pays."
-            }
+            },
+            cta_desc: "Pour suivre en détail nos récents programmes et événements, nous vous invitons à visiter notre page d'actualités.",
+            btn_latest: "Voir les dernières activités"
         },
         featured_event: {
             title: "TÊT VIÊT 2026 NICE",
@@ -294,7 +296,9 @@ const translations = {
             item6: {
                 title: "6. Kết nối Việt – Pháp",
                 desc: "Thúc đẩy các hoạt động giao lưu, hợp tác trong lĩnh vực văn hóa, giáo dục và kinh tế giữa hai quốc gia."
-            }
+            },
+            cta_desc: "Để theo dõi chi tiết các chương trình và sự kiện gần đây, mời bạn ghé thăm trang cập nhật của chúng tôi.",
+            btn_latest: "Xem Hoạt Động Mới Nhất"
         },
         featured_event: {
             title: "TẾT VIỆT 2026 NICE",
@@ -508,7 +512,9 @@ const translations = {
             item6: {
                 title: "6. Vietnam-France Connection",
                 desc: "Promoting exchange and cooperation in culture, education, and economy between Vietnam and France."
-            }
+            },
+            cta_desc: "To follow our recent programs and events in detail, please visit our updates page.",
+            btn_latest: "View Latest Activities"
         },
         featured_event: {
             title: "TET VIET 2026 NICE",
