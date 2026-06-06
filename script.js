@@ -183,6 +183,9 @@ const translations = {
             date: "25/01/2026",
             location: "Nice, France"
         },
+        partners: {
+            title: "NOS PARTENAIRES"
+        },
         quote: {
             text: "\"L'ACVNI aspire à être un pilier culturel, social et spirituel pour la communauté vietnamienne de Nice.\"",
             author: "- Le Comité de l'ACVNI"
@@ -394,6 +397,9 @@ const translations = {
             date: "25/01/2026",
             location: "Nice, France"
         },
+        partners: {
+            title: "ĐỐI TÁC CỦA CHÚNG TÔI"
+        },
         quote: {
             text: "\"ACVNI mong muốn trở thành một điểm tựa văn hóa, xã hội và tinh thần của cộng đồng người Việt tại Nice.\"",
             author: "- Ban Chấp Hành ACVNI"
@@ -604,6 +610,9 @@ const translations = {
             desc: "A successful consular session by the Embassy of Vietnam in France, held in a warm and supportive atmosphere. Thanks to the dedicated Embassy staff, the enthusiastic Student Association, and Blue Résidence for the venue, our community received excellent assistance. A meaningful event strengthening our unity and shared spirit.",
             date: "25/01/2026",
             location: "Nice, France"
+        },
+        partners: {
+            title: "OUR PARTNERS"
         },
         quote: {
             text: "\"ACVNI aims to be a cultural, social, and spiritual anchor for the Vietnamese community in Nice.\"",
