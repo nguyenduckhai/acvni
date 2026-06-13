@@ -1888,14 +1888,17 @@ footer {
 }
 
 .activities-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 30px;
     max-width: 1200px;
     margin: 0 auto;
 }
 
 .activity-card {
+    flex: 1 1 320px;
+    max-width: 380px;
     background: var(--bg-card);
     padding: 40px;
     border-radius: 12px;
@@ -1936,7 +1939,13 @@ footer {
     }
 
     .activities-grid {
-        grid-template-columns: 1fr;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .activity-card {
+        width: 100%;
+        max-width: 100%;
     }
 }
 .section-label {

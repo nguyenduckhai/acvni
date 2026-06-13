@@ -81,6 +81,10 @@ const translations = {
                 title: "6. Lien France-Vietnam",
                 desc: "Promotion de la coopération culturelle, éducative et économique entre les deux pays."
             },
+            item7: {
+                title: "7. Enseignement du Vietnamien",
+                desc: "Organisation de cours de vietnamien pour les adultes."
+            },
             cta_desc: "Pour suivre en détail nos récents programmes et événements, nous vous invitons à visiter notre page d'actualités.",
             btn_latest: "Voir les dernières activités"
         },
@@ -297,6 +301,10 @@ const translations = {
                 title: "6. Kết nối Việt – Pháp",
                 desc: "Thúc đẩy các hoạt động giao lưu, hợp tác trong lĩnh vực văn hóa, giáo dục và kinh tế giữa hai quốc gia."
             },
+            item7: {
+                title: "7. Dạy tiếng Việt",
+                desc: "Tổ chức các lớp học tiếng Việt cho người lớn."
+            },
             cta_desc: "Để theo dõi chi tiết các chương trình và sự kiện gần đây, mời bạn ghé thăm trang cập nhật của chúng tôi.",
             btn_latest: "Xem Hoạt Động Mới Nhất"
         },
@@ -512,6 +520,10 @@ const translations = {
             item6: {
                 title: "6. Vietnam-France Connection",
                 desc: "Promoting exchange and cooperation in culture, education, and economy between Vietnam and France."
+            },
+            item7: {
+                title: "7. Vietnamese Teaching",
+                desc: "Organizing Vietnamese classes for adults."
             },
             cta_desc: "To follow our recent programs and events in detail, please visit our updates page.",
             btn_latest: "View Latest Activities"
