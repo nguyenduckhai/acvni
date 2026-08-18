@@ -9,6 +9,7 @@ const translations = {
             activities: "Activités",
             membership: "Adhésion",
             news: "Actualités",
+            partners: "Partenaires",
             contact: "Contact"
         },
         hero: {
@@ -190,7 +191,14 @@ const translations = {
             location: "Nice, France"
         },
         partners: {
-            title: "NOS PARTENAIRES"
+            label: "PARTENARIAT & DÉVELOPPEMENT",
+            title: "NOS PARTENAIRES & COMPAGNONS",
+            main_title: "NOS PARTENAIRES & COMPAGNONS",
+            subtitle: "Les organisations et sponsors qui accompagnent l'ACVNI dans le développement de notre communauté.",
+            companions_title: "NOS COMPAGNONS",
+            companions_subtitle: "Nos partenaires privilégiés qui nous accompagnent au quotidien",
+            sponsors_title: "PARTENAIRES & SPONSORS",
+            sponsors_subtitle: "Nos partenaires et sponsors qui soutiennent nos événements"
         },
         quote: {
             text: "\"L'ACVNI aspire à être un pilier culturel, social et spirituel pour la communauté vietnamienne de Nice.\"",
@@ -229,6 +237,7 @@ const translations = {
             activities: "Hoạt động",
             membership: "Thành viên",
             news: "Tin tức",
+            partners: "Đối tác",
             contact: "Liên hệ"
         },
         hero: {
@@ -410,7 +419,14 @@ const translations = {
             location: "Nice, France"
         },
         partners: {
-            title: "ĐỐI TÁC CỦA CHÚNG TÔI"
+            label: "ĐỒNG HÀNH & PHÁT TRIỂN",
+            title: "ĐỐI TÁC & ĐỒNG HÀNH",
+            main_title: "ĐỐI TÁC & ĐỒNG HÀNH",
+            subtitle: "Các đơn vị và nhà tài trợ đồng hành cùng ACVNI trong hành trình xây dựng và phát triển cộng đồng.",
+            companions_title: "NGƯỜI ĐỒNG HÀNH",
+            companions_subtitle: "Những đơn vị luôn gắn bó và đồng hành cùng ACVNI",
+            sponsors_title: "ĐỐI TÁC & NHÀ TÀI TRỢ",
+            sponsors_subtitle: "Các đối tác và nhà tài trợ đồng hành cùng các hoạt động & sự kiện"
         },
         quote: {
             text: "\"ACVNI mong muốn trở thành một điểm tựa văn hóa, xã hội và tinh thần của cộng đồng người Việt tại Nice.\"",
@@ -449,6 +465,7 @@ const translations = {
             activities: "Activities",
             membership: "Membership",
             news: "News",
+            partners: "Partners",
             contact: "Contact"
         },
         hero: {
@@ -630,7 +647,14 @@ const translations = {
             location: "Nice, France"
         },
         partners: {
-            title: "OUR PARTNERS"
+            label: "PARTNERSHIP & COMMUNITY",
+            title: "OUR PARTNERS & COMPANIONS",
+            main_title: "OUR PARTNERS & COMPANIONS",
+            subtitle: "Organizations and sponsors accompanying ACVNI in building and developing our community.",
+            companions_title: "OUR COMPANIONS",
+            companions_subtitle: "Key long-term companions accompanying ACVNI",
+            sponsors_title: "PARTNERS & SPONSORS",
+            sponsors_subtitle: "Valued partners and sponsors supporting our events"
         },
         quote: {
             text: "\"ACVNI aims to be a cultural, social, and spiritual anchor for the Vietnamese community in Nice.\"",
