@@ -127,18 +127,21 @@ header {
     left: 0;
     width: 100%;
     z-index: 1000;
-    padding: 20px 0;
-    transition: var(--transition);
-    background: transparent;
-    /* Start transparent */
+    height: 85px;
+    background: linear-gradient(180deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 100%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
 }
 
-/* Sticky state if needed (JS can toggle this) */
 header.scrolled {
-    background: var(--bg-header-scrolled);
-    box-shadow: var(--shadow);
     position: fixed;
-    padding: 15px 0;
+    background-color: rgba(18, 18, 18, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.4);
+    height: 70px;
 }
 
 header.scrolled .nav-links a,
@@ -149,6 +152,10 @@ header.scrolled .theme-toggle-btn {
 }
 
 .navbar {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -238,33 +245,49 @@ header.scrolled .nav-links a:hover,
     margin: 5px 0;
 }
 
-/* Hero Section */
-.hero {
+/* Unified Merged Hero Section (Full-Bleed 50% Opacity Background Slideshow) */
+.hero-split {
     position: relative;
-    height: 90vh;
-    /* Not full 100vh, keeps content visible */
-    min-height: 600px;
-    background-color: var(--bg-dark-section);
-    /* Fallback is critical for white text visibility */
-    /* background-image removed for slideshow */
+    width: 100%;
+    min-height: calc(100vh - 85px);
+    margin-top: 85px; /* Offset for header top bar */
     display: flex;
     align-items: center;
+    justify-content: center;
     overflow: hidden;
-    /* To crop overflowing slides */
-
+    background-color: #0b0f0d;
 }
 
-/* Slideshow Styles */
-.hero-slideshow {
+/* Full-bleed background slideshow behind text content */
+.hero-right {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 0;
+    z-index: 1;
+    padding: 0;
+    background-color: transparent;
 }
 
-.slide {
+.hero-image-frame {
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    border-radius: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-right .hero-slideshow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.hero-right .slide {
     position: absolute;
     top: 0;
     left: 0;
@@ -273,65 +296,223 @@ header.scrolled .nav-links a:hover,
     background-size: cover;
     background-position: center;
     opacity: 0;
-    transition: opacity 1.5s ease-in-out;
+    transition: opacity 1.5s ease-in-out, transform 6s ease;
+    transform: scale(1.04);
 }
 
-.slide.active {
-    opacity: 0.5;
+.hero-right .slide.active {
+    opacity: 0.5; /* 50% image opacity across all views */
+    transform: scale(1);
 }
 
-.hero-overlay {
+.hero-right .hero-overlay {
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.3);
-    /* Slight dim */
-    z-index: 1;
-    /* Ensure overlay is above slides */
-}
-
-.hero-content {
-    position: relative;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.6) 100%);
     z-index: 2;
-    /* Content above overlay */
-    max-width: 700px;
 }
 
-.hero h1 {
-    font-size: 3.5rem;
-    color: #ffffff;
-    margin-bottom: 20px;
-    line-height: 1.2;
-}
-
-.hero p {
-    font-size: 1.25rem;
-    color: rgba(255, 255, 255, 0.9);
-    margin-bottom: 30px;
-    max-width: 600px;
-}
-
-/* Intro Section (Our Approach) */
-.section-intro {
-    padding: 120px 20px;
-    text-align: center;
-    max-width: 800px;
+/* Centered Hero Text Content sitting on top of 50% opacity background image */
+.hero-left {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    max-width: 900px;
     margin: 0 auto;
+    padding: 80px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 28px;
+    background: transparent;
+}
+
+.hero-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2.8rem, 5.2vw, 4.6rem);
+    line-height: 1.1;
+    color: #ffffff;
+    font-weight: 400;
+    letter-spacing: -0.5px;
+    text-align: center;
+    margin: 0;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
+}
+
+.hero-title .text-gold {
+    color: #d4a373;
+    font-style: italic;
+}
+
+.hero-subtitle {
+    font-family: var(--font-body);
+    font-size: clamp(1.05rem, 1.4vw, 1.25rem);
+    color: #d6e2da;
+    line-height: 1.6;
+    font-weight: 300;
+    max-width: 650px;
+    text-align: center;
+    margin: 0;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.6);
+}
+
+/* Redesigned Latest News Headline Highlight Card */
+.hero-headline-card {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background: rgba(18, 18, 18, 0.65);
+    border: 1px solid rgba(244, 236, 216, 0.25);
+    border-radius: 16px;
+    padding: 20px 28px;
+    text-decoration: none;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    max-width: 600px;
+    width: 100%;
+    margin-top: 10px;
+    text-align: left;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.hero-headline-card:hover {
+    background: rgba(18, 18, 18, 0.85);
+    border-color: var(--color-accent, #D49A80);
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.45);
+}
+
+.headline-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.headline-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--color-accent, #D49A80);
+}
+
+.pulse-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: #27ae60;
+    display: inline-block;
+    box-shadow: 0 0 8px #27ae60;
+    animation: pulse-dot-anim 2s infinite;
+}
+
+@keyframes pulse-dot-anim {
+    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(39, 174, 96, 0.7); }
+    70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(39, 174, 96, 0); }
+    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(39, 174, 96, 0); }
+}
+
+.headline-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #f4ecd8;
+    opacity: 0.85;
+    transition: all 0.3s ease;
+}
+
+.hero-headline-card:hover .headline-action {
+    color: var(--color-accent, #D49A80);
+    opacity: 1;
+    transform: translateX(3px);
+}
+
+.hero-news-title {
+    font-family: var(--font-heading);
+    font-size: 1.18rem;
+    color: #ffffff;
+    font-weight: 500;
+    line-height: 1.4;
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Section Below Hero - Follows the rest of the dark site theme */
+.section-intro {
+    padding: 100px 20px;
+    text-align: center;
+    background-color: var(--bg-body);
+    color: var(--text-main);
 }
 
 .section-intro h2 {
     font-size: 3rem;
     color: var(--text-main);
     margin-bottom: 30px;
+    font-weight: 400;
 }
 
 .section-intro p {
-    font-size: 1.1rem;
     color: var(--text-muted);
-    margin-bottom: 40px;
+    font-size: 1.1rem;
     line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .hero-split {
+        margin-top: 75px;
+        min-height: 80vh;
+    }
+
+    header {
+        height: 75px;
+    }
+
+    .hero-left {
+        padding: 60px 24px;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-left {
+        padding: 40px 20px;
+        gap: 20px;
+    }
+
+    .hero-title {
+        font-size: 2.1rem;
+    }
+
+    .hero-subtitle {
+        font-size: 0.95rem;
+    }
+
+    .hero-headline-card {
+        padding: 16px 20px;
+    }
+
+    .hero-news-title {
+        font-size: 1.05rem;
+    }
 }
 
 /* Zig-Zag Section (Split) */

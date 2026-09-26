@@ -16,11 +16,14 @@ const translations = {
             title: "Association de la communauté <span class='text-gold'>Vietnamienne</span> de Nice",
             subtitle: "Promouvoir la culture, l'entraide et l'amitié franco-vietnamienne sur la Côte d'Azur.",
             btn_discover: "Découvrir l'Association",
-            btn_join: "Nous Rejoindre"
+            btn_join: "Nous Rejoindre",
+            news_label: "DERNIÈRE ACTUALITÉ",
+            read_news: "Lire l'article",
+            fallback_news: "Découvrez les dernières actualités et événements"
         },
         about: {
             title: "À Propos",
-            intro: "<p>L'ACVNI – Association de la Communauté des Vietnamiens de Nice – est une association à Nice et ses environs, créée dans le but de connecter, soutenir et développer la communauté vietnamienne dans un esprit de solidarité, d'entraide et de préservation de l'identité culturelle nationale.</p><p>L'association fonctionne sur une base non lucrative, respectant la loi et dans l'intérêt commun de la communauté. L'ACVNI aspire à devenir un pont entre les Vietnamiens de Nice, tout en contribuant à promouvoir l'amitié et les échanges culturels entre le Vietnam et la France.</p><div style='margin-top: 30px; border-top: 1px solid #eee; padding-top: 20px;'><p style='font-weight: bold; margin-bottom: 5px; color: var(--color-accent);'>PHUNG Thao Huyen</p><p style='font-size: 0.9em; color: #666;'>Présidente de l'ACVNI – Association de la Communauté des Vietnamiens de Nice</p></div>",
+            intro: "<p>L'ACVNI – Association de la Communauté des Vietnamiens de Nice – est une association à Nice et ses environs, créée dans le but de connecter, soutenir et développer la communauté vietnamienne dans un esprit de solidarité, d'entraide et de préservation de l'identité culturelle nationale.</p><p>L'association fonctionne sur une base non lucrative, respectant la loi et dans l'intérêt commun de la communauté. L'ACVNI aspire à devenir un pont entre les Vietnamiens de Nice, tout en contribuant à promouvoir l'amitié et les échanges culturels entre le Vietnam et la France.</p><div style='margin-top: 35px; padding-top: 20px; border-top: 2px solid var(--color-accent, #D49A80); width: 80px; margin: 0 auto 20px auto;'></div><div><p style='font-weight: bold; margin-bottom: 5px; color: var(--color-accent);'>PHUNG Thao Huyen</p><p style='font-size: 0.9em; color: var(--text-muted, #a0a0a0);'>Présidente de l'ACVNI – Association de la Communauté des Vietnamiens de Nice</p></div>",
             goals_title: "Objectifs de l'ACVNI",
             goals: {
                 1: "Organiser des événements culturels traditionnels vietnamiens tels que le Têt (Nouvel An lunaire), la Fête de la Mi-Automne et des programmes d'échanges culturels et artistiques.",
@@ -244,11 +247,14 @@ const translations = {
             title: "Cộng đồng người <span class='text-gold'>Việt Nam</span> tại Nice",
             subtitle: "Phát huy văn hóa, tương trợ và tình hữu nghị Pháp-Việt tại vùng Côte d'Azur.",
             btn_discover: "Khám phá Hội",
-            btn_join: "Tham gia ngay"
+            btn_join: "Tham gia ngay",
+            news_label: "TIN MỚI NHẤT",
+            read_news: "Xem ngay",
+            fallback_news: "Khám phá thông báo & sự kiện mới nhất"
         },
         about: {
             title: "Giới Thiệu",
-            intro: "<p>ACVNI – Association de la Communauté des Vietnamiens de Nice – là Hội Cộng đồng người Việt Nam tại Nice và khu vực lân cận, được thành lập với mục tiêu kết nối, hỗ trợ và phát triển cộng đồng người Việt trong tinh thần đoàn kết, tương trợ và gìn giữ bản sắc văn hóa dân tộc.</p><p>Hội hoạt động trên nguyên tắc phi lợi nhuận, tôn trọng pháp luật và vì lợi ích chung của cộng đồng. ACVNI mong muốn trở thành cầu nối giữa người Việt tại Nice với nhau, đồng thời góp phần thúc đẩy tình hữu nghị và giao lưu văn hóa giữa Việt Nam và Pháp.</p><div style='margin-top: 30px; border-top: 1px solid #eee; padding-top: 20px;'><p style='font-weight: bold; margin-bottom: 5px; color: var(--color-accent);'>Phùng Thảo Huyền</p><p style='font-size: 0.9em; color: #666;'>Chủ tịch ACVNI – Hội Cộng đồng người Việt Nam tại Nice</p></div>",
+            intro: "<p>ACVNI – Association de la Communauté des Vietnamiens de Nice – là Hội Cộng đồng người Việt Nam tại Nice và khu vực lân cận, được thành lập với mục tiêu kết nối, hỗ trợ và phát triển cộng đồng người Việt trong tinh thần đoàn kết, tương trợ và gìn giữ bản sắc văn hóa dân tộc.</p><p>Hội hoạt động trên nguyên tắc phi lợi nhuận, tôn trọng pháp luật và vì lợi ích chung của cộng đồng. ACVNI mong muốn trở thành cầu nối giữa người Việt tại Nice với nhau, đồng thời góp phần thúc đẩy tình hữu nghị và giao lưu văn hóa giữa Việt Nam và Pháp.</p><div style='margin-top: 35px; padding-top: 20px; border-top: 2px solid var(--color-accent, #D49A80); width: 80px; margin: 0 auto 20px auto;'></div><div><p style='font-weight: bold; margin-bottom: 5px; color: var(--color-accent);'>Phùng Thảo Huyền</p><p style='font-size: 0.9em; color: var(--text-muted, #a0a0a0);'>Chủ tịch ACVNI – Hội Cộng đồng người Việt Nam tại Nice</p></div>",
             goals_title: "Mục tiêu của ACVNI",
             goals: {
                 1: "Tổ chức các sự kiện văn hóa truyền thống Việt Nam như Tết Nguyên đán, Tết Trung thu và các chương trình giao lưu văn hóa – nghệ thuật.",
@@ -472,11 +478,14 @@ const translations = {
             title: "<span class='text-gold'>Vietnamese</span> Community in Nice",
             subtitle: "Promoting culture, mutual aid, and Franco-Vietnamese friendship on the French Riviera.",
             btn_discover: "Discover Us",
-            btn_join: "Join Us"
+            btn_join: "Join Us",
+            news_label: "LATEST NEWS",
+            read_news: "Read article",
+            fallback_news: "Discover our latest news & events"
         },
         about: {
             title: "About Us",
-            intro: "<p>ACVNI – Association de la Communauté des Vietnamiens de Nice – is the Association of the Vietnamese Community in Nice and its surroundings, established with the goal of connecting, supporting, and developing the Vietnamese community in the spirit of solidarity, mutual aid, and preservation of national cultural identity.</p><p>The association operates on a non-profit basis, respecting the law and for the common interests of the community. ACVNI aims to become a bridge between the Vietnamese people in Nice, while contributing to the promotion of friendship and cultural exchange between Vietnam and France.</p><div style='margin-top: 30px; border-top: 1px solid #eee; padding-top: 20px;'><p style='font-weight: bold; margin-bottom: 5px; color: var(--color-accent);'>PHUNG Thao Huyen</p><p style='font-size: 0.9em; color: #666;'>President of ACVNI – Association of the Vietnamese Community in Nice</p></div>",
+            intro: "<p>ACVNI – Association de la Communauté des Vietnamiens de Nice – is the Association of the Vietnamese Community in Nice and its surroundings, established with the goal of connecting, supporting, and developing the Vietnamese community in the spirit of solidarity, mutual aid, and preservation of national cultural identity.</p><p>The association operates on a non-profit basis, respecting the law and for the common interests of the community. ACVNI aims to become a bridge between the Vietnamese people in Nice, while contributing to the promotion of friendship and cultural exchange between Vietnam and France.</p><div style='margin-top: 35px; padding-top: 20px; border-top: 2px solid var(--color-accent, #D49A80); width: 80px; margin: 0 auto 20px auto;'></div><div><p style='font-weight: bold; margin-bottom: 5px; color: var(--color-accent);'>PHUNG Thao Huyen</p><p style='font-size: 0.9em; color: var(--text-muted, #a0a0a0);'>President of ACVNI – Association of the Vietnamese Community in Nice</p></div>",
             goals_title: "Goals of ACVNI",
             goals: {
                 1: "Organize traditional Vietnamese cultural events such as the Lunar New Year (Tet), Mid-Autumn Festival, and exchange programs.",

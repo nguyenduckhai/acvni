@@ -62,19 +62,40 @@
     </header>
 
     <main>
-        <!-- Hero Section -->
-        <section id="home" class="hero">
-            <div class="hero-slideshow">
-                <div class="slide" style="background-image: url('assets/album1/image7.jpg');"></div>
-                <div class="slide active" style="background-image: url('assets/album1/image14.JPG');"></div>
-                <div class="slide" style="background-image: url('assets/album1/image6.JPG');"></div>
-            </div>
-            <div class="hero-overlay"></div>
-            <div class="container hero-content">
-                <h1 data-i18n="hero.title">Cộng đồng người Việt Nam tại Nice</h1>
-                <p data-i18n="hero.subtitle">Phát huy văn hóa, tương trợ và tình hữu nghị Pháp-Việt tại vùng Côte
-                    d'Azur.</p>
+        <!-- Split Hero Section -->
+        <section id="home" class="hero-split">
+            <div class="hero-left">
+                <h1 class="hero-title" data-i18n="hero.title">Cộng đồng người Việt Nam tại Nice</h1>
+                <p class="hero-subtitle" data-i18n="hero.subtitle">Phát huy văn hóa, tương trợ và tình hữu nghị Pháp-Việt tại vùng Côte d'Azur.</p>
 
+                <!-- Redesigned Latest News Headline Highlight Card -->
+                <a href="news.html" id="hero-latest-news-card" class="hero-headline-card">
+                    <div class="headline-card-header">
+                        <span class="headline-badge">
+                            <span class="pulse-dot"></span>
+                            <span data-i18n="hero.news_label">TIN MỚI NHẤT</span>
+                        </span>
+                        <span class="headline-action">
+                            <span data-i18n="hero.read_news">Xem ngay</span>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </span>
+                    </div>
+                    <h3 class="hero-news-title">Đang tải tin tức...</h3>
+                </a>
+            </div>
+
+            <div class="hero-right">
+                <div class="hero-image-frame">
+                    <div class="hero-slideshow">
+                        <div class="slide" style="background-image: url('assets/album1/image7.jpg');"></div>
+                        <div class="slide active" style="background-image: url('assets/album1/image14.JPG');"></div>
+                        <div class="slide" style="background-image: url('assets/album1/image6.JPG');"></div>
+                    </div>
+                    <div class="hero-overlay"></div>
+                </div>
             </div>
         </section>
 
@@ -373,6 +394,7 @@
     </footer>
 
     <script src="script.js"></script>
+    <script src="notion-client.js"></script>
 </body>
 
 </html>

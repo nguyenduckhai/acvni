@@ -37,9 +37,39 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     const isNewsPage = document.querySelector('.news-grid');
     const isArticlePage = document.getElementById('dynamic-article-header');
+    const heroNewsCard = document.getElementById('hero-latest-news-card');
 
     // Get current language from localStorage
     const t = window.translations ? window.translations[currentLang] : null;
+
+    // -----------------------------------------
+    // RENDER HERO LATEST NEWS CARD (HOMEPAGE)
+    // -----------------------------------------
+    if (heroNewsCard) {
+        try {
+            const response = await fetch(`${API_BASE}/api/news?page=1&limit=1`);
+            if (response.ok) {
+                const result = await response.json();
+                if (result.data && result.data.length > 0) {
+                    const latestArticle = result.data[0];
+                    const title = getPropValue(latestArticle.properties.Title) || (t ? t.hero.fallback_news : 'Tin tức mới nhất');
+                    
+                    const titleEl = heroNewsCard.querySelector('.hero-news-title');
+                    if (titleEl) titleEl.textContent = title;
+                    heroNewsCard.href = `news-article.html?id=${latestArticle.id}`;
+                }
+            } else {
+                const titleEl = heroNewsCard.querySelector('.hero-news-title');
+                if (titleEl) titleEl.textContent = t ? t.hero.fallback_news : 'Hoạt động & Tin tức mới nhất';
+                heroNewsCard.href = 'news.html';
+            }
+        } catch (err) {
+            console.warn('Hero Notion news fetch:', err);
+            const titleEl = heroNewsCard.querySelector('.hero-news-title');
+            if (titleEl) titleEl.textContent = t ? t.hero.fallback_news : 'Hoạt động & Tin tức mới nhất';
+            heroNewsCard.href = 'news.html';
+        }
+    }
 
     // -----------------------------------------
     // RENDER NEWS LISTING PAGE
